@@ -1,0 +1,37 @@
+import 'package:flutter/material.dart';
+import 'package:grocery_app/controller/components/black_text_widget.dart';
+import 'package:grocery_app/controller/components/green_text_button.dart';
+import 'package:grocery_app/controller/components/grey_text_widget.dart';
+class SplashScreen2 extends StatefulWidget {
+  const SplashScreen2({super.key});
+
+  @override
+  State<SplashScreen2> createState() => _SplashScreen2State();
+}
+
+class _SplashScreen2State extends State<SplashScreen2> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body:Container(
+        width:double.infinity,
+        height: double.infinity,
+        decoration: BoxDecoration(
+          image: DecorationImage(image: AssetImage('assets/images/splash1.png'),fit: BoxFit.cover)
+        ),
+        child: Column(
+          children: [
+            SizedBox(height: 90,width: 320,),
+            BlackTextWidget(text: "Buy Premium \n Quality Fruits"),
+            SizedBox(height: 10,),
+            GreyText(text: 'Lorem ipsum dolor sit amet, consetetur \n sadipscing elitr, sed diam nonumy'),
+            Spacer(),
+            GreenTextButton(text: 'Get started', ontap: (){}),
+            SizedBox(height: 40,),
+          ],
+        ),
+      )
+       
+    );
+  }
+}
