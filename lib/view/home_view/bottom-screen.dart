@@ -16,9 +16,9 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
     return Scaffold(
       body: Column(
         children: [
-          //Expanded(flex: 90, child:
+          Expanded(flex: 90, child:SizedBox()
         //  select==1?HomeScreen() :select==2?Favourite(): select==3?
-         // ),
+          ),
           Expanded(flex: 10, child: Row(children: [
             IconButton(onPressed: (){
               select=1;
