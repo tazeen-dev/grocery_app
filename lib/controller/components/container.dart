@@ -1,50 +1,52 @@
 import 'package:flutter/material.dart';
-import 'package:grocery_app/controller/components/black_text_widget.dart';
-
-import '../utils/constants/appcolors/app_color.dart';
-class ContainerWidget extends StatelessWidget {
-  final String text;
-  final String carttext;
-  final double fontSize;
-  final FontWeight fontWeight;
+import 'package:grocery_app/controller/components/text-class.dart';
+import 'package:grocery_app/controller/utils/constants/appcolors/app_color.dart';
+class ContainerClass extends StatelessWidget {
+  final String title;
+  final String Subtitle;
+  final String price;
   final String imagepath;
-  final String imageicon;
-  final String bigimage;
-  final String image;
-  final String smalltext;
-  final Color color;
-  const ContainerWidget({super.key, required this.text, this.fontSize=20,
-    this.fontWeight=FontWeight.w600,required this.imagepath,this.color=AppColors.greyColor ,
-    required this.imageicon,required this.carttext, required this.bigimage, required this.image, required this.smalltext});
+  final String cartadd;
+  final String iconpath;
+  const ContainerClass({super.key, required this.title,
+    required this.Subtitle, required this.price,
+    required this.cartadd, required this.imagepath,
+    required this.iconpath});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width:181 ,
+      width: 180,
       height:234 ,
       decoration: BoxDecoration(
-        image: DecorationImage(image: AssetImage(imagepath),fit: BoxFit.cover),
         color: AppColors.whiteColor,
+        boxShadow:[
+          BoxShadow(
+          color: AppColors.greyColor,
+          blurRadius: 5,
+          offset: const Offset(1, 3),
+        )] ,
       ),
       child: Column(
         children: [
           Row(
-            mainAxisAlignment: MainAxisAlignment.end,
             children: [
-           Image(image: AssetImage(imagepath)),
+            Image.asset(iconpath,),
             ],
           ),
-          SizedBox(height: 20,),
-          Divider(thickness: 1,color: AppColors.greyColor,),
-          Row(
-            children: [
-              BlackTextWidget(text: smalltext)
-            ],
-          )
-            ],
+          Image.asset(imagepath),
+          BlackTextWidget(text: price),
+          BlackTextWidget(text: title),
+          BlackTextWidget(text: Subtitle),
+          Divider( thickness: 1,color: AppColors.lightGrey,),
+         Row(
+           children: [
+             Image.asset(imagepath),
+             BlackTextWidget(text: cartadd),
+           ],
+         )
+          ]
       ),
-
     );
   }
 }
-

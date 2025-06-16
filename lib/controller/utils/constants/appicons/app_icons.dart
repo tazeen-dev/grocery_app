@@ -1,0 +1,29 @@
+class AppIcons{
+      static const aocado='assets/icons/aocado-2 1.png';
+      static const search = 'assets/icons/icon.png';
+      static const peach='assets/icons/peach.png';
+      static const pineapple='assets/icons/pineapple-pieces.png';
+      static const pomegrante='assets/icons/pomegranate-11.png';
+      static const search2='assets/icons/search2.png';
+      static const grapes='assets/icons/grapes-31.png';
+      static const broccoli='assets/icons/green-fresh-broccoli.png';
+      static const babyicon='assets/icons/baby 1.png';
+      static const beverageicon='assets/icons/baby 1.png';
+      static const fruiticon='assets/icons/baby 1.png';
+      static const vegetablesicon='assets/icons/pic2.png';
+      static const groceryicon='assets/icons/pic4.png';
+      static const vacumicon='assets/icons/vacuum 1 (1).png';
+     static const  householdicon='assets/Vector.png';
+      static const carticon='assets/icons/Vector (2).png';
+      static const hearticon='assets/icons/Vector (3).png';
+      static const oilicon='assets/icons/vector(4).png';
+      static const usericon='assets/icons/user (1).png';
+      static const homeicon='assets/icons/home.png';
+      static const minusicon='assets/icons/Group 38.png';
+      static const plusicon='assets/icons/plusicon.png';
+      static const backicon='assets/icons/backArrow.png';
+      static const google='assets/icons/google.png';
+      static const person='assets/icons/user (1).png';
+      static const person2='assets/icons/Vector (6).png';
+      static const icon2='assets/icons/icon2.png';
+}

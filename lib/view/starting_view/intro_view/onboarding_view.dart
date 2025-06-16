@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:grocery_app/controller/components/black_text_widget.dart';
+import 'package:grocery_app/controller/components/text-class.dart';
 import 'package:grocery_app/controller/components/green_text_button.dart';
-import 'package:grocery_app/controller/components/grey_text_widget.dart';
+import 'package:grocery_app/controller/components/grey-text.dart';
 import 'package:grocery_app/controller/utils/constants/appcolors/app_color.dart';
 class OnBoarding extends StatefulWidget {
   const OnBoarding({super.key});
@@ -49,7 +49,7 @@ class _OnBoardingState extends State<OnBoarding> {
           Column(
                       children: [
                         SizedBox(height:100,),
-          Image.asset('assets/images/Online Groceries-cuate 1 (1).png',fit: BoxFit.cover,),
+          Image.asset('assets/images/onbording3.png',fit: BoxFit.cover,),
           Spacer(),
           BlackTextWidget(text: "Buy Grocery"),
           SizedBox(height: 10,),
@@ -71,7 +71,7 @@ class _OnBoardingState extends State<OnBoarding> {
         Column(
           children: [
             SizedBox(height: 80,),
-            Image.asset('assets/images/Passionate-cuate 1.png',fit: BoxFit.cover,),
+            Image.asset('assets/images/onboarding4.png',fit: BoxFit.cover,),
             BlackTextWidget(text: 'Enjoy Quality Food'),
           SizedBox(height: 10,),
           GreyText(text: 'Lorem ipsum dolor sit amet, consetetur \n sadipscing elitr, sed diam nonumy'),

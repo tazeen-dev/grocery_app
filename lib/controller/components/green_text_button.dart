@@ -23,8 +23,6 @@ class GreenTextButton extends StatelessWidget {
           child: Text(text,style: GoogleFonts.poppins(textStyle:
           TextStyle(fontSize: 15,fontWeight:FontWeight.w600,color: AppColors.whiteColor)),),
         ),
-
-
       ),
     );
   }

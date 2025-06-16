@@ -1,52 +1,63 @@
 import 'package:flutter/material.dart';
+import 'package:grocery_app/controller/utils/constants/appicons/app_icons.dart';
+import 'package:grocery_app/view/home_view/cart-screen/cart.dart';
 import 'package:grocery_app/view/home_view/favorities-screen/favourite.dart';
 import 'package:grocery_app/view/home_view/home-screen/home_screen.dart';
-
-class BottomNavScreen extends StatefulWidget {
-  const BottomNavScreen({super.key});
+import 'package:grocery_app/view/home_view/profile-screen/profile-screen.dart';
+class BottonBar extends StatefulWidget {
+  const BottonBar({super.key});
 
   @override
-  State<BottomNavScreen> createState() => _BottomNavScreenState();
+  State<BottonBar> createState() => _BottonBarState();
 }
 
-class _BottomNavScreenState extends State<BottomNavScreen> {
+class _BottonBarState extends State<BottonBar> {
   int select=1;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          Expanded(flex: 90, child:SizedBox()
-        //  select==1?HomeScreen() :select==2?Favourite(): select==3?
-          ),
-          Expanded(flex: 10, child: Row(children: [
-            IconButton(onPressed: (){
-              select=1;
-              setState(() {
-
-              });
-            }, icon: Icon(Icons.home)),
-            IconButton(onPressed: (){
+      body:Column(
+      crossAxisAlignment: CrossAxisAlignment.end,
+      children: [
+        select==1? HomeScreen():select==2?ProfileScreen():select==3?FavouriteScreen():CartScreen(),
+        Expanded(
+          flex: 20,
+            child:
+        Row(
+          children: [
+            InkWell(
+              onTap: (){
+                select=1;
+                setState(() {
+                });
+              },
+                child: Image(image: AssetImage(AppIcons.homeicon))),
+            InkWell(onTap: (){
               select=2;
               setState(() {
-
               });
-            }, icon: Icon(Icons.person)),
-            IconButton(onPressed: (){
-              select=3;
-              setState(() {
-
-              });
-            }, icon: Icon(Icons.favorite_border)),
-            IconButton(onPressed: (){
-              select=4;
-              setState(() {
-
-              });
-            }, icon: Icon(Icons.shopping_cart)),
-          ],)),
-        ],
-      ),
+            },
+                child: Image(image: AssetImage(AppIcons.person))),
+            InkWell(
+              onTap: (){
+                select=3;
+                setState(() {
+                });
+              },
+                child: Image(image: AssetImage(AppIcons.hearticon),)),
+            SizedBox(width: 10,),
+            InkWell(
+              onTap: (){
+                select=4;
+                setState(() {
+                });
+              },
+                child: Image(image: AssetImage(AppIcons.carticon))),
+          ],
+        )
+        ),
+      ],
+    ),
     );
   }
 }
