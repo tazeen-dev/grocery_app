@@ -17,17 +17,18 @@ body: Stack(
         Spacer(),
         Container(
           width:double.infinity,
-          height: 314.0994873046875,
+          height: 350.0994873046875,
           decoration: BoxDecoration(
             color: AppColors.whiteColor,
-            borderRadius: BorderRadius.only(topLeft: Radius.circular(90),topRight: Radius.circular(90))
+            borderRadius: BorderRadius.only(topLeft: Radius.circular(150),topRight: Radius.circular(150))
           ),
           child: Column(
             children: [
-              Spacer(),
+              SizedBox(height: 50,),
               BlackTextWidget(text: "Buy Premium \n Quality Fruits"),
+              SizedBox(height: 10,),
               GreyText(text: "Lorem ipsum dolor sit amet, consetetur \n sadipscing elitr, sed diam nonumy"),
-              Spacer(),
+              SizedBox(height: 40,),
               GreenTextButton(text: "Get started", ontap: (){}),
               SizedBox(height: 30,),
             ],

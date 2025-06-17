@@ -3,6 +3,7 @@ import 'package:grocery_app/controller/components/text-class.dart';
 import 'package:grocery_app/controller/components/green_text_button.dart';
 import 'package:grocery_app/controller/components/grey-text.dart';
 import 'package:grocery_app/controller/utils/constants/appcolors/app_color.dart';
+import 'package:grocery_app/controller/utils/constants/appimages/app_images_widget.dart';
 class SplashScreen6 extends StatelessWidget {
   const SplashScreen6({super.key});
 
@@ -11,10 +12,9 @@ class SplashScreen6 extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-          Image(image: AssetImage('assets/images/welcome3.png')),
+          Image(image: AssetImage(AppImages.aggsplash)),
           Column(
             children: [
-              Spacer(),
               Container(
                   width:double.infinity,
                   height: 314.0994873046875,
@@ -24,10 +24,8 @@ class SplashScreen6 extends StatelessWidget {
                   ),
                   child: Column(
                     children: [
-                      Spacer(),
                       BlackTextWidget(text: "Buy Premium \n Quality Fruits"),
                       GreyText(text: "Lorem ipsum dolor sit amet, consetetur \n sadipscing elitr, sed diam nonumy"),
-                      Spacer(),
                       GreenTextButton(text: "Get started", ontap: (){}),
                       SizedBox(height: 30,),
                     ],
