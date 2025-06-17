@@ -4,7 +4,12 @@ plugins {
     // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
     id "dev.flutter.flutter-gradle-plugin"
 }
+android {
+    compileSdkVersion 34
+    ndkVersion "26.3.11579264"
 
+    // rest of config
+}
 android {
     namespace = "com.example.grocery_app"
     compileSdk = flutter.compileSdkVersion

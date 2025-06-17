@@ -12,6 +12,7 @@ class HomeScreen1 extends StatefulWidget {
 
 class _HomeScreen1State extends State<HomeScreen1> {
   TextEditingController searchController=TextEditingController();
+  String searchproduct='';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,7 +52,7 @@ class _HomeScreen1State extends State<HomeScreen1> {
               children: [
                 HomeContainer(text: '20% off on your \n first purchase', images: AppImages.homeimage),
               ],
-            )
+            ),
         
           ],
         ),

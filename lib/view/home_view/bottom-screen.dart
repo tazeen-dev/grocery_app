@@ -4,14 +4,14 @@ import 'package:grocery_app/view/home_view/cart-screen/cart.dart';
 import 'package:grocery_app/view/home_view/favorities-screen/favourite.dart';
 import 'package:grocery_app/view/home_view/home-screen/home_screen.dart';
 import 'package:grocery_app/view/home_view/profile-screen/profile-screen.dart';
-class BottonBar extends StatefulWidget {
-  const BottonBar({super.key});
+class BottomBar extends StatefulWidget {
+  const BottomBar({super.key});
 
   @override
-  State<BottonBar> createState() => _BottonBarState();
+  State<BottomBar> createState() => _BottomBarState();
 }
 
-class _BottonBarState extends State<BottonBar> {
+class _BottomBarState extends State<BottomBar> {
   int select=1;
   @override
   Widget build(BuildContext context) {
@@ -19,9 +19,12 @@ class _BottonBarState extends State<BottonBar> {
       body:Column(
       crossAxisAlignment: CrossAxisAlignment.end,
       children: [
-        select==1? HomeScreen():select==2?ProfileScreen():select==3?FavouriteScreen():CartScreen(),
         Expanded(
-          flex: 20,
+          flex: 90,
+          child: select==1? HomeScreen():select==2?ProfileScreen():select==3?FavouriteScreen():CartScreen(),
+    ),
+        Expanded(
+          flex: 10,
             child:
         Row(
           children: [
@@ -37,7 +40,7 @@ class _BottonBarState extends State<BottonBar> {
               setState(() {
               });
             },
-                child: Image(image: AssetImage(AppIcons.person))),
+                child:Image(image: AssetImage(AppIcons.homeicon))),
             InkWell(
               onTap: (){
                 select=3;

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:grocery_app/controller/components/favourite-product.dart';
 import 'package:grocery_app/controller/components/text-class.dart';
 import 'package:grocery_app/controller/utils/constants/appcolors/app_color.dart';
 import 'package:grocery_app/controller/utils/constants/appicons/app_icons.dart';
@@ -24,9 +23,6 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
     'fresh fruits',
     'fresh fruits',
     'fresh fruits',
-    'fresh fruits',
-    'fresh fruits',
-    'fresh fruits',
   ];
   @override
   Widget build(BuildContext context) {
@@ -36,9 +32,11 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
         title:
             BlackTextWidget(text: 'Favorites',fontSize: 18,fontWeight: FontWeight.w500,),
         leading: Icon(Icons.arrow_back,size: 20,),
+        centerTitle: true,
       ),
    body: ListView.builder(
-
+     itemCount: text.length,
+       scrollDirection: Axis.vertical,
        itemBuilder: (context,index){
      return ListTile(
       leading: Stack(
@@ -48,7 +46,6 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
             width: 40,
             decoration: BoxDecoration(
               shape: BoxShape.circle,
-
             ),
           ),
           Image(image: AssetImage(images[index])),
@@ -59,7 +56,7 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
            Text(text[index]),
          ],
        ),
-       subtitle:Text(text[index])
+       subtitle:Text(text[index]),
      );
    }),
     );

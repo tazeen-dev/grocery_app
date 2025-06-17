@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:grocery_app/view/auth_view/login-screen/auth_login_screen.dart';
 import 'package:grocery_app/view/auth_view/signup-screen/auth_signup_screen.dart';
 import 'package:grocery_app/view/auth_view/welcome1.dart';
+import 'package:grocery_app/view/home_view/bottom-screen.dart';
 import 'package:grocery_app/view/home_view/categaries_screen/categaries_screen.dart';
 import 'package:grocery_app/view/home_view/favorities-screen/favourite.dart';
 import 'package:grocery_app/view/home_view/home-screen/home_screen.dart';
@@ -49,20 +50,22 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home ://CategariesScreen(),
+      home :BottomBar(),
+      //BottomAppBar(),
+      //CategariesScreen(),
       //FavouriteScreen(),
-      //HomeScreen1(),
+     // HomeScreen1(),
       //LoginScreen(),
       //WelcomeScreen(),
-     // HomeScreen(),
+    // HomeScreen(),
       //SplashScreen01(),
-     // SignupScreen(),
+      //SignupScreen(),
        //OnBoarding(),
-     // SplashScreen6(),
+      //SplashScreen6(),
       //SplashScreen5(),
       //SplashScreen4(),
      //SplashScreen3(),
-     SplashScreen2(),
+    // SplashScreen2(),
    //SplashScreen(),
     );
   }
