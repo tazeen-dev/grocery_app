@@ -49,11 +49,10 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: AppColors.whiteColor,
-        title: Container(
-          height: 300,
-          width: double.infinity,
+      appBar:
+        PreferredSize(preferredSize:Size.fromHeight(80),
+          child:AppBar(
+        title: Center(
           child: TextField(
             controller: searchController,
             keyboardType: TextInputType.text,
@@ -77,7 +76,7 @@ class _HomeScreenState extends State<HomeScreen> {
               searchtext),
           ),
         ),
-      ),
+      ),),
       body: SingleChildScrollView(
         child: Column(
           children: [
