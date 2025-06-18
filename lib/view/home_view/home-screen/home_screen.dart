@@ -50,9 +50,8 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar:
-        PreferredSize(preferredSize:Size.fromHeight(80),
+        PreferredSize(preferredSize:Size.fromHeight(70),
           child:AppBar(
-            backgroundColor: AppColors.whiteColor,
         title: Padding(
           padding: const EdgeInsets.only(top: 20.0),
           child: TextField(
@@ -113,18 +112,14 @@ class _HomeScreenState extends State<HomeScreen> {
                     scrollDirection: Axis.horizontal,
                     itemBuilder:(context , index){
                     return Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 18.0),
+                      padding: const EdgeInsets.symmetric(horizontal: 15.0),
                       child: Column(
                         children: [
                           Row(
-                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              // CircleAvatar(
-                              //   child: Image.asset(''),
-                              // )
                               Container(
-                              height: 60.4,
-                              width: 60.84882926940918,
+                              height: 54,
+                              width: 55.84882926940918,
                               decoration: BoxDecoration(
                                 shape: BoxShape.circle,
                                 color: listColors[index],//AppColors.greyColor,
@@ -150,67 +145,68 @@ class _HomeScreenState extends State<HomeScreen> {
                     ,fontSize: 18,),
                   IconButton(onPressed: (){
                     Navigator.push(context,MaterialPageRoute(builder: (context) =>FeaturedScreen()));
-                  }, icon:Icon(Icons.arrow_forward_ios,
+                  }, icon:Icon(Icons.arrow_forward_ios,size: 20,
                     color: AppColors.greyColor)),
                 ],
               ),
-              SizedBox(height: 20,),
+              SizedBox(height: 10,),
               Row(
                 children: [
               Container(
-                height: 234,
-                  width: 181,
+                height: 250,
+                  width: 150,
                 decoration: BoxDecoration(
                   color: AppColors.whiteColor,
                 ),
                 child: Column(
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.all(18.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: [
-                          IconButton(onPressed: (){
-                            if(is_favourite==false){
-                              is_favourite=true;
-                            }
-                            else{
-                              is_favourite=false;
-                            }
-                            setState(() {
-                            });
-                          }, icon: Icon(is_favourite?Icons.favorite:Icons.favorite_border,color:
-                          is_favourite?AppColors.greyColor:AppColors.lightredcolor,)),
-                        ],
-                      ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        IconButton(onPressed: (){
+                          if(is_favourite==true){
+                            is_favourite=false;
+                          }
+                          else{
+                            is_favourite=true;
+                          }
+                          setState(() {
+                          });
+                        }, icon: Icon(is_favourite?Icons.favorite:Icons.favorite_border,color:
+                        is_favourite?AppColors.greyColor:AppColors.lightredcolor,size: 20,)),
+                      ],
                     ),
                     Stack(
                       children: [
-                        CircleAvatar(
-                          radius: 30,
-                          backgroundColor: AppColors.lightredcolor,
+                        Padding(
+                          padding: const EdgeInsets.only(left: 8.0),
+                          child: CircleAvatar(
+                            radius: 30,
+                            backgroundColor: AppColors.lightredcolor,
+                          ),
                         ),
                         InkWell(
                           onTap: (){
                             Navigator.push(context, MaterialPageRoute(builder: (context)=>PeachScreen()));
                           },
-                            child: Image(image: AssetImage(AppIcons.peach))),
+                            child: Padding(
+                              padding: const EdgeInsets.only(top: 22.0,left: 8.0),
+                              child: Image(image: AssetImage(AppIcons.peach),height: 50,),
+                            )),
                       ],
                     ),
-                      BlackTextWidget(text: '\$8.00',fontWeight: FontWeight.w500,fontSize: 12,textColor: AppColors.LightGreen,),
-                      BlackTextWidget(text: 'Fresh Peach',fontSize: 15,fontWeight: FontWeight.w600,),
-                    BlackTextWidget(text: 'dozen',fontSize: 12,fontWeight: FontWeight.w500,textColor: AppColors.greyColor,),
+                      BlackTextWidget(text: '\$8.00',fontWeight: FontWeight.w500,fontSize: 10,textColor: AppColors.LightGreen,),
+                      BlackTextWidget(text: 'Fresh Peach',fontSize: 12,fontWeight: FontWeight.w600,),
+                    BlackTextWidget(text: 'dozen',fontSize: 10,fontWeight: FontWeight.w500,textColor: AppColors.greyColor,),
                     Divider(thickness: 1,color: AppColors.greyColor),
-                    SizedBox(height: 10,),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         Image(image: AssetImage(AppIcons.carticon)),
-                        IconButton(onPressed: (){
-                          Navigator.push(context, MaterialPageRoute(builder: (context)=>CartScreen()));
-                        }, icon: BlackTextWidget(text: 'Add to cart',fontSize: 12,fontWeight: FontWeight.w500,),)
+                        TextButton(onPressed: (){}, child:BlackTextWidget(text: 'Add to cart',fontWeight: FontWeight.w500,fontSize: 12,))
                       ],
                     ),
+                    SizedBox(height: 20,),
                 ]
                     ),
               ),
@@ -218,16 +214,77 @@ class _HomeScreenState extends State<HomeScreen> {
                   //2 container
                   SizedBox(width: 20,),
                   Container(
-                    height: 234,
-                    width: 181,
+                    height: 250,
+                    width: 150,
                     decoration: BoxDecoration(
                       color: AppColors.whiteColor,
                     ),
                     child: Column(
                         children: [
-                          Padding(
-                            padding: const EdgeInsets.all(18.0),
-                            child: Row(
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              IconButton(onPressed: (){
+                                if(is_favourite==false){
+                                  is_favourite=true;
+                                }
+                                else{
+                                  is_favourite=false;
+                                }
+                                setState(() {
+                                });
+                              }, icon: Icon(is_favourite?Icons.favorite:Icons.favorite_border,color:
+                              is_favourite?AppColors.greyColor:AppColors.lightredcolor,size: 20,)),
+                            ],
+                          ),
+                          Stack(
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(left: 8.0),
+                                child: CircleAvatar(
+                                  radius: 30,
+                                  backgroundColor: AppColors.lightredcolor,
+                                ),
+                              ),
+                              InkWell(
+                                  onTap: (){
+                                    Navigator.push(context, MaterialPageRoute(builder: (context)=>PeachScreen()));
+                                  },
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(top: 10.0),
+                                    child: Image(image: AssetImage(AppIcons.pineapple),height: 60,),
+                                  )),
+                            ],
+                          ),
+                          BlackTextWidget(text: '\$8.00',fontWeight: FontWeight.w500,fontSize: 10,textColor: AppColors.LightGreen,),
+                          BlackTextWidget(text: 'Pineapple',fontSize: 12,fontWeight: FontWeight.w600,),
+                          BlackTextWidget(text: 'dozen',fontSize: 10,fontWeight: FontWeight.w500,textColor: AppColors.greyColor,),
+                          Divider(thickness: 1,color: AppColors.greyColor),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Image(image: AssetImage(AppIcons.carticon)),
+                              TextButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder:(context)=>CartScreen()));},
+                                  child:BlackTextWidget(text: 'Add to cart',fontWeight: FontWeight.w500,fontSize: 12,)),
+                            ],
+                          ),
+                        ]
+                    ),
+                  ),
+                  ]),
+              SizedBox(height: 20,),
+              //3 container
+              Row(
+                  children: [
+                    Container(
+                      height: 250,
+                      width: 150,
+                      decoration: BoxDecoration(
+                        color: AppColors.whiteColor,
+                      ),
+                      child: Column(
+                          children: [
+                            Row(
                               mainAxisAlignment: MainAxisAlignment.end,
                               children: [
                                 IconButton(onPressed: (){
@@ -240,263 +297,231 @@ class _HomeScreenState extends State<HomeScreen> {
                                   setState(() {
                                   });
                                 }, icon: Icon(is_favourite?Icons.favorite:Icons.favorite_border,color:
-                                is_favourite?AppColors.greyColor:AppColors.lightredcolor,)),
+                                is_favourite?AppColors.greyColor:AppColors.lightredcolor,size: 20,)),
                               ],
-                            ),
-                          ),
-                          Stack(
-                            children: [
-                              CircleAvatar(
-                                radius: 30,
-                                backgroundColor: AppColors.lightredcolor,
-                              ),
-                              InkWell(
-                                  onTap: (){
-                                    Navigator.push(context, MaterialPageRoute(builder: (context)=>PeachScreen()));
-                                  },
-                                  child: Image(image: AssetImage(AppIcons.pineapple))),
-                            ],
-                          ),
-                          BlackTextWidget(text: '\$8.00',fontWeight: FontWeight.w500,fontSize: 12,textColor: AppColors.LightGreen,),
-                          BlackTextWidget(text: 'Fresh Pineapple',fontSize: 15,fontWeight: FontWeight.w600,),
-                          BlackTextWidget(text: 'dozen',fontSize: 12,fontWeight: FontWeight.w500,textColor: AppColors.greyColor,),
-                          Divider(thickness: 1,color: AppColors.greyColor),
-                          SizedBox(height: 10,),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              Image(image: AssetImage(AppIcons.carticon)),
-                              BlackTextWidget(text: 'Add to cart',fontSize: 12,fontWeight: FontWeight.w500,),
-                            ],
-                          ),
-                        ]
-                    ),
-                  ),
-                  ]),
-              SizedBox(height: 20,),
-              //3 container
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Container(
-                      height: 234,
-                      width: 181,
-                      decoration: BoxDecoration(
-                        color: AppColors.whiteColor,
-                      ),
-                      child: Column(
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.all(18.0),
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.end,
-                                children: [
-                                  IconButton(onPressed: (){
-                                    if(is_favourite==false){
-                                      is_favourite=true;
-                                    }
-                                    else{
-                                      is_favourite=false;
-                                    }
-                                    setState(() {
-                                    });
-                                  }, icon: Icon(is_favourite?Icons.favorite:Icons.favorite_border,color:
-                                  is_favourite?AppColors.greyColor:AppColors.lightredcolor,)),
-                                ],
-                              ),
-                            ),
-                            BlackTextWidget(text: '\$8.00',fontWeight: FontWeight.w500,fontSize: 12,textColor: AppColors.LightGreen,),
-                            BlackTextWidget(text: 'Fresh Peach',fontSize: 15,fontWeight: FontWeight.w600,),
-                            BlackTextWidget(text: 'dozen',fontSize: 12,fontWeight: FontWeight.w500,textColor: AppColors.greyColor,),
-                            Divider(thickness: 1,color: AppColors.greyColor),
-                            SizedBox(height: 10,),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                Image(image: AssetImage('assets/images/Vector (2).png')),
-                                BlackTextWidget(text: 'Add to cart',fontSize: 12,fontWeight: FontWeight.w500,),
-                              ],
-                            ),
-                          ]
-                      ),
-                    ),
-                    //4 container
-                    Container(
-                      height: 234,
-                      width: 181,
-                      decoration: BoxDecoration(
-                        color: AppColors.whiteColor,
-                      ),
-                      child: Column(
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.all(18.0),
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.end,
-                                children: [
-                                  IconButton(onPressed: (){
-                                    if(is_favourite==false){
-                                      is_favourite=true;
-                                    }
-                                    else{
-                                      is_favourite=false;
-                                    }
-                                    setState(() {
-                                    });
-                                  }, icon: Icon(is_favourite?Icons.favorite:Icons.favorite_border,color:
-                                  is_favourite?AppColors.greyColor:AppColors.lightredcolor,)),
-                                ],
-                              ),
                             ),
                             Stack(
                               children: [
-                                CircleAvatar(
-                                  radius: 30,
-                                  backgroundColor: AppColors.lightredcolor,
+                                Padding(
+                                  padding: const EdgeInsets.only(left: 8.0),
+                                  child: CircleAvatar(
+                                    radius: 30,
+                                    backgroundColor: AppColors.lightredcolor,
+                                  ),
                                 ),
                                 InkWell(
                                     onTap: (){
                                       Navigator.push(context, MaterialPageRoute(builder: (context)=>PeachScreen()));
                                     },
-                                    child: Image(image: AssetImage(AppIcons.peach))),
+                                    child: Padding(
+                                      padding: const EdgeInsets.only(top: 10.0),
+                                      child: Image(image: AssetImage(AppIcons.pineapple),height: 60,),
+                                    )),
                               ],
                             ),
-                            BlackTextWidget(text: '\$8.00',fontWeight: FontWeight.w500,fontSize: 12,textColor: AppColors.LightGreen,),
-                            BlackTextWidget(text: 'Fresh Peach',fontSize: 15,fontWeight: FontWeight.w600,),
-                            BlackTextWidget(text: 'dozen',fontSize: 12,fontWeight: FontWeight.w500,textColor: AppColors.greyColor,),
+                            BlackTextWidget(text: '\$8.00',fontWeight: FontWeight.w500,fontSize: 10,textColor: AppColors.LightGreen,),
+                            BlackTextWidget(text: 'Fresh Peach',fontSize: 12,fontWeight: FontWeight.w600,),
+                            BlackTextWidget(text: 'dozen',fontSize: 10,fontWeight: FontWeight.w500,textColor: AppColors.greyColor,),
                             Divider(thickness: 1,color: AppColors.greyColor),
                             SizedBox(height: 10,),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
                                 Image(image: AssetImage(AppIcons.carticon)),
-                                BlackTextWidget(text: 'Add to cart',fontSize: 12,fontWeight: FontWeight.w500,),
+                                TextButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder:(context)=>CartScreen()));},
+                                    child:BlackTextWidget(text: 'Add to cart',fontWeight: FontWeight.w500,fontSize: 12,)),
+                              ],
+                            )
+
+
+                          ]
+                      ),
+                    ),
+                    //4
+                    // container
+                    SizedBox(width: 15,),
+                    Container(
+                      height: 250,
+                      width: 150,
+                      decoration: BoxDecoration(
+                        color: AppColors.whiteColor,
+                      ),
+                      child: Column(
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                                IconButton(onPressed: (){
+                                  if(is_favourite==false){
+                                    is_favourite=true;
+                                  }
+                                  else{
+                                    is_favourite=false;
+                                  }
+                                  setState(() {
+                                  });
+                                }, icon: Icon(is_favourite?Icons.favorite:Icons.favorite_border,color:
+                                is_favourite?AppColors.greyColor:AppColors.lightredcolor,size: 20,)),
+                              ],
+                            ),
+                            Stack(
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.only(left: 8.0),
+                                  child: CircleAvatar(
+                                    radius: 30,
+                                    backgroundColor: AppColors.lightredcolor,
+                                  ),
+                                ),
+                                InkWell(
+                                    onTap: (){
+                                      Navigator.push(context, MaterialPageRoute(builder: (context)=>PeachScreen()));
+                                    },
+                                    child: Padding(
+                                      padding: const EdgeInsets.only(top: 20.0,left: 10.0),
+                                      child: Image(image: AssetImage(AppIcons.grapes),height: 50,),
+                                    )),
+                              ],
+                            ),
+                            BlackTextWidget(text: '\$8.00',fontWeight: FontWeight.w500,fontSize: 10,textColor: AppColors.LightGreen,),
+                            BlackTextWidget(text: 'Black Grapes',fontSize: 12,fontWeight: FontWeight.w600,),
+                            BlackTextWidget(text: 'dozen',fontSize: 10,fontWeight: FontWeight.w500,textColor: AppColors.greyColor,),
+                            Divider(thickness: 1,color: AppColors.greyColor),
+                            SizedBox(height: 10,),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Image(image: AssetImage(AppIcons.carticon)),
+        TextButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder:(context)=>CartScreen()));},
+            child:BlackTextWidget(text: 'Add to cart',fontWeight: FontWeight.w500,fontSize: 12,)),
                               ],
                             ),
                           ]
                       ),
                     ),
                   ]),
-              Padding(
-                padding: const EdgeInsets.only(top: 15.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Container(
-                        height: 234,
-                        width: 181,
-                        decoration: BoxDecoration(
-                          color: AppColors.whiteColor,
-                        ),
-                        child: Column(
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.all(18.0),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.end,
-                                  children: [
-                                    IconButton(onPressed: (){
-                                      if (is_favourite==false){
-                                        is_favourite=true;
-                                      }
-                                      else{
-                                        is_favourite=false;
-                                      }
-                                      setState(() {
-                                      });
-                                    }, icon:Icon(is_favourite?Icons.favorite_border:Icons.favorite,color:
-                                    is_favourite?AppColors.greyColor:AppColors.lightredcolor,)),
-                                  ],
-                                ),
-                              ),
-                              Stack(
-                                children: [
-                                  CircleAvatar(
+              SizedBox(height: 10,),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Container(
+                      height: 250,
+                      width: 150,
+                      decoration: BoxDecoration(
+                        color: AppColors.whiteColor,
+                      ),
+                      child: Column(
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                                IconButton(onPressed: (){
+                                  if (is_favourite==false){
+                                    is_favourite=true;
+                                  }
+                                  else{
+                                    is_favourite=false;
+                                  }
+                                  setState(() {
+                                  });
+                                }, icon:Icon(is_favourite?Icons.favorite_border:Icons.favorite,color:
+                                is_favourite?AppColors.greyColor:AppColors.lightredcolor,size: 20,)),
+                              ],
+                            ),
+                            Stack(
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.only(left: 8.0),
+                                  child: CircleAvatar(
                                     radius: 30,
                                     backgroundColor: AppColors.lightredcolor,
                                   ),
-                                  InkWell(
-                                      onTap: (){
-                                        Navigator.push(context, MaterialPageRoute(builder: (context)=>PeachScreen()));
-                                      },
-                                      child: Image(image: AssetImage(AppIcons.peach))),
-                                ],
-                              ),
-                              BlackTextWidget(text: '\$8.00',fontWeight: FontWeight.w500,fontSize: 12,textColor: AppColors.LightGreen,),
-                              BlackTextWidget(text: 'Fresh Peach',fontSize: 15,fontWeight: FontWeight.w600,),
-                              BlackTextWidget(text: 'dozen',fontSize: 12,fontWeight: FontWeight.w500,textColor: AppColors.greyColor,),
-                              Divider(thickness: 1,color: AppColors.greyColor),
-                              SizedBox(height: 10,),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                children: [
-                                  Image(image: AssetImage(AppIcons.carticon)),
-                                  BlackTextWidget(text: 'Add to cart',fontSize: 12,fontWeight: FontWeight.w500,),
-                                ],
-                              ),
-                            ]
-                        ),
-                      ),
-                      SizedBox(width: 30,),
-                      Container(
-                        height: 234,
-                        width: 181,
-                        decoration: BoxDecoration(
-                          color: AppColors.whiteColor,
-                        ),
-                        child: Column(
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.all(18.0),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.end,
-                                  children: [
-                                   IconButton(onPressed: (){
-                                      if(is_favourite==false){
-                                        is_favourite=true;
-                                      }
-                                      else{
-                                        is_favourite=false;
-                                      }
-                                      setState(() {
-                                      });
-                                    }, icon: Icon(is_favourite?Icons.favorite:Icons.favorite_border,color:
-                                    is_favourite?AppColors.greyColor:AppColors.lightredcolor,)),
-                                  ],
                                 ),
-                              ),
-                              Stack(
-                                children: [
-                                  CircleAvatar(
-                                    radius: 50,
-                                    backgroundColor: AppColors.lightredcolor,
-                                  ),
-                                  InkWell(
-                                      onTap: (){
-                                        Navigator.push(context, MaterialPageRoute(builder: (context)=>PeachScreen()));
-                                      },
-                                      child: Image(image: AssetImage(AppIcons.peach))),
-                                ],
-                              ),
-                              BlackTextWidget(text: '\$8.00',fontWeight: FontWeight.w500,fontSize: 12,textColor: AppColors.LightGreen,),
-                              BlackTextWidget(text: 'Fresh Peach',fontSize: 15,fontWeight: FontWeight.w600,),
-                              BlackTextWidget(text: 'dozen',fontSize: 12,fontWeight: FontWeight.w500,textColor: AppColors.greyColor,),
-                              Divider(thickness: 1,color: AppColors.greyColor),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                children: [
-                                  Image(image: AssetImage(AppIcons.carticon)),
-                                  TextButton(onPressed: (){
-                                    Navigator.push(context, MaterialPageRoute(builder: (context)=>CartScreen()));
-                                  }, child: BlackTextWidget(text: 'Add to cart',fontSize:12 ,fontWeight: FontWeight.w500,)),
-                                ],
-                              ),
-                            ]
-                        ),
+                                InkWell(
+                                    onTap: (){
+                                      Navigator.push(context, MaterialPageRoute(builder: (context)=>PeachScreen()));
+                                    },
+                                    child: Padding(
+                                      padding: const EdgeInsets.only(top: 20.0,left: 5.0),
+                                      child: Image(image: AssetImage(AppIcons.pomegrante),height: 50,),
+                                    )),
+                              ],
+                            ),
+                            BlackTextWidget(text: '\$8.00',fontWeight: FontWeight.w500,fontSize: 10,textColor: AppColors.LightGreen,),
+                            BlackTextWidget(text: 'Fresh Peach',fontSize: 12,fontWeight: FontWeight.w600,),
+                            BlackTextWidget(text: 'dozen',fontSize: 10,fontWeight: FontWeight.w500,textColor: AppColors.greyColor,),
+                            Divider(thickness: 1,color: AppColors.greyColor),
+                            SizedBox(height: 10,),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Image(image: AssetImage(AppIcons.carticon)),
+                                TextButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder:(context)=>CartScreen()));},
+                                    child:BlackTextWidget(text: 'Add to cart',fontWeight: FontWeight.w500,fontSize: 12,)),
+                              ],
+                            ),
+                          ]
                       ),
-                    ]),
-              ),
-              SizedBox(height: 10,),
+                    ),
+                    SizedBox(width: 20,),
+                    Container(
+                      height: 250,
+                      width: 150,
+                      decoration: BoxDecoration(
+                        color: AppColors.whiteColor,
+                      ),
+                      child: Column(
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                               IconButton(onPressed: (){
+                                  if(is_favourite==false){
+                                    is_favourite=true;
+                                  }
+                                  else{
+                                    is_favourite=false;
+                                  }
+                                  setState(() {
+                                  });
+                                }, icon: Icon(is_favourite?Icons.favorite:Icons.favorite_border,color:
+                                is_favourite?AppColors.greyColor:AppColors.lightredcolor,size: 20,)),
+                              ],
+                            ),
+                            Stack(
+                              children: [
+                                CircleAvatar(
+                                  radius: 30,
+                                  backgroundColor: AppColors.LightGreen,
+                                ),
+                                InkWell(
+                                    onTap: (){
+                                      Navigator.push(context, MaterialPageRoute(builder: (context)=>PeachScreen()));
+                                    },
+                                    child: Padding(
+                                      padding: const EdgeInsets.only(top: 20.0,left: 5),
+                                      child: Image(image: AssetImage(AppIcons.broccoli,),height: 50,),
+                                    )),
+                              ],
+                            ),
+                            BlackTextWidget(text: '\$8.00',fontWeight: FontWeight.w500,fontSize: 10,textColor: AppColors.LightGreen,),
+                            BlackTextWidget(text: 'Fresh Broccoli',fontSize: 10,fontWeight: FontWeight.w600,),
+                            BlackTextWidget(text: 'dozen',fontSize: 10,fontWeight: FontWeight.w500,textColor: AppColors.greyColor,),
+                            Divider(thickness: 1,color: AppColors.greyColor),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Image(image: AssetImage(AppIcons.carticon)),
+                                TextButton(onPressed: (){
+                                  Navigator.push(context, MaterialPageRoute(builder: (context)=>CartScreen()));
+                                }, child: BlackTextWidget(text: 'Add to cart',fontSize:12 ,fontWeight: FontWeight.w500,)),
+                              ],
+                            ),
+                          ]
+                      ),
+                    ),
+                  ]),
+              SizedBox(height: 20,),
 
                ] ),
         ), ));
