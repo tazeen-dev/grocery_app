@@ -8,8 +8,8 @@ class AppIcons{
       static const grapes='assets/icons/grapes-31.png';
       static const broccoli='assets/icons/green-fresh-broccoli.png';
       static const babyicon='assets/icons/baby 1.png';
-      static const beverageicon='assets/icons/baby 1.png';
-      static const fruiticon='assets/icons/baby 1.png';
+      static const beverageicon='assets/icons/beverage 1.png';
+      static const fruiticon='assets/icons/fruits2.png';
       static const vegetablesicon='assets/icons/pic2.png';
       static const groceryicon='assets/icons/pic4.png';
       static const vacumicon='assets/icons/vacuum 1 (1).png';
@@ -26,4 +26,5 @@ class AppIcons{
       static const person='assets/icons/user (1).png';
       static const person2='assets/icons/Vector (6).png';
       static const icon2='assets/icons/icon2.png';
+      static const cart2='assets/icons/cart2.png';
 }

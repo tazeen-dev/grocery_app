@@ -32,46 +32,72 @@ class _CategariesScreenState extends State<CategariesScreen> {
     AppColors.LightGreen,
     AppColors.lightredcolor,
     AppColors.lightyellowcolor,
-    AppColors.lightpurple,
     AppColors.lightblue,
-    AppColors.lightpink,
-    AppColors.randomcolor2,
+    AppColors.lightblue,
+    AppColors.lightredcolor,
+    AppColors.lightblue,
   ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         backgroundColor: AppColors.whiteColor,
         title: BlackTextWidget(text: 'Categories',fontSize: 18,
           fontWeight: FontWeight.w500,),
         leading: InkWell(
           onTap: (){
+            Navigator.pop(context);
           },
-            child: Image(image: AssetImage(AppIcons.backicon))),
+            child: Image(image: AssetImage(AppIcons.backicon),color: AppColors.blackColor,)),
         actions: [
-          Image(image: AssetImage(AppIcons.search2)),
+          Padding(
+            padding: const EdgeInsets.only(right: 18.0),
+            child: Image(image: AssetImage(AppIcons.search2,),color: AppColors.blackColor,),
+          ),
         ],
       ),
-      body: Container(
-        height: 15,
-        width: 49,
-        decoration: BoxDecoration(
-          color: AppColors.whiteColor,
-          borderRadius: BorderRadius.circular(5),
-        ),
-        child: GridView.builder(gridDelegate:
-        SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount:text.length ),itemBuilder: (context,index) {
-          return Column(
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 18.0),
+        child: Column(
           children: [
-            CircleAvatar(
-          backgroundColor: appColor[index],
-    backgroundImage:AssetImage(images[index]),
-          ),
-    BlackTextWidget(text: text[index]),
+            SizedBox(height: 30,),
+            SizedBox(height: 500,
+              child: GridView.builder(gridDelegate:
+              SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3,
+              crossAxisSpacing: 10,mainAxisSpacing: 10),
+                scrollDirection: Axis.vertical,
+                itemCount: text.length,
+                itemBuilder: (context,index) {
+               return Container(
+                 height: 130,
+                 width: 120,
+                 decoration: BoxDecoration(
+                   color: AppColors.whiteColor,
+                   borderRadius: BorderRadius.circular(5),
+                 ),
+                 child: Column(
+                   mainAxisAlignment: MainAxisAlignment.center,
+                   children: [
+                 Container(
+                   height: 50,
+                   width: 50,
+                   decoration: BoxDecoration(
+                     shape: BoxShape.circle,
+                     color: appColor[index],
+                     image: DecorationImage(image: AssetImage(images[index]))
+                   ),
+                 ),
+                   SizedBox(height: 10,),
+                   Text(text[index],),
+                 ],)
+
+               );
+                },
+                        ),
+            ),
           ],
-          );
-    },
-      ),
+        ),
       ),
     );
   }

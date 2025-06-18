@@ -14,7 +14,6 @@ class BottomBar extends StatefulWidget {
 
 class _BottomBarState extends State<BottomBar> {
   int select=1;
-  bool iconcolor=false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,6 +28,9 @@ class _BottomBarState extends State<BottomBar> {
           flex: 10,
             child:
         Container(
+          decoration: BoxDecoration(
+            color: AppColors.whiteColor,
+          ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
@@ -38,33 +40,31 @@ class _BottomBarState extends State<BottomBar> {
                   setState(() {
                   });
                 },
-                  child: Image(image: AssetImage(AppIcons.homeicon,),color: AppColors.greyColor,)),
+                  child: Image(image: AssetImage(AppIcons.homeicon,),color:select==1?AppColors.blackColor: AppColors.greyColor,)),
               InkWell(onTap: (){
                 select=2;
                 setState(() {
                 });
               },
-                  child:Image(image: AssetImage(AppIcons.homeicon))),
+                  child:Image(image: AssetImage(AppIcons.person),color: select==2?AppColors.blackColor:AppColors.greyColor,)),
               InkWell(
                 onTap: (){
                   select=3;
                   setState(() {
                   });
                 },
-                  child:Image(image: AssetImage(AppIcons.homeicon))),
-              SizedBox(width: 10,),
+                  child:Image(image: AssetImage(AppIcons.hearticon),color: select==3?AppColors.blackColor:AppColors.greyColor,)),
               InkWell(
                 onTap: (){
                   select=4;
                   setState(() {
                   });
                 },
-                  child: Image(image: AssetImage(AppIcons.))),
+                  child: Image(image: AssetImage(AppIcons.cart2),color:select==4?AppColors.blackColor:AppColors.greyColor)),
             ],
           ),
         )
-        ),
-      ],
+        ),      ],
     ),
     );
   }

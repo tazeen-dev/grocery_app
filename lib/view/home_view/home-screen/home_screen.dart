@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:grocery_app/controller/components/product-details.dart';
 import 'package:grocery_app/controller/components/text-class.dart';
 import 'package:grocery_app/controller/components/container.dart';
 import 'package:grocery_app/controller/components/welcome_button.dart';
@@ -9,7 +10,7 @@ import 'package:grocery_app/view/home_view/cart-screen/cart.dart';
 import 'package:grocery_app/view/home_view/categaries_screen/categaries_screen.dart';
 import 'package:grocery_app/view/home_view/favorities-screen/favourite.dart';
 import 'package:grocery_app/view/home_view/featured_screen/featured_screen.dart';
-import 'package:grocery_app/view/home_view/product_details/peach_screen.dart';
+import 'package:grocery_app/view/starting_view/splash_view/splash_screen.dart';
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -18,7 +19,12 @@ class HomeScreen extends StatefulWidget {
 }
 class _HomeScreenState extends State<HomeScreen> {
   TextEditingController searchController=TextEditingController();
-  bool is_favourite=true;
+  bool is_favourite1=false;
+  bool is_favourite2=false;
+  bool is_favourite3=false;
+  bool is_favourite4=false;
+  bool is_favourite5=false;
+  bool is_favourite6=false;
   String searchtext='';
   List <String> text=[
    'Vegetables',
@@ -27,6 +33,7 @@ class _HomeScreenState extends State<HomeScreen> {
     'Grocery',
     'Edible oil',
     'Household'
+    'Babycare',
   ];
   List <String> images=[
     AppIcons.vegetablesicon,
@@ -41,10 +48,10 @@ class _HomeScreenState extends State<HomeScreen> {
     AppColors.LightGreen,
     AppColors.lightredcolor,
     AppColors.lightyellowcolor,
-    AppColors.lightpurple,
+    AppColors.lightredcolor,
     AppColors.lightblue,
-    AppColors.lightpink,
-    AppColors.randomcolor,
+    AppColors.lightredcolor,
+    AppColors.lightblue,
   ];
   @override
   Widget build(BuildContext context) {
@@ -164,16 +171,15 @@ class _HomeScreenState extends State<HomeScreen> {
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         IconButton(onPressed: (){
-                          if(is_favourite==true){
-                            is_favourite=false;
+                          if(is_favourite1==true){
+                            is_favourite1=false;
                           }
                           else{
-                            is_favourite=true;
+                            is_favourite1=true;
                           }
                           setState(() {
                           });
-                        }, icon: Icon(is_favourite?Icons.favorite:Icons.favorite_border,color:
-                        is_favourite?AppColors.greyColor:AppColors.lightredcolor,size: 20,)),
+                        }, icon: Icon(is_favourite1?Icons.favorite:Icons.favorite_border,color: is_favourite1?Colors.red:Colors.grey)),
                       ],
                     ),
                     Stack(
@@ -187,7 +193,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                         InkWell(
                           onTap: (){
-                            Navigator.push(context, MaterialPageRoute(builder: (context)=>PeachScreen()));
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>SplashScreen()));
                           },
                             child: Padding(
                               padding: const EdgeInsets.only(top: 22.0,left: 8.0),
@@ -225,16 +231,16 @@ class _HomeScreenState extends State<HomeScreen> {
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: [
                               IconButton(onPressed: (){
-                                if(is_favourite==false){
-                                  is_favourite=true;
+                                if(is_favourite2==true){
+                                  is_favourite2=false;
                                 }
                                 else{
-                                  is_favourite=false;
+                                  is_favourite2=true;
                                 }
                                 setState(() {
                                 });
-                              }, icon: Icon(is_favourite?Icons.favorite:Icons.favorite_border,color:
-                              is_favourite?AppColors.greyColor:AppColors.lightredcolor,size: 20,)),
+                              }, icon: Icon(is_favourite2?Icons.favorite:Icons.favorite_border,color:
+                              is_favourite2?Colors.red:Colors.grey,size: 20,)),
                             ],
                           ),
                           Stack(
@@ -248,11 +254,11 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                               InkWell(
                                   onTap: (){
-                                    Navigator.push(context, MaterialPageRoute(builder: (context)=>PeachScreen()));
+                                    Navigator.push(context, MaterialPageRoute(builder: (context)=>SplashScreen()));
                                   },
                                   child: Padding(
-                                    padding: const EdgeInsets.only(top: 10.0),
-                                    child: Image(image: AssetImage(AppIcons.pineapple),height: 60,),
+                                    padding: const EdgeInsets.only(top: 25.0,left: 10.0),
+                                    child: Image(image: AssetImage(AppIcons.aocado),height: 40,),
                                   )),
                             ],
                           ),
@@ -288,16 +294,16 @@ class _HomeScreenState extends State<HomeScreen> {
                               mainAxisAlignment: MainAxisAlignment.end,
                               children: [
                                 IconButton(onPressed: (){
-                                  if(is_favourite==false){
-                                    is_favourite=true;
+                                  if(is_favourite3==true){
+                                    is_favourite3=false;
                                   }
                                   else{
-                                    is_favourite=false;
+                                    is_favourite3=true;
                                   }
                                   setState(() {
                                   });
-                                }, icon: Icon(is_favourite?Icons.favorite:Icons.favorite_border,color:
-                                is_favourite?AppColors.greyColor:AppColors.lightredcolor,size: 20,)),
+                                }, icon: Icon(is_favourite3?Icons.favorite:Icons.favorite_border,color:
+                                is_favourite3?Colors.red:Colors.grey,size: 20,)),
                               ],
                             ),
                             Stack(
@@ -311,7 +317,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 ),
                                 InkWell(
                                     onTap: (){
-                                      Navigator.push(context, MaterialPageRoute(builder: (context)=>PeachScreen()));
+                                      Navigator.push(context, MaterialPageRoute(builder: (context)=>SplashScreen()));
                                     },
                                     child: Padding(
                                       padding: const EdgeInsets.only(top: 10.0),
@@ -352,16 +358,16 @@ class _HomeScreenState extends State<HomeScreen> {
                               mainAxisAlignment: MainAxisAlignment.end,
                               children: [
                                 IconButton(onPressed: (){
-                                  if(is_favourite==false){
-                                    is_favourite=true;
+                                  if(is_favourite4==true){
+                                    is_favourite4=false;
                                   }
                                   else{
-                                    is_favourite=false;
+                                    is_favourite4=true;
                                   }
                                   setState(() {
                                   });
-                                }, icon: Icon(is_favourite?Icons.favorite:Icons.favorite_border,color:
-                                is_favourite?AppColors.greyColor:AppColors.lightredcolor,size: 20,)),
+                                }, icon: Icon(is_favourite4?Icons.favorite:Icons.favorite_border,color:
+                                is_favourite4?Colors.red:Colors.grey,size: 20,)),
                               ],
                             ),
                             Stack(
@@ -375,7 +381,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 ),
                                 InkWell(
                                     onTap: (){
-                                      Navigator.push(context, MaterialPageRoute(builder: (context)=>PeachScreen()));
+                                      Navigator.push(context, MaterialPageRoute(builder: (context)=>SplashScreen()));
                                     },
                                     child: Padding(
                                       padding: const EdgeInsets.only(top: 20.0,left: 10.0),
@@ -416,16 +422,16 @@ class _HomeScreenState extends State<HomeScreen> {
                               mainAxisAlignment: MainAxisAlignment.end,
                               children: [
                                 IconButton(onPressed: (){
-                                  if (is_favourite==false){
-                                    is_favourite=true;
+                                  if (is_favourite5==true){
+                                    is_favourite5=false;
                                   }
                                   else{
-                                    is_favourite=false;
+                                    is_favourite5=true;
                                   }
                                   setState(() {
                                   });
-                                }, icon:Icon(is_favourite?Icons.favorite_border:Icons.favorite,color:
-                                is_favourite?AppColors.greyColor:AppColors.lightredcolor,size: 20,)),
+                                }, icon:Icon(is_favourite5?Icons.favorite:Icons.favorite_border,color:
+                                is_favourite5?Colors.red:Colors.grey,size: 20,)),
                               ],
                             ),
                             Stack(
@@ -439,7 +445,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 ),
                                 InkWell(
                                     onTap: (){
-                                      Navigator.push(context, MaterialPageRoute(builder: (context)=>PeachScreen()));
+                                      Navigator.push(context, MaterialPageRoute(builder: (context)=>SplashScreen()));
                                     },
                                     child: Padding(
                                       padding: const EdgeInsets.only(top: 20.0,left: 5.0),
@@ -476,16 +482,16 @@ class _HomeScreenState extends State<HomeScreen> {
                               mainAxisAlignment: MainAxisAlignment.end,
                               children: [
                                IconButton(onPressed: (){
-                                  if(is_favourite==false){
-                                    is_favourite=true;
+                                  if(is_favourite6==true){
+                                    is_favourite6=false;
                                   }
                                   else{
-                                    is_favourite=false;
+                                    is_favourite6=true;
                                   }
                                   setState(() {
                                   });
-                                }, icon: Icon(is_favourite?Icons.favorite:Icons.favorite_border,color:
-                                is_favourite?AppColors.greyColor:AppColors.lightredcolor,size: 20,)),
+                                }, icon: Icon(is_favourite6?Icons.favorite:Icons.favorite_border,color:
+                                is_favourite6?Colors.red:Colors.grey,size: 20,)),
                               ],
                             ),
                             Stack(
@@ -496,7 +502,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 ),
                                 InkWell(
                                     onTap: (){
-                                      Navigator.push(context, MaterialPageRoute(builder: (context)=>PeachScreen()));
+                                      Navigator.push(context, MaterialPageRoute(builder: (context)=> SplashScreen()));
                                     },
                                     child: Padding(
                                       padding: const EdgeInsets.only(top: 20.0,left: 5),
@@ -508,6 +514,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             BlackTextWidget(text: 'Fresh Broccoli',fontSize: 10,fontWeight: FontWeight.w600,),
                             BlackTextWidget(text: 'dozen',fontSize: 10,fontWeight: FontWeight.w500,textColor: AppColors.greyColor,),
                             Divider(thickness: 1,color: AppColors.greyColor),
+                            SizedBox(height: 10,),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
