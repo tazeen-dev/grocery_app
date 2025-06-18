@@ -179,7 +179,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           }
                           setState(() {
                           });
-                        }, icon: Icon(is_favourite1?Icons.favorite:Icons.favorite_border,color: is_favourite1?Colors.red:Colors.grey)),
+                        }, icon: Icon(is_favourite1?Icons.favorite:Icons.favorite_border,color: is_favourite1?Colors.red:Colors.grey,)),
                       ],
                     ),
                     Stack(
@@ -193,8 +193,10 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                         InkWell(
                           onTap: (){
-                            Navigator.push(context, MaterialPageRoute(builder: (context)=>SplashScreen()));
-                          },
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>ProductDetails(text: 'peach',
+                                image:AppImages.lemon, appicons: AppIcons.hearticon, discription: 'Lorem ipsum dolor sit amet, consetetur\n sadipscing elitr, sed diam nonumy', price: '22', containerColor:
+                                AppColors.LightGreen)));
+                            },
                             child: Padding(
                               padding: const EdgeInsets.only(top: 22.0,left: 8.0),
                               child: Image(image: AssetImage(AppIcons.peach),height: 50,),

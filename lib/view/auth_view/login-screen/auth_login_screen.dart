@@ -22,7 +22,7 @@ class _LoginScreenState extends State<LoginScreen> {
         child: Stack(
           children: [
             Container(
-              height: 390,
+              height: 690,
               width: double.infinity,
               decoration: BoxDecoration(
                 image: DecorationImage(image: AssetImage(AppImages.female3,),fit: BoxFit.cover,),

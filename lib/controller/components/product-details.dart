@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:grocery_app/controller/components/grey-text.dart';
 import 'package:grocery_app/controller/components/text-class.dart';
 import 'package:grocery_app/controller/components/welcome_button.dart';
+import 'package:grocery_app/controller/utils/constants/appicons/app_icons.dart';
 
 import '../utils/constants/appcolors/app_color.dart';
 class ProductDetails extends StatefulWidget {
@@ -23,55 +24,53 @@ class ProductDetails extends StatefulWidget {
 class _ProductDetailsState extends State<ProductDetails> {
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        Container(
-          height: 490,
-          width: 490,
-          decoration: BoxDecoration(
-            color: widget.containerColor,
-            borderRadius: BorderRadius.only(bottomLeft: Radius.circular(40),bottomRight:
-            Radius.circular(40)),
+    return Scaffold(
+      backgroundColor: AppColors.whiteColor,
+      body: Column(
+
+        children: [
+          Stack(
+            children: [
+              SizedBox(height: 400,),
+             Container(
+               height: 250,
+               width: double.infinity,
+               decoration: BoxDecoration(
+                 color: widget.containerColor,
+                 borderRadius: BorderRadius.only(bottomRight: Radius.circular(150),bottomLeft: Radius.circular(150)),
+               ),
+             ),
+              Padding(
+                padding: const EdgeInsets.only(top: 120.0,left: 70.0),
+                child: Image(image: AssetImage(widget.image),height: 210,),
+              ),],
           ),
-        ),
-        Image(image: AssetImage(widget.image,),width:324,height: 324,),
-     Spacer(),
-        Column(
-          children: [
-            Container(
-             width: 414,
-              height:438 ,
-              decoration: BoxDecoration(
-                color: AppColors.lightGrey,
-                borderRadius:BorderRadius.only(topLeft: Radius.circular(10),topRight: Radius.circular(10)),
-
-              ),
-              child:Column(
-                children: [
-                 Row(
-                   children: [
-                     TextButton(onPressed: (){}, child:Text('\$2.22')),
-                     SizedBox(height: 30,) ,
-                   ],
-                 ),
-                  BlackTextWidget(text:widget.text),
-                  BlackTextWidget(text:widget.price),
-                  GreyText(text:widget.discription),
-                  Row(
-                    children: [
-                      Container(),
-                      Container(),
-                      Container(),
-                    ],
-                  ),
-
-                ],
-              ),
+          Spacer(),
+          Container(
+            height: 358,
+            width: 438,
+            decoration: BoxDecoration(
+              color: AppColors.lightGrey,
             ),
-          ],
-        )
+            child:
+            Column(
+              children: [
+                SizedBox(height: 10,),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    BlackTextWidget(text: widget.price,fontWeight: FontWeight.w300,fontSize: 12,),
+                    Image(image: AssetImage(widget.appicons)),
+                  ],
+                ),
+                BlackTextWidget(text: widget.text,fontSize: 18,fontWeight: FontWeight.w300,),
+                BlackTextWidget(text: widget.discription,fontWeight: FontWeight.w300,fontSize: 12,textColor: AppColors.greyColor,),
 
-      ],
+              ],
+            ),
+          )
+        ],
+      ),
     );
   }
 }
