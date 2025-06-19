@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:grocery_app/controller/components/dot-indicator.dart';
 import 'package:grocery_app/controller/components/home-container.dart';
+import 'package:grocery_app/controller/components/page_veiw.dart';
 import 'package:grocery_app/controller/utils/constants/appcolors/app_color.dart';
 import 'package:grocery_app/controller/utils/constants/appicons/app_icons.dart';
 import '../../../controller/utils/constants/appimages/app_images_widget.dart';
@@ -12,18 +14,23 @@ class HomeScreen1 extends StatefulWidget {
 
 class _HomeScreen1State extends State<HomeScreen1> {
   TextEditingController searchController=TextEditingController();
-  String searchproduct='';
+  PageController imageController=PageController();
+  int currentPage=1;
+  void nextPage(){
+    if(currentPage<3){
+      imageController.animateToPage(currentPage++, duration: Duration(milliseconds: 100), curve: Curves.bounceOut);
+    }
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.whiteColor,
       appBar: AppBar(
         backgroundColor: AppColors.whiteColor,
-        title: Container(
-          height: 50,
-          width: 380,
-          child: TextFormField(
-               controller:  searchController,
+        title: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: TextField(
+            controller: searchController,
             keyboardType: TextInputType.text,
             decoration:InputDecoration(
               enabledBorder: OutlineInputBorder(
@@ -38,8 +45,14 @@ class _HomeScreen1State extends State<HomeScreen1> {
               filled: true,
               hintText: 'Search keywords..',
               hintStyle: TextStyle(color: AppColors.greyColor),
-              prefixIcon: Image(image: AssetImage(AppIcons.search)),
-              suffixIcon: Image(image: AssetImage(AppIcons.search2))
+              prefixIcon: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Image(image: AssetImage(AppIcons.search)),
+              ),
+              suffixIcon: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Image(image: AssetImage(AppIcons.search2)),
+              )
             ),
             style: TextStyle(color: AppColors.greyColor),
           ),
@@ -48,12 +61,30 @@ class _HomeScreen1State extends State<HomeScreen1> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            PageView(
-              children: [
-                HomeContainer(text: '20% off on your \n first purchase', images: AppImages.homeimage),
-              ],
+            SizedBox(height: 10,),
+            SizedBox(height: 250,
+              child: Stack(
+                children:[ PageView(
+                  controller: imageController,
+                  onPageChanged: (index){
+                    setState(() {
+                      currentPage=index;
+                    });
+                  },
+                  children: [
+                    PageContainer(text: 'Get 20% Off', image:AppImages.homeimage),
+                    PageContainer(text: 'Get Fresh Food', image:AppIcons.pineapple ),
+                    PageContainer(text: 'Get 20% Off', image:AppImages.homeimage),
+                  ],
+                ),
+
+                  Padding(
+                    padding: const EdgeInsets.only(left: 25.0,top: 210.0),
+                    child: DotIndicator(currentIndex: currentPage, itemCount: 3),
+                  )
+                ]
+              ),
             ),
-        
           ],
         ),
       ),
