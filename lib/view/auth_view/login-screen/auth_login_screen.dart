@@ -65,9 +65,9 @@ class _LoginScreenState extends State<LoginScreen> {
                         Row(
                             children: [
                               Image(image: AssetImage(AppIcons.icon2)),
-                              SizedBox(width:5,),
+                              SizedBox(width:3,),
                               BlackTextWidget(text: 'Remember me',fontSize: 15,fontWeight: FontWeight.w500,textColor: AppColors.greyColor,),
-                              SizedBox(width: 15,),
+                              SizedBox(width: 3,),
                               BlackTextWidget(text: 'Forgot password',fontWeight: FontWeight.w500,fontSize: 15,textColor: AppColors.bluecolor,)
                               ,
                             ]
