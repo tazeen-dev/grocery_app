@@ -194,7 +194,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         InkWell(
                           onTap: (){
                             Navigator.push(context, MaterialPageRoute(builder: (context)=>ProductDetails(text: 'peach',
-                                image:AppImages.lemon, appicons: AppIcons.hearticon, discription: 'Lorem ipsum dolor sit amet, consetetur\n sadipscing elitr, sed diam nonumy', price: '22', containerColor:
+                                image:AppImages.lemon, appicons: AppIcons.hearticon, discription:'Lorem ipsum dolor sit amet, consetetur\n sadipscing elitr, sed diam nonumy''\nLorem ipsum dolor sit amet, consetetur\n sadipscing elitr, sed diam nonumy', price: '22', containerColor:
                                 AppColors.LightGreen)));
                             },
                             child: Padding(

@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:grocery_app/controller/components/green_text_button.dart';
 import 'package:grocery_app/controller/components/grey-text.dart';
 import 'package:grocery_app/controller/components/text-class.dart';
 import 'package:grocery_app/controller/components/welcome_button.dart';
 import 'package:grocery_app/controller/utils/constants/appicons/app_icons.dart';
+import 'package:grocery_app/view/home_view/cart-screen/cart.dart';
 
 import '../utils/constants/appcolors/app_color.dart';
 class ProductDetails extends StatefulWidget {
@@ -22,6 +24,12 @@ class ProductDetails extends StatefulWidget {
 }
 
 class _ProductDetailsState extends State<ProductDetails> {
+  int count=0;
+  double per_price=0;
+  void initState(){
+    super.initState();
+    per_price=double.parse(widget.price);
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,26 +55,86 @@ class _ProductDetailsState extends State<ProductDetails> {
           ),
           Spacer(),
           Container(
-            height: 358,
+           // height: 358,
             width: 438,
             decoration: BoxDecoration(
               color: AppColors.lightGrey,
             ),
             child:
-            Column(
-              children: [
-                SizedBox(height: 10,),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    BlackTextWidget(text: widget.price,fontWeight: FontWeight.w300,fontSize: 12,),
-                    Image(image: AssetImage(widget.appicons)),
-                  ],
-                ),
-                BlackTextWidget(text: widget.text,fontSize: 18,fontWeight: FontWeight.w300,),
-                BlackTextWidget(text: widget.discription,fontWeight: FontWeight.w300,fontSize: 12,textColor: AppColors.greyColor,),
+            Padding(
+              padding: const EdgeInsets.only(left: 18.0),
+              child: Column(
+                children: [
+                  SizedBox(height: 10,),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      BlackTextWidget(text: '\$${per_price}',textColor:AppColors.greencolor,fontWeight: FontWeight.w500,fontSize: 18,),
+                      Image(image: AssetImage(widget.appicons,),height: 20,),
+                    ],
+                  ),
+                  BlackTextWidget(text:
+                  widget.text,fontSize: 18,textColor:AppColors.greencolor,fontWeight: FontWeight.w300,),
+                  BlackTextWidget(text: widget.discription,
+                    fontWeight: FontWeight.w300,fontSize: 12,textColor: AppColors.greyColor,),
+                  Row(
+                    children: [
+                      BlackTextWidget(text: '4.5',
+                        fontWeight: FontWeight.w500,fontSize: 15,),
+                      Icon(Icons.star,color: Color(0xffFFC107),size:20 ,),
+                      Icon(Icons.star,color: Color(0xffFFC107),size:20,),
+                      Icon(Icons.star,color: Color(0xffFFC107),size:20 ,),
+                      Icon(Icons.star,color: Color(0xffFFC107),size:20 ,),
+                      Icon(Icons.star_half_sharp,color: Color(0xffFFC107),size:15 ,),
+                    ],
+                  ),
+                  SizedBox(height: 10,),
+                  Container(
+                    height: 50,
+                    color: Colors.white,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        GreyText(text: 'Quantity'),
+                        Spacer(),
+                        IconButton(onPressed: (){
+                                           if(count>1){
+                                             count--;
+                                             per_price=per_price - double.parse(widget.price);
+                                             setState(() {
+                                             });
+                                           }
+                              } ,icon:Icon(Icons.minimize,color: AppColors.greencolor,),),
+                          Container(
+                            width: 1,
+                            height: 50,
+                            color: Colors.grey.withOpacity(0.5),
+                          ),
+                          TextButton(onPressed: (){}, child: Text('$count')),
+                        Container(
+                          width: 1,
+                          height: 50,
+                          color: Colors.grey,
+                        ),
+                        IconButton(onPressed: (){
+                          count++;
+                          per_price=per_price+double.parse(widget.price);
+                          setState(() {
+                          });
+                        }, icon:Icon(Icons.add,color: AppColors.greencolor,),
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(height: 20,),
+                  GreenTextButton(text: 'Add to cart', ontap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>CartScreen()));
+                  }),
+                  SizedBox(height: 40,)
 
-              ],
+
+                ],
+              ),
             ),
           )
         ],

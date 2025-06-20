@@ -15,4 +15,8 @@ class AppImages{
   static const homeimage='assets/images/homepic1.png';
   static const female3='assets/images/Mask Group (4).png';
   static const lemon='assets/images/lemon.png';
+  static const home2='assets/images/home2.jpg';
+  static const home3='assets/images/home3.jpg';
+  static const home4='assets/images/image1.jpg';
+  static const home5='assets/images/image2.jpg';
 }

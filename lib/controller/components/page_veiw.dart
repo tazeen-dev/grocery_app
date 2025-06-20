@@ -18,7 +18,10 @@ class _PageContainerState extends State<PageContainer> {
       decoration: BoxDecoration(
         image: DecorationImage(image:AssetImage(widget.image)),
       ),
-      child: BlackTextWidget(text: widget.text),
+      child: Padding(
+        padding: const EdgeInsets.only(top: 130.0,right: 150.0),
+        child: BlackTextWidget(text: widget.text,fontSize: 20,fontWeight:   FontWeight.w700,),
+      ),
     );
   }
 }
