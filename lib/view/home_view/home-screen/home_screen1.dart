@@ -18,13 +18,13 @@ class HomeScreen1 extends StatefulWidget {
 
 class _HomeScreen1State extends State<HomeScreen1> {
   List<ProductList> listproduct=[
-    ProductList( AppColors.LightGreen, text: 'Vegetables', image:   AppIcons.vegetablesicon,),
-    ProductList(AppColors.lightredcolor, text: 'Fruits', image:AppIcons.fruiticon),
-    ProductList(AppColors.lightyellowcolor, text: 'Beverages', image:AppIcons.beverageicon),
-    ProductList(AppColors.lightredcolor, text: 'Grocery', image: AppIcons.groceryicon,),
-    ProductList(AppColors.lightblue, text: 'Edible oil', image: AppIcons.oilicon, ),
-    ProductList(AppColors.lightredcolor, text: 'Household', image: AppIcons.householdicon,),
-    ProductList(AppColors.lightblue, text: 'babycare', image:AppIcons.babyicon),
+    ProductList(appcolor:  AppColors.LightGreen, text: 'Vegetables', image:   AppIcons.vegetablesicon,),
+    ProductList(appcolor:AppColors.lightredcolor, text: 'Fruits', image:AppIcons.fruiticon),
+    ProductList(appcolor:AppColors.lightyellowcolor, text: 'Beverages', image:AppIcons.beverageicon),
+    ProductList(appcolor:AppColors.lightredcolor, text: 'Grocery', image: AppIcons.groceryicon,),
+    ProductList(appcolor:AppColors.lightblue, text: 'Edible oil', image: AppIcons.oilicon, ),
+    ProductList(appcolor:AppColors.lightredcolor, text: 'Household', image: AppIcons.householdicon,),
+    ProductList(appcolor:AppColors.lightblue, text: 'babycare', image:AppIcons.babyicon),
   ];
   TextEditingController searchController=TextEditingController();
   PageController imageController=PageController();
