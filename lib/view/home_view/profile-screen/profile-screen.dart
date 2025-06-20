@@ -10,14 +10,35 @@ class ProfileScreen extends StatelessWidget {
         children: [
           Column(
             children: [
-              Expanded(child: Container(
+              Expanded(
+                flex: 20,
+                  child: Container(
                 height: 145,
                 width: double.infinity,
                 decoration: BoxDecoration(
-                  color: AppColors.whiteColor.opacity(0.5)
+                  color: AppColors.whiteColor,
                 ),
               )),
-              
+              Expanded(
+                  flex: 80,
+                  child: Container(
+              width: double.infinity,
+                    color: Colors.grey.withOpacity(0.5),
+                  decoration: BoxDecoration(
+                  ),
+                  child: Column(
+                    children: [
+                      Container(
+                        height: 100,
+                        width: 100,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          image: DecorationImage(image: )
+                        ),
+                      )
+                    ],
+                  ),),
+              )
             ],
           )
         ],
