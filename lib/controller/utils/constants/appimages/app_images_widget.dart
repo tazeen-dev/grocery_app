@@ -18,14 +18,4 @@ class AppImages{
   static const home2='assets/images/home2.jpg';
   static const home3='assets/images/home3.jpg';
   static const home4='assets/images/image1.jpg';
-  static const home5='assets/images/image2.jpg';
-  static const profile='assets/images/profilepic.png';
-  static const persongreen='assets/images/green-person.png';
-  static const order='assets/images/order.png';
-  static const creditcard='assets/images/credir-card.png';
-  static const notification ='assets/images/notification.png';
-  static const transaction='assets/images/transaction.png';
-  static const logout='assets/images/logout.png';
-  static const greenheart ='assets/images/green-hurt.png';
-  static const address='assets/images/address.png';
-}
+  static const home5='assets/images/image2.jpg';}

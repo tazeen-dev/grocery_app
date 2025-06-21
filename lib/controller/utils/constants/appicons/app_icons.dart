@@ -27,4 +27,14 @@ class AppIcons{
       static const person2='assets/icons/Vector (6).png';
       static const icon2='assets/icons/icon2.png';
       static const cart2='assets/icons/cart2.png';
+      static const signout='assets/icons/signout.png';
+      static const profile='assets/icons/profilepic.png';
+      static const persongreen='assets/icons/green-person.png';
+      static const order='assets/icons/order.png';
+      static const creditcard='assets/icons/credir-card.png';
+      static const notification ='assets/icons/notification.png';
+      static const transaction='assets/icons/transaction.png';
+      static const greenheart ='assets/icons/green-hurt.png';
+      static const address='assets/icons/address.png';
 }
+
