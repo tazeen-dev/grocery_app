@@ -18,6 +18,12 @@ class _NotifictionScreenState extends State<NotifictionScreen> {
     'Order Notifcations',
     'General Notifcations',
   ];
+  List<String> images=[
+    AppIcons.allownotification,
+    AppIcons.icon2,
+    AppIcons.icon2,
+    AppIcons.allownotification,
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,7 +46,7 @@ class _NotifictionScreenState extends State<NotifictionScreen> {
           child: Column(
             children: [
               SizedBox(height: 30,),
-              SizedBox(height:400,
+              SizedBox(height:500,
                 child: ListView.builder(
                   itemCount: text.length,
                     shrinkWrap: true,
@@ -66,7 +72,8 @@ class _NotifictionScreenState extends State<NotifictionScreen> {
                                 children: [
                                   BlackTextWidget(text: 'Lorem ipsum dolor sit amet, consetetur sadi \n  pscing elitr, sed diam nonumym',
                                       fontSize: 10,fontWeight: FontWeight.w400,textColor: AppColors.greyColor,),
-
+                                    SizedBox(width: 10,),
+                                    Image(image: AssetImage(images[index])),
                                 ],
                               ),
                             ],

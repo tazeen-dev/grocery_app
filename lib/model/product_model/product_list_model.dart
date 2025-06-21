@@ -5,5 +5,6 @@ class ProductList{
   final String image;
   final String text;
    final Color appcolor;
-  ProductList({this.appcolor=AppColors.LightGreen ,required this.text,required this.image,});
+   final Widget screen;
+  ProductList(this.screen, {this.appcolor=AppColors.LightGreen ,required this.text,required this.image,});
 }

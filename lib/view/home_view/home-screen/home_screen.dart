@@ -19,6 +19,7 @@ class HomeScreen extends StatefulWidget {
 }
 class _HomeScreenState extends State<HomeScreen> {
   TextEditingController searchController=TextEditingController();
+
   bool is_favourite1=false;
   bool is_favourite2=false;
   bool is_favourite3=false;
@@ -35,6 +36,7 @@ class _HomeScreenState extends State<HomeScreen> {
     'Household'
     'Babycare',
   ];
+
   List <String> images=[
     AppIcons.vegetablesicon,
     AppIcons.fruiticon,
@@ -80,6 +82,7 @@ class _HomeScreenState extends State<HomeScreen> {
               suffixIcon: ImageIcon(AssetImage(AppIcons.search2)),
             ),
             style: TextStyle(color: AppColors.greyColor),
+
             onChanged: (value) => setState(() =>
               searchtext),
           ),
@@ -190,11 +193,15 @@ class _HomeScreenState extends State<HomeScreen> {
                             radius: 30,
                             backgroundColor: AppColors.lightredcolor,
                           ),
+
                         ),
                         InkWell(
                           onTap: (){
-                            Navigator.push(context, MaterialPageRoute(builder: (context)=>ProductDetails(text: 'peach',
-                                image:AppImages.lemon, appicons: AppIcons.hearticon, discription:'Lorem ipsum dolor sit amet, consetetur\n sadipscing elitr, sed diam nonumy''\nLorem ipsum dolor sit amet, consetetur\n sadipscing elitr, sed diam nonumy', price: '22', containerColor:
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>
+                                ProductDetails(text:
+                            'peach',
+                                image:AppImages.lemon, appicons: AppIcons.hearticon, discription:'Lorem ipsum dolor sit amet, consetetur\n sadipscing elitr, sed diam nonumy''\nLorem ipsum dolor sit amet, consetetur\n sadipscing elitr, sed diam nonumy',
+                                price: '22', containerColor:
                                 AppColors.LightGreen)));
                             },
                             child: Padding(

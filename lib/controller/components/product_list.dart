@@ -14,7 +14,7 @@ class ListItems extends StatefulWidget {
 class _ListItemsState extends State<ListItems> {
   @override
   Widget build(BuildContext context) {
-    return SizedBox(height: 250,
+    return SizedBox(height: 100,
       child: ListView.builder(
           itemCount: widget.products.length,
           scrollDirection: Axis.horizontal,
@@ -25,14 +25,19 @@ class _ListItemsState extends State<ListItems> {
                 children: [
                   Row(
                       children: [
-                        Container(
-                          height: 54,
-                          width: 55.84882926940918,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color:widget.products[index].appcolor,//AppColors.greyColor,
-                            image: DecorationImage(image: AssetImage(widget.products[index].image)),
-                          ),),]),
+                        InkWell(
+                          onTap: (){
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>widget.products[index].screen));
+                          },
+                          child: Container(
+                            height: 54,
+                            width: 55.84882926940918,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              color:widget.products[index].appcolor,//AppColors.greyColor,
+                              image: DecorationImage(image: AssetImage(widget.products[index].image)),
+                            ),),
+                        ),]),
                   SizedBox(height: 10,),
                   Row(
                     children: [

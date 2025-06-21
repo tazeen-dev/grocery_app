@@ -32,9 +32,10 @@ class AppIcons{
       static const persongreen='assets/icons/green-person.png';
       static const order='assets/icons/order.png';
       static const creditcard='assets/icons/credir-card.png';
-      static const notification ='assets/icons/greennotification.png';
+      static const notification1='assets/icons/Group 205.png';
       static const transaction='assets/icons/transaction.png';
       static const greenheart ='assets/icons/green-hurt.png';
       static const address='assets/icons/address.png';
+      static const allownotification='assets/icons/greennotification.png';
 }
 

@@ -19,8 +19,8 @@ class _PageContainerState extends State<PageContainer> {
         image: DecorationImage(image:AssetImage(widget.image)),
       ),
       child: Padding(
-        padding: const EdgeInsets.only(top: 130.0,right: 150.0),
-        child: BlackTextWidget(text: widget.text,fontSize: 20,fontWeight:   FontWeight.w700,),
+        padding: const EdgeInsets.only(top: 120.0,right: 140.0),
+        child: BlackTextWidget(text: widget.text,fontSize: 18,fontWeight:   FontWeight.w700,),
       ),
     );
   }
