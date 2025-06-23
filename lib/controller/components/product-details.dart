@@ -41,7 +41,7 @@ class _ProductDetailsState extends State<ProductDetails> {
             children: [
               SizedBox(height: 400,),
              Container(
-               height: 250,
+               height: 230,
                width: double.infinity,
                decoration: BoxDecoration(
                  color: widget.containerColor,
@@ -49,7 +49,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                ),
              ),
               Padding(
-                padding: const EdgeInsets.only(top: 120.0,left: 70.0),
+                padding: const EdgeInsets.only(top: 120.0,left: 80.0),
                 child: Image(image: AssetImage(widget.image),height: 210,),
               ),],
           ),
