@@ -3,14 +3,15 @@ import 'package:grocery_app/controller/utils/constants/appcolors/app_color.dart'
 import 'package:grocery_app/controller/utils/constants/appicons/app_icons.dart';
 class TextFeildWidget extends StatelessWidget {
   final String hintext;
+  final Color color;
   final TextInputType textInputType;
   final IconData prefixIcons;
   final TextEditingController controller;
-  const TextFeildWidget({super.key, required this.hintext, required this.prefixIcons, required this.controller,this.textInputType=TextInputType.number});
+  const TextFeildWidget({super.key, required this.hintext, required this.prefixIcons, required this.controller,this.textInputType=TextInputType.number, required this.color});
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 380,
+      width: double.infinity,
       height: 60,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.zero,
@@ -27,7 +28,7 @@ class TextFeildWidget extends StatelessWidget {
               borderRadius: BorderRadius.circular(5),
             ),
             filled: true,
-            fillColor:AppColors.whiteColor,
+            fillColor:color,
             hintText: hintext,
             hintStyle: TextStyle(
               color: AppColors.greyColor,

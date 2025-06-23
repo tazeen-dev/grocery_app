@@ -83,9 +83,9 @@ class _AboutScreenState extends State<AboutScreen> {
               'Change Password',fontSize:18,fontWeight:
               FontWeight.w600,),
               SizedBox(height: 10,),
-              TextFeildWidget(hintext: 'Current password', prefixIcons: Icons.lock_outline, controller: passwordController),
-              PasswordWidget(hintext: 'password', prefixIcons: Icons.lock_outline, controller: checkPasswordController),
-              TextFeildWidget(hintext: 'Confirm password', prefixIcons: Icons.lock_outline, controller: passwordConfirmController),
+              TextFeildWidget(hintext: 'Current password', prefixIcons: Icons.lock_outline, controller: passwordController,color: AppColors.whiteColor),
+              PasswordWidget(hintext: 'password', prefixIcons: Icons.lock_outline, controller: checkPasswordController,),
+              TextFeildWidget(hintext: 'Confirm password', prefixIcons: Icons.lock_outline, controller: passwordConfirmController,color: AppColors.whiteColor),
              SizedBox(height: 60,),
               GreenTextButton(text: 'Save settings', ontap: (){})
             ],

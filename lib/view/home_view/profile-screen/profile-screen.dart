@@ -10,6 +10,7 @@ import 'package:grocery_app/view/home_view/favorities-screen/favourite.dart';
 import 'package:grocery_app/view/home_view/profile-screen/aboutscreen.dart';
 import 'package:grocery_app/view/home_view/profile-screen/address_screen.dart';
 import 'package:grocery_app/view/home_view/profile-screen/creditcard_screen.dart';
+import 'package:grocery_app/view/home_view/profile-screen/my_address_screen.dart';
 import 'package:grocery_app/view/home_view/profile-screen/notifictionscreen.dart';
 import 'package:grocery_app/view/home_view/profile-screen/orderscreen.dart';
 import 'package:grocery_app/view/home_view/profile-screen/signout_screen.dart';
@@ -20,7 +21,7 @@ class ProfileScreen extends StatelessWidget {
     ProfileList(AboutScreen(), text: 'About me', image: AppIcons.persongreen, icon:Icons.arrow_forward_ios,),
     ProfileList(OrderScreen(), text: 'My orders', image: AppIcons.order, icon: Icons.arrow_forward_ios),
     ProfileList(FavouriteScreen(), text:'My Favourites', image: AppIcons.greenheart, icon:Icons.arrow_forward_ios),
- ProfileList(AddressScreen(), text: 'My address', image: AppIcons.address, icon: Icons.arrow_forward_ios),
+ ProfileList(MyAddressScreen(), text: 'My address', image: AppIcons.address, icon: Icons.arrow_forward_ios),
   ProfileList(CreditcardScreen(), text: 'Credit cards', image: AppIcons.creditcard, icon: Icons.arrow_forward_ios),
     ProfileList(TransactionsScreen(), text:'Transactions' , image:AppIcons.transaction, icon: Icons.arrow_forward_ios),
    ProfileList(NotifictionScreen(), text: 'Notifications', image:AppIcons.notification1, icon:Icons.arrow_forward_ios),

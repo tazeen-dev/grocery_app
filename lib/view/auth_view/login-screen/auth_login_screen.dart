@@ -58,7 +58,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         BlackTextWidget(text: 'Sign in to your account',fontWeight:
                         FontWeight.w400,fontSize: 15,textalignn: TextAlign.start,textColor: AppColors.greyColor,),
                         SizedBox(height: 20,),
-                        TextFeildWidget(hintext: 'enter the email',
+                        TextFeildWidget(hintext: 'enter the email',color: AppColors.whiteColor,
                           prefixIcons:Icons.email_outlined, controller:emailController,textInputType: TextInputType.emailAddress, ),
                         PasswordWidget(hintext: 'enter the password', prefixIcons:Icons.lock_outline, controller: passwordController),
                        SizedBox(height: 10,),

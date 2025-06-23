@@ -65,10 +65,10 @@ class _SignupScreenState extends State<SignupScreen> {
                             FontWeight.w400,fontSize: 15,textalignn: TextAlign.start,textColor: AppColors.greyColor,),
                             SizedBox(height: 10,),
                             TextFeildWidget(hintext: 'enter the email',
-                              prefixIcons:Icons.email_outlined, controller:emailController,textInputType: TextInputType.emailAddress, ),
+                              prefixIcons:Icons.email_outlined, controller:emailController,textInputType: TextInputType.emailAddress, color: AppColors.whiteColor),
                            SizedBox(height: 10,),
                             TextFeildWidget(hintext: 'enter the phone number', prefixIcons:Icons.phone,
-                              controller:phoneNumberController,textInputType: TextInputType.phone,),
+                              controller:phoneNumberController,textInputType: TextInputType.phone,color: AppColors.whiteColor),
                             SizedBox(height: 10,),
                             PasswordWidget(hintext: 'enter the password', prefixIcons:Icons.lock_outline, controller: passwordController),
           

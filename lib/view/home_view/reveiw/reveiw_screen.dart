@@ -3,6 +3,9 @@ import 'package:grocery_app/controller/components/grey-text.dart';
 import 'package:grocery_app/controller/components/text-class.dart';
 import 'package:grocery_app/controller/utils/constants/appcolors/app_color.dart';
 import 'package:grocery_app/controller/utils/constants/appimages/app_images_widget.dart';
+import 'package:grocery_app/view/home_view/reveiw/write_review.dart';
+
+import '../../../controller/utils/constants/appicons/app_icons.dart';
 class ReveiwScreen extends StatefulWidget {
   const ReveiwScreen({super.key});
 
@@ -26,6 +29,21 @@ class _ReveiwScreenState extends State<ReveiwScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: AppColors.whiteColor,
+        title: BlackTextWidget(text: 'My Address',fontWeight: FontWeight.w500,fontSize: 18,),
+        centerTitle: true,
+        leading: InkWell(
+            onTap: (){
+              Navigator.pop(context);
+            },
+            child: Image(image: AssetImage(AppIcons.backicon),color: AppColors.blackColor,)),
+        actions: [
+          IconButton(onPressed: (){
+            Navigator.push(context, MaterialPageRoute(builder: (context)=>WriteReview()));
+          }, icon:Icon(Icons.add_circle_outline,size: 18,color: AppColors.blackColor,)),
+        ],
+      ),
       body: Container(
        width: 380,
         height:169 ,

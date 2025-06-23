@@ -42,13 +42,13 @@ class _AddressScreenState extends State<AddressScreen> {
           child: Column(
             children: [
               SizedBox(height: 35,),
-              TextFeildWidget(hintext: 'Name', prefixIcons:Icons.person_outline_sharp, controller:nameController),
-              TextFeildWidget(hintext: 'Email Address', prefixIcons:Icons.email_outlined, controller: emailController),
-              TextFeildWidget(hintext: 'Phone number', prefixIcons: Icons.phone, controller: phoneNumberController),
-              TextFeildWidget(hintext: 'Address', prefixIcons: Icons.person_pin_circle, controller: adddresController),
-              TextFeildWidget(hintext: 'Zip code', prefixIcons:Icons.margin , controller: zipcodeController),
-              TextFeildWidget(hintext: 'city', prefixIcons: Icons.location_city_outlined, controller:cityController),
-              TextFeildWidget(hintext: 'Country', prefixIcons: Icons.language, controller: CountryController),
+              TextFeildWidget(hintext: 'Name', prefixIcons:Icons.person_outline_sharp, controller:nameController,color: AppColors.whiteColor,),
+              TextFeildWidget(hintext: 'Email Address', prefixIcons:Icons.email_outlined, controller: emailController,color: AppColors.whiteColor,),
+              TextFeildWidget(hintext: 'Phone number', prefixIcons: Icons.phone, controller: phoneNumberController,color: AppColors.whiteColor,),
+              TextFeildWidget(hintext: 'Address', prefixIcons: Icons.person_pin_circle, controller: adddresController,color: AppColors.whiteColor,),
+              TextFeildWidget(hintext: 'Zip code', prefixIcons:Icons.margin , controller: zipcodeController,color: AppColors.whiteColor,),
+              TextFeildWidget(hintext: 'city', prefixIcons: Icons.location_city_outlined, controller:cityController,color: AppColors.whiteColor,),
+              TextFeildWidget(hintext: 'Country', prefixIcons: Icons.language, controller: CountryController,color: AppColors.whiteColor,),
               SizedBox(height: 10,),
               Row(
                 children: [
