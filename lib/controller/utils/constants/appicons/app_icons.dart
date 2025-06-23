@@ -37,5 +37,8 @@ class AppIcons{
       static const greenheart ='assets/icons/green-hurt.png';
       static const address='assets/icons/address.png';
       static const allownotification='assets/icons/greennotification.png';
+      static const visa='assets/icons/visa.png';
+      static const papal='assets/icons/paypal 1.png';
+      static const circle='assets/icons/circle.png';
 }
 

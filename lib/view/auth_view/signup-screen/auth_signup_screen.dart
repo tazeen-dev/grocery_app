@@ -9,6 +9,8 @@ import 'package:grocery_app/controller/utils/constants/appicons/app_icons.dart';
 import 'package:grocery_app/view/auth_view/login-screen/auth_login_screen.dart';
 import 'package:grocery_app/view/home_view/home-screen/home_screen.dart';
 import '../../../controller/utils/constants/appimages/app_images_widget.dart';
+
+
 class SignupScreen extends StatefulWidget {
   const SignupScreen({super.key});
   
@@ -79,6 +81,7 @@ class _SignupScreenState extends State<SignupScreen> {
                             }),
                             SizedBox(height: 10,),
                             Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 GreyText(text: 'Dont have account?',),
                                 SizedBox(width: 10,),

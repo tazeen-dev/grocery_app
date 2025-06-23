@@ -30,7 +30,7 @@ class _LoginScreenState extends State<LoginScreen> {
         ),
             Column(
               children: [
-                SizedBox(height: 40,),
+                SizedBox(height: 10,),
                 Padding(
                   padding: const EdgeInsets.only(left: 18.0),
                   child: Row(
@@ -42,7 +42,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     ],
                   ),
                 ),
-                SizedBox(height: 300,),
+                SizedBox(height: 400,),
                 Container(
                   width: double.infinity,
                   decoration: BoxDecoration(
@@ -72,7 +72,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               ,
                             ]
                         ),
-                        SizedBox(height: 20,),
+                        SizedBox(height: 25,),
                         GreenTextButton(text: 'Login', ontap: (){}),
                         SizedBox(height: 10,),
                         Row(

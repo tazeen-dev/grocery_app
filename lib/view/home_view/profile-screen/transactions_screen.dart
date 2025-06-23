@@ -12,16 +12,21 @@ class TransactionsScreen extends StatefulWidget {
 
 class _TransactionsScreenState extends State<TransactionsScreen> {
   List<String> text=[
-    'Haylie Aminoff',
-    'Carla Septimus',
-    'Carla George',
-    'Maren Kenter',
+    'Master Card',
+    'Master Card',
+    'Paypal',
+    'Paypal',
+    'Master Card',
+    'Master Card',
+
   ];
   List <String> images=[
-    AppImages.revewi1,
-    AppImages.reveiw2,
-    AppImages.reveiw3,
-    AppImages.reveiw4,
+    AppIcons.circle,
+    AppIcons.visa,
+    AppIcons.papal,
+    AppIcons.papal,
+    AppIcons.circle,
+    AppIcons.visa,
   ];
   @override
   Widget build(BuildContext context) {
@@ -36,62 +41,75 @@ class _TransactionsScreenState extends State<TransactionsScreen> {
           },
           child: Image(image: AssetImage(AppIcons.backicon),color: AppColors.blackColor,)),
     ),
-      body: Column(
-        children: [
-          SizedBox(height: 30,),
-          SizedBox(height: 750,
-            child: ListView.builder(
-                shrinkWrap: true,
-                physics: NeverScrollableScrollPhysics(),
-                scrollDirection: Axis.vertical,
-                itemCount: text.length,
-                itemBuilder:
-                    (context,index) {
-                  return Container(
-                    margin: EdgeInsets.all(10),
-                    padding: EdgeInsets.all(15),
-                    height:169 ,
-                    width: 380,
-                    decoration: BoxDecoration(
-                      color: AppColors.whiteColor,
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Row(
-                          children: [
-                            CircleAvatar(
-                              backgroundImage:AssetImage(images[index]) ,
-                            ),
-                            SizedBox(width: 12,),
-                            BlackTextWidget(text:text[index],fontSize:15 ,fontWeight: FontWeight.w600,),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            SizedBox(height: 30,),
+            SizedBox(height: 750,
+              child: ListView.builder(
+                  shrinkWrap: true,
+                  physics: NeverScrollableScrollPhysics(),
+                  scrollDirection: Axis.vertical,
+                  itemCount: text.length,
+                  itemBuilder:
+                      (context,index) {
+                    return
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: 15.0),
+                        child: Container(
+                          height:100,
+                          width: double.infinity,
+                          decoration: BoxDecoration(
+                            color: AppColors.whiteColor,
+                          ),
+                          child: Column(
+                            children: [
+                              Container(
+                                padding: EdgeInsets.all(16),
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                ),
+                                child: Row(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Container(
+                                      height: 65,
+                                      width: 65,
+                                      decoration: BoxDecoration(
+                                        color: Color(0xffF5F5F5),
+                                        shape: BoxShape.circle,
+                                      ),
+                                      child: Image(image: AssetImage(images[index]),),
+                                    ),
+                                    SizedBox(width: 12),
+                                    Expanded(
+                                      child: Column(
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        children: [
+                                          BlackTextWidget(text:text[index],fontSize: 18,fontWeight: FontWeight.w600,),
+                                          Row(
+                                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                              children: [
+                                                Text('Dec 12 2021 at 10:00 pm',
+                                                    style: TextStyle(fontWeight:FontWeight.w400,fontSize: 12)),
+                                                BlackTextWidget(text: '\$89',fontWeight: FontWeight.w600,fontSize: 15,textColor: AppColors.greencolor,)
+                                              ]),
 
-                          ],
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 48.0),
-                          child: BlackTextWidget(text:'32 minutes ago', textColor: AppColors.greyColor,fontSize: 12,fontWeight: FontWeight.w400,),
-                        ),
-
-                        Divider( color: AppColors.greyColor,thickness:1),
-                        Row(
-                          children: [
-                            BlackTextWidget(text: '4.5',fontWeight: FontWeight.w600,fontSize: 15,),
-                            Icon(Icons.star,color:Color(0xffFFC107),),
-                            Icon(Icons.star,color:Color(0xffFFC107),),
-                            Icon(Icons.star,color:Color(0xffFFC107) ,),
-                            Icon(Icons.star,color: Color(0xffFFC107),),
-                            Icon(Icons.star_half_sharp,color:Color(0xffFFC107),)
-                          ],
-                        ),
-                        BlackTextWidget(text: 'Lorem ipsum dolor sit amet, consetetur sadi sspscing \n elitr, sed diam nonumy',fontSize: 11,fontWeight:FontWeight.w400,
-                          textColor: AppColors.greyColor,)
-                      ],
-                    ),
-                  );
-                }),
-          ),
-        ],
+                      );
+                  }
+                  ),
+            ),
+          ],
+        ),
       ),
     );
   }
