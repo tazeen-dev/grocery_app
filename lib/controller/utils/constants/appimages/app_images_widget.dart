@@ -18,4 +18,9 @@ class AppImages{
   static const home2='assets/images/home2.jpg';
   static const home3='assets/images/home3.jpg';
   static const home4='assets/images/image1.jpg';
-  static const home5='assets/images/image2.jpg';}
+  static const home5='assets/images/image2.jpg';
+  static const revewi1='assets/images/';
+  static const reveiw2='assets/images/home3.jpg';
+  static const reveiw3='assets/images/image1.jpg';
+  static const reveiw4='assets/images/image2.jpg';
+}

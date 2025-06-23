@@ -15,6 +15,7 @@ class ReveiwScreen extends StatefulWidget {
 
 class _ReveiwScreenState extends State<ReveiwScreen> {
   List<String> text=[
+    'Haylie Aminoff',
     'Carla Septimus',
     'Carla George',
     'Maren Kenter',
@@ -31,7 +32,7 @@ class _ReveiwScreenState extends State<ReveiwScreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: AppColors.whiteColor,
-        title: BlackTextWidget(text: 'My Address',fontWeight: FontWeight.w500,fontSize: 18,),
+        title: BlackTextWidget(text: 'Reviews',fontWeight: FontWeight.w500,fontSize: 18,),
         centerTitle: true,
         leading: InkWell(
             onTap: (){
@@ -44,42 +45,59 @@ class _ReveiwScreenState extends State<ReveiwScreen> {
           }, icon:Icon(Icons.add_circle_outline,size: 18,color: AppColors.blackColor,)),
         ],
       ),
-      body: Container(
-       width: 380,
-        height:169 ,
-        color: AppColors.whiteColor,
-        child: ListView.builder(
-          scrollDirection: Axis.vertical,
-            itemCount: text.length,
-            itemBuilder:
-        (context,index) {
-          return Column(
-            children: [
-              Row(
-                children: [
-                  CircleAvatar(
-                    backgroundImage:AssetImage(images[index]) ,
-                  ),
-                  BlackTextWidget(text:text[index],fontSize:15 ,fontWeight: FontWeight.w600,)
-                ],
-              ),
-              GreyText(text:'32 minutes ago', ),
-              Divider( color: AppColors.greyColor,thickness:1,height: 343.0000000000013,),
-              Row(
-                children: [
-                  BlackTextWidget(text: '4.5',fontWeight: FontWeight.w500,fontSize: 12,),
-                  Icon(Icons.star,color: AppColors.yellowcolor,),
-                  Icon(Icons.star,color: AppColors.yellowcolor,),
-                  Icon(Icons.star,color: AppColors.yellowcolor,),
-                  Icon(Icons.star,color: AppColors.yellowcolor,),
-                  Icon(Icons.star_half_sharp,color: AppColors.yellowcolor,)
-                ],
-              ),
-              GreyText(text: 'Lorem ipsum dolor sit amet, consetetur sadi sspscing \n elitr, sed diam nonumy',)
-            ],
-          );
-        }),
-      ),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            SizedBox(height: 700,
+              child: ListView.builder(
+                shrinkWrap: true,
+                physics: NeverScrollableScrollPhysics(),
+                  scrollDirection: Axis.vertical,
+                  itemCount: text.length,
+                  itemBuilder:
+                      (context,index) {
+                    return Padding(
+                      padding: const EdgeInsets.only(bottom: 12.0),
+                      child: Container(
+                        height:169 ,
+                        width: 380,
+                        decoration: BoxDecoration(
+                          color: AppColors.whiteColor,
+                        ),
+                        child: Column(
+                          children: [
+                            Row(
+                              children: [
+                                CircleAvatar(
+                                  backgroundImage:AssetImage(images[index]) ,
+                                ),
+                                BlackTextWidget(text:text[index],fontSize:15 ,fontWeight: FontWeight.w600,)
+                              ],
+                            ),
+                            GreyText(text:'32 minutes ago', ),
+                            Divider( color: AppColors.greyColor,thickness:1),
+                            Row(
+                              children: [
+                                BlackTextWidget(text: '4.5',fontWeight: FontWeight.w600,fontSize: 15,),
+                                Icon(Icons.star,color:Color(0xffFFC107),),
+                                Icon(Icons.star,color:Color(0xffFFC107),),
+                                Icon(Icons.star,color:Color(0xffFFC107) ,),
+                                Icon(Icons.star,color: Color(0xffFFC107),),
+                                Icon(Icons.star_half_sharp,color:Color(0xffFFC107),)
+                              ],
+                            ),
+                            BlackTextWidget(text: 'Lorem ipsum dolor sit amet, consetetur sadi sspscing \n elitr, sed diam nonumy',fontSize: 11,fontWeight:FontWeight.w400,
+                              textColor: AppColors.greyColor,)
+                          ],
+                        ),
+                      ),
+                    );
+                  }),
+            ),
+            SizedBox(height: 30,),
+          ],
+        ),
+      )
     );
   }
 }
