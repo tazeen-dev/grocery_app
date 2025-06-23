@@ -21,10 +21,10 @@ class _ReveiwScreenState extends State<ReveiwScreen> {
     'Maren Kenter',
   ];
   List <String> images=[
-    AppImages.lemon,
-    AppImages.homeimage,
-    AppImages.lemon,
-    AppImages.homeimage,
+    AppImages.revewi1,
+    AppImages.reveiw2,
+    AppImages.reveiw3,
+    AppImages.reveiw4,
   ];
 
   @override
@@ -36,7 +36,6 @@ class _ReveiwScreenState extends State<ReveiwScreen> {
         centerTitle: true,
         leading: InkWell(
             onTap: (){
-              Navigator.pop(context);
             },
             child: Image(image: AssetImage(AppIcons.backicon),color: AppColors.blackColor,)),
         actions: [
@@ -47,8 +46,10 @@ class _ReveiwScreenState extends State<ReveiwScreen> {
       ),
       body: SingleChildScrollView(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: 700,
+            SizedBox(height: 30,),
+            SizedBox(height: 750,
               child: ListView.builder(
                 shrinkWrap: true,
                 physics: NeverScrollableScrollPhysics(),
@@ -56,40 +57,46 @@ class _ReveiwScreenState extends State<ReveiwScreen> {
                   itemCount: text.length,
                   itemBuilder:
                       (context,index) {
-                    return Padding(
-                      padding: const EdgeInsets.only(bottom: 12.0),
-                      child: Container(
-                        height:169 ,
-                        width: 380,
-                        decoration: BoxDecoration(
-                          color: AppColors.whiteColor,
-                        ),
-                        child: Column(
-                          children: [
-                            Row(
-                              children: [
-                                CircleAvatar(
-                                  backgroundImage:AssetImage(images[index]) ,
-                                ),
-                                BlackTextWidget(text:text[index],fontSize:15 ,fontWeight: FontWeight.w600,)
-                              ],
-                            ),
-                            GreyText(text:'32 minutes ago', ),
-                            Divider( color: AppColors.greyColor,thickness:1),
-                            Row(
-                              children: [
-                                BlackTextWidget(text: '4.5',fontWeight: FontWeight.w600,fontSize: 15,),
-                                Icon(Icons.star,color:Color(0xffFFC107),),
-                                Icon(Icons.star,color:Color(0xffFFC107),),
-                                Icon(Icons.star,color:Color(0xffFFC107) ,),
-                                Icon(Icons.star,color: Color(0xffFFC107),),
-                                Icon(Icons.star_half_sharp,color:Color(0xffFFC107),)
-                              ],
-                            ),
-                            BlackTextWidget(text: 'Lorem ipsum dolor sit amet, consetetur sadi sspscing \n elitr, sed diam nonumy',fontSize: 11,fontWeight:FontWeight.w400,
-                              textColor: AppColors.greyColor,)
-                          ],
-                        ),
+                    return Container(
+                      margin: EdgeInsets.all(10),
+                      padding: EdgeInsets.all(15),
+                      height:169 ,
+                      width: 380,
+                      decoration: BoxDecoration(
+                        color: AppColors.whiteColor,
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            children: [
+                              CircleAvatar(
+                                backgroundImage:AssetImage(images[index]) ,
+                              ),
+                              SizedBox(width: 12,),
+                              BlackTextWidget(text:text[index],fontSize:15 ,fontWeight: FontWeight.w600,),
+
+                            ],
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 48.0),
+                            child: BlackTextWidget(text:'32 minutes ago', textColor: AppColors.greyColor,fontSize: 12,fontWeight: FontWeight.w400,),
+                          ),
+
+                          Divider( color: AppColors.greyColor,thickness:1),
+                          Row(
+                            children: [
+                              BlackTextWidget(text: '4.5',fontWeight: FontWeight.w600,fontSize: 15,),
+                              Icon(Icons.star,color:Color(0xffFFC107),),
+                              Icon(Icons.star,color:Color(0xffFFC107),),
+                              Icon(Icons.star,color:Color(0xffFFC107) ,),
+                              Icon(Icons.star,color: Color(0xffFFC107),),
+                              Icon(Icons.star_half_sharp,color:Color(0xffFFC107),)
+                            ],
+                          ),
+                          BlackTextWidget(text: 'Lorem ipsum dolor sit amet, consetetur sadi sspscing \n elitr, sed diam nonumy',fontSize: 11,fontWeight:FontWeight.w400,
+                            textColor: AppColors.greyColor,)
+                        ],
                       ),
                     );
                   }),
