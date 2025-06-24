@@ -6,6 +6,7 @@ import 'package:grocery_app/view/auth_view/varification_screen/verify_number.dar
 import 'package:grocery_app/view/auth_view/welcome1.dart';
 import 'package:grocery_app/view/home_view/bottom-screen.dart';
 import 'package:grocery_app/view/home_view/bottom_bar.dart';
+import 'package:grocery_app/view/home_view/cart-screen/order_successful_screen.dart';
 import 'package:grocery_app/view/home_view/categaries_screen/categaries_screen.dart';
 import 'package:grocery_app/view/home_view/favorities-screen/favourite.dart';
 import 'package:grocery_app/view/home_view/home-screen/home_screen.dart';
@@ -59,7 +60,8 @@ class MyApp extends StatelessWidget {
       home ://VeryfyNumber(),
       //ExpansionPhoneField (),
       // VerifyNumber(),
-      ForgetpasswordScreen(),
+      OrderSuccessfulScreen(),
+      // ForgetpasswordScreen(),
       //ReveiwScreen(),
       //BottomNav(),
       //SplashScreen8(),
