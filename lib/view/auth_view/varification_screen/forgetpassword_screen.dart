@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:grocery_app/controller/components/green_text_button.dart';
 import 'package:grocery_app/controller/components/grey-text.dart';
 import 'package:grocery_app/controller/components/textfield.dart';
+import 'package:grocery_app/view/auth_view/varification_screen/verify_number.dart';
 
 import '../../../controller/components/text-class.dart';
 import '../../../controller/utils/constants/appcolors/app_color.dart';
@@ -42,7 +43,9 @@ class _ForgetpasswordScreenState extends State<ForgetpasswordScreen> {
                 prefixIcons:Icons.email_outlined, controller: emailController, color: AppColors.whiteColor),
           ),
           SizedBox(height: 20,),
-          GreenTextButton(text: "Send link", ontap:(){
+          GreenTextButton(text: "Send link", ontap:(
+              ){
+            Navigator.push(context, MaterialPageRoute(builder: (context)=>VeryfyNumber()));
 
           })
         ],

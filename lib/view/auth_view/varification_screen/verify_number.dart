@@ -3,6 +3,7 @@ import 'package:grocery_app/controller/components/green_text_button.dart';
 import 'package:grocery_app/controller/components/grey-text.dart';
 import 'package:grocery_app/controller/components/text-class.dart';
 import 'package:grocery_app/controller/utils/constants/appcolors/app_color.dart';
+import 'package:grocery_app/view/auth_view/varification_screen/otp_screen.dart';
 
 import '../../../controller/utils/constants/appicons/app_icons.dart';
 class VeryfyNumber extends StatefulWidget {
@@ -100,7 +101,9 @@ class _VeryfyNumberState extends State<VeryfyNumber> {
             SizedBox(
               height: 30,
             ),
-            GreenTextButton(text: 'Next', ontap: (){}),
+            GreenTextButton(text: 'Next', ontap: (){
+    Navigator.push(context, MaterialPageRoute(builder: (context)=>OtpScreen()));
+            }),
             SizedBox(height: 10,),
             BlackTextWidget(text: 'Resend confirmation code (1:23)',fontSize: 15,fontWeight: FontWeight.w400,)
           ],
