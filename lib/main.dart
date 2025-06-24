@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:grocery_app/view/auth_view/login-screen/auth_login_screen.dart';
 import 'package:grocery_app/view/auth_view/signup-screen/auth_signup_screen.dart';
+import 'package:grocery_app/view/auth_view/varification_screen/forgetpassword_screen.dart';
+import 'package:grocery_app/view/auth_view/varification_screen/verify_number.dart';
 import 'package:grocery_app/view/auth_view/welcome1.dart';
 import 'package:grocery_app/view/home_view/bottom-screen.dart';
 import 'package:grocery_app/view/home_view/bottom_bar.dart';
@@ -54,7 +56,11 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home ://ReveiwScreen(),
+      home :VeryfyNumber(),
+      //ExpansionPhoneField (),
+      // VerifyNumber(),
+      //ForgetpasswordScreen(),
+      //ReveiwScreen(),
       //BottomNav(),
       //SplashScreen8(),
       //SplashScreen7(),
@@ -67,7 +73,7 @@ class MyApp extends StatelessWidget {
       //WelcomeScreen(),
    //HomeScreen(),
       //SplashScreen01(),
-      SignupScreen(),
+     // SignupScreen(),
        //OnBoarding(),
       //SplashScreen6(),
       //SplashScreen5(),
