@@ -12,6 +12,7 @@ import 'package:grocery_app/view/home_view/favorities-screen/favourite.dart';
 import 'package:grocery_app/view/home_view/home-screen/home_screen.dart';
 import 'package:grocery_app/view/home_view/home-screen/home_screen1.dart';
 import 'package:grocery_app/view/home_view/reveiw/reveiw_screen.dart';
+import 'package:grocery_app/view/home_view/track_screen/track_screen.dart';
 import 'package:grocery_app/view/starting_view/intro_view/onboarding_view.dart';
 import 'package:grocery_app/view/starting_view/splash_view/splash-8.dart';
 import 'package:grocery_app/view/starting_view/splash_view/splash_screen.dart';
@@ -57,13 +58,14 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home ://VeryfyNumber(),
+      home :TrackScreen(),
+      //VeryfyNumber(),
       //ExpansionPhoneField (),
       // VerifyNumber(),
-      HomeScreen1(),
+     // HomeScreen1(),
       // ForgetpasswordScreen(),
       //ReveiwScreen(),
-      //BottomNav(),
+     // BottomNav(),
       //SplashScreen8(),
       //SplashScreen7(),
       //BottomBar(),

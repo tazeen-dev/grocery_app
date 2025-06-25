@@ -13,7 +13,7 @@ class VeryfyNumber extends StatefulWidget {
 class _VeryfyNumberState extends State<VeryfyNumber> {
   TextEditingController phoneController = TextEditingController();
   List <Map<String,String>> countries=[
-  {'name': 'Pakistan', 'flag': '🇵🇰', 'code': '+92'},
+  {'name': 'Pakistan', 'flag': 'pk', 'code': '+92'},
   {'name': 'India', 'flag': '🇮🇳', 'code': '+91'},
   {'name': 'USA', 'flag': '🇺🇸', 'code': '+1'},
   {'name': 'UK', 'flag': '🇬🇧', 'code': '+44'},
