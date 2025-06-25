@@ -6,7 +6,9 @@ import '../../../controller/utils/constants/appicons/app_icons.dart';
 class VegitableScreen extends StatelessWidget {
    VegitableScreen({super.key});
   List<GridContainer> gridProduct=[
-    GridContainer(Color(0xffFFCEC1), text: 'Fresh Peach',
+    GridContainer(
+
+        Color(0xffFFCEC1), text: 'Fresh Peach',
         image:AppIcons.peach , price: '\$8.00', subtitle:
         'dozen', cartprice: 'Add to cart'),
     GridContainer(Color(0xffFCFFD9), text: 'Avacoda',

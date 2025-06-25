@@ -40,5 +40,6 @@ class AppIcons{
       static const visa='assets/icons/visa.png';
       static const papal='assets/icons/paypal 1.png';
       static const circle='assets/icons/circle.png';
+      static const successfulorder='assets/icons/orderimage.png';
 }
 

@@ -60,7 +60,7 @@ class MyApp extends StatelessWidget {
       home ://VeryfyNumber(),
       //ExpansionPhoneField (),
       // VerifyNumber(),
-      OrderSuccessfulScreen(),
+      HomeScreen1(),
       // ForgetpasswordScreen(),
       //ReveiwScreen(),
       //BottomNav(),

@@ -38,8 +38,23 @@ class _GridListState extends State<GridList> {
               ),
               child: Column(children: [
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
+
+
+                 widget.products[index].isNew==true?
+                 Container(
+                      height: 30,
+                      width: 100,
+                      color: Colors.orange,
+                   child: Center(child: Text('New'),),
+                    ):widget.products[index].isDisount==true?
+                 Container(
+                   height: 30,
+                   width: 100,
+                   color: Colors.red,
+                   child: Center(child: Text(widget.products[index].discountValue.toString()),),
+                 ):SizedBox(),
                     IconButton(
                         onPressed: () {},
                         icon: Icon(
