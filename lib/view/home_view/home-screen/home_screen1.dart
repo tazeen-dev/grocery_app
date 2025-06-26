@@ -20,7 +20,6 @@ class HomeScreen1 extends StatefulWidget {
   @override
   State<HomeScreen1> createState() => _HomeScreen1State();
 }
-
 class _HomeScreen1State extends State<HomeScreen1> {
   List<ProductList> listproduct=[
     ProductList( appcolor:  AppColors.LightGreen, text: 'Vegetables', image:   AppIcons.vegetablesicon,VegitableScreen()),
@@ -41,7 +40,7 @@ class _HomeScreen1State extends State<HomeScreen1> {
         isNew: true,
         Color(0xffFCFFD9), text: 'Avacoda',
         image:AppIcons.aocado , price: '\$7.00', subtitle:
-       '2.0 lbs' , cartprice: '1'),
+    '2.0 lbs' , cartprice: '1'),
     GridContainer(
         isNew: false,
         isDisount: true,
@@ -136,9 +135,7 @@ class _HomeScreen1State extends State<HomeScreen1> {
                     Padding(
                       padding: const EdgeInsets.only(left: 20.0,top: 210.0),
                       child: DotIndicator(currentIndex: currentPage, itemCount: 3),
-                    ),
-
-                  ]
+                    ),]
                 ),
               ),
               SizedBox(height: 10,),

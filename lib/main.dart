@@ -6,6 +6,7 @@ import 'package:grocery_app/view/auth_view/varification_screen/verify_number.dar
 import 'package:grocery_app/view/auth_view/welcome1.dart';
 import 'package:grocery_app/view/home_view/bottom-screen.dart';
 import 'package:grocery_app/view/home_view/bottom_bar.dart';
+import 'package:grocery_app/view/home_view/cart-screen/cart.dart';
 import 'package:grocery_app/view/home_view/cart-screen/order_successful_screen.dart';
 import 'package:grocery_app/view/home_view/categaries_screen/categaries_screen.dart';
 import 'package:grocery_app/view/home_view/favorities-screen/favourite.dart';
@@ -58,14 +59,15 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home :TrackScreen(),
+      home :CartScreen(),
+      //TrackScreen(),
       //VeryfyNumber(),
       //ExpansionPhoneField (),
       // VerifyNumber(),
      // HomeScreen1(),
       // ForgetpasswordScreen(),
       //ReveiwScreen(),
-     // BottomNav(),
+     //BottomNav(),
       //SplashScreen8(),
       //SplashScreen7(),
       //BottomBar(),
