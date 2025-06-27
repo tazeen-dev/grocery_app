@@ -4,6 +4,8 @@ import 'package:grocery_app/controller/components/text-class.dart';
 import 'package:grocery_app/controller/components/green_text_button.dart';
 import 'package:grocery_app/controller/components/grey-text.dart';
 import 'package:grocery_app/controller/utils/constants/appcolors/app_color.dart';
+import 'package:grocery_app/view/home_view/bottom_bar.dart';
+import 'package:grocery_app/view/home_view/home-screen/home_screen1.dart';
 class OnBoarding extends StatefulWidget {
   const OnBoarding({super.key});
   @override
@@ -24,17 +26,35 @@ class _OnBoardingState extends State<OnBoarding> {
       floatingActionButton: currentPage==2?
           Padding(
             padding: const EdgeInsets.only(left: 30.0,bottom: 18),
-            child: GreenTextButton(text: 'Get started', ontap: (){},),
+            child: GreenTextButton(text: 'Get started', ontap: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>BottomNav()));
+            },),
           ):
           Padding(
             padding: const EdgeInsets.only(left: 40.0),
             child: Row(
               children: [
-                BlackTextWidget(text: 'Skip',textColor:AppColors.greyColor,fontSize: 15
-                  ,fontWeight: FontWeight.w500,),
+                InkWell(
+                  onTap: (){
+                    OnboardingController.animateToPage(
+                        2,
+                        duration: Duration(milliseconds: 300),
+                        curve: Curves.easeInOut,
+                      );
+                    },
+                  child: BlackTextWidget(text: 'Skip',textColor:AppColors.greyColor,fontSize: 15
+                    ,fontWeight: FontWeight.w500,),
+                ),
                 Spacer(),
                 InkWell(
-                  onTap: (){nextPage();
+                  onTap: () {
+                    if (currentPage < 2) {
+                      OnboardingController .animateToPage(
+                        currentPage + 1,
+                        duration: Duration(milliseconds: 300),
+                        curve: Curves.easeInOut,
+                      );
+                    }
                   },
                   child: BlackTextWidget(text: 'Next',textColor:
                   AppColors.DarkGreen,fontWeight:

@@ -78,7 +78,7 @@ class MyApp extends StatelessWidget {
       //FavouriteScreen(),
       //HomeScreen1(),
      //LoginScreen(),
-      //WelcomeScreen(),
+     // WelcomeScreen(),
    //HomeScreen(),
       //SplashScreen01(),
      // SignupScreen(),
@@ -88,7 +88,7 @@ class MyApp extends StatelessWidget {
       //SplashScreen4(),
      //SplashScreen3(),
     // SplashScreen2(),
-   SplashScreen(),
+  SplashScreen(),
     );
   }
 }

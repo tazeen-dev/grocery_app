@@ -4,6 +4,7 @@ import 'package:grocery_app/controller/components/green_text_button.dart';
 import 'package:grocery_app/controller/components/grey-text.dart';
 import 'package:grocery_app/controller/utils/constants/appcolors/app_color.dart';
 import 'package:grocery_app/controller/utils/constants/appimages/app_images_widget.dart';
+import 'package:grocery_app/view/starting_view/intro_view/onboarding_view.dart';
 class SplashScreen5 extends StatelessWidget {
   const SplashScreen5({super.key});
   @override
@@ -27,7 +28,9 @@ class SplashScreen5 extends StatelessWidget {
                     SizedBox(height: 10,),
                     GreyText(text: "Lorem ipsum dolor sit amet, consetetu \n sadipscing elitr, sed diam nonumy"),
                     SizedBox(height: 50,),
-                    GreenTextButton(text: "Start", ontap: (){} ),
+                    GreenTextButton(text: "Start", ontap: (){
+                      Navigator.push(context, MaterialPageRoute(builder:(context)=>OnBoarding()));
+                    } ),
                     SizedBox(height: 30,),
                   ],
                 ),
