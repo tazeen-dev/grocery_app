@@ -10,6 +10,7 @@ import 'package:grocery_app/model/product_model/grid_product_list.dart';
 import 'package:grocery_app/model/product_model/product_list_model.dart';
 import 'package:grocery_app/view/home_view/home-screen/fruits_screen.dart';
 import 'package:grocery_app/view/home_view/home-screen/vegitable_screen.dart';
+import 'package:grocery_app/view/home_view/search_screen/search_screen.dart';
 import '../../../controller/components/text-class.dart';
 import '../../../controller/utils/constants/appimages/app_images_widget.dart';
 import '../categaries_screen/categaries_screen.dart';
@@ -78,35 +79,41 @@ class _HomeScreen1State extends State<HomeScreen1> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: TextField(
-          controller: searchController,
-          keyboardType: TextInputType.text,
-          decoration:InputDecoration(
-            enabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(5),
-              borderSide: BorderSide(width: 1,color: AppColors.whiteColor),
-            ),
-            focusedBorder: OutlineInputBorder(
-              borderSide: BorderSide(width: 1,color: AppColors.whiteColor),
-              borderRadius: BorderRadius.circular(5),
-            ),
-            fillColor: AppColors.lightGrey,
-            filled: true,
-            hintText: 'Search keywords..',
-            hintStyle: TextStyle(color: AppColors.greyColor),
-            prefixIcon: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Image(image: AssetImage(AppIcons.search)),
-            ),
-            suffixIcon: InkWell(
-              onTap: (){
-
-              },
-                child: Image(image: AssetImage(AppIcons.search2)))
-          ),
-          style: TextStyle(color:Color(0xffF4F5F9)),
+        title: GestureDetector( onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => SearchScreen()),
+          );
+        },
+          child:AbsorbPointer(
+          child: Container(
+                  width: 300,
+                  child: TextField(
+                    controller: searchController,
+                    keyboardType: TextInputType.text,
+                    decoration:InputDecoration(
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(5),
+                        borderSide: BorderSide(width: 1,color: AppColors.whiteColor),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(width: 1,color: AppColors.whiteColor),
+                        borderRadius: BorderRadius.circular(5),
+                      ),
+                      fillColor: AppColors.lightGrey,
+                      filled: true,
+                      hintText: 'Search keywords..',
+                      hintStyle: TextStyle(color: AppColors.greyColor),
+                      prefixIcon: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Image(image: AssetImage(AppIcons.search)),
+                      ),
+                      suffixIcon: Image(image: AssetImage(AppIcons.search2))),
+                    style: TextStyle(color:AppColors.greyColor),
+                  ),
+                ),
         ),
-      ),
+      ),),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 8.0),
