@@ -35,23 +35,26 @@ class _ProductDetailsState extends State<ProductDetails> {
     return Scaffold(
       backgroundColor: AppColors.whiteColor,
       body: Column(
-
         children: [
           Stack(
             children: [
-              SizedBox(height: 400,),
-             Container(
-               height: 250,
+              Container(
+               height: 350,
                width: double.infinity,
                decoration: BoxDecoration(
                  color: widget.containerColor,
                  borderRadius: BorderRadius.only(bottomRight: Radius.circular(155),bottomLeft: Radius.circular(155)),
                ),
              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 120.0,left: 80.0),
-                child: Image(image: AssetImage(widget.image),height: 220,),
-              ),],
+      // ✅ Use Positioned to control exact placement
+      Positioned(
+        top: 100, // adjust this value to move image vertically
+        left: 50, // adjust this to move image horizontally
+        child: Image.asset(
+          widget.image,
+          width: 380,
+          height: 380,    // // // ✅ Height works here!
+        ),)]
           ),
           Spacer(),
           Container(

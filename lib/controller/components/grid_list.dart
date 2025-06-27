@@ -77,7 +77,8 @@ class _GridListState extends State<GridList> {
                         onTap: () {
                           Navigator.push(context, MaterialPageRoute(builder: (context)=>ProductDetails(
                            text: widget.products[index].text, image: widget.products[index].image,
-                              appicons: AppIcons.hearticon, discription: 'discription', price: '80', containerColor: AppColors.greyColor)));
+                              appicons: AppIcons.hearticon, discription: 'discription', price: '80', containerColor: widget.products
+                          [index].color)));
                           //ProductDetails(text: , image: image, appicons: appicons, discription: discription, price: price, containerColor: containerColor)
                         },
                         child: Padding(
