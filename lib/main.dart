@@ -8,6 +8,7 @@ import 'package:grocery_app/view/home_view/bottom-screen.dart';
 import 'package:grocery_app/view/home_view/bottom_bar.dart';
 import 'package:grocery_app/view/home_view/cart-screen/cart.dart';
 import 'package:grocery_app/view/home_view/cart-screen/order_successful_screen.dart';
+import 'package:grocery_app/view/home_view/cart-screen/shipping_address.dart';
 import 'package:grocery_app/view/home_view/categaries_screen/categaries_screen.dart';
 import 'package:grocery_app/view/home_view/favorities-screen/favourite.dart';
 import 'package:grocery_app/view/home_view/home-screen/home_screen.dart';
@@ -59,7 +60,8 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home :CartScreen(),
+      home :ShippingAddress(),
+      //CartScreen(),
       //TrackScreen(),
       //VeryfyNumber(),
       //ExpansionPhoneField (),

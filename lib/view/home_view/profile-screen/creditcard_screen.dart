@@ -244,7 +244,6 @@ SizedBox(width: 10,),
                                         Text('CVV : 908')
                                       ],
                                     ),
-
                                   ],
                                 ),
                               ),
