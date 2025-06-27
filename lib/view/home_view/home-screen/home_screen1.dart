@@ -78,36 +78,33 @@ class _HomeScreen1State extends State<HomeScreen1> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: AppColors.whiteColor,
-        title: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: TextField(
-            controller: searchController,
-            keyboardType: TextInputType.text,
-            decoration:InputDecoration(
-              enabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(5),
-                borderSide: BorderSide(width: 1,color: AppColors.whiteColor),
-              ),
-              focusedBorder: OutlineInputBorder(
-                borderSide: BorderSide(width: 1,color: AppColors.whiteColor),
-                borderRadius: BorderRadius.circular(5),
-              ),
-              fillColor: AppColors.lightGrey,
-              filled: true,
-              hintText: 'Search keywords..',
-              hintStyle: TextStyle(color: AppColors.greyColor),
-              prefixIcon: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Image(image: AssetImage(AppIcons.search)),
-              ),
-              suffixIcon: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Image(image: AssetImage(AppIcons.search2)),
-              )
+        title: TextField(
+          controller: searchController,
+          keyboardType: TextInputType.text,
+          decoration:InputDecoration(
+            enabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(5),
+              borderSide: BorderSide(width: 1,color: AppColors.whiteColor),
             ),
-            style: TextStyle(color: AppColors.greyColor),
+            focusedBorder: OutlineInputBorder(
+              borderSide: BorderSide(width: 1,color: AppColors.whiteColor),
+              borderRadius: BorderRadius.circular(5),
+            ),
+            fillColor: AppColors.lightGrey,
+            filled: true,
+            hintText: 'Search keywords..',
+            hintStyle: TextStyle(color: AppColors.greyColor),
+            prefixIcon: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Image(image: AssetImage(AppIcons.search)),
+            ),
+            suffixIcon: InkWell(
+              onTap: (){
+
+              },
+                child: Image(image: AssetImage(AppIcons.search2)))
           ),
+          style: TextStyle(color:Color(0xffF4F5F9)),
         ),
       ),
       body: SingleChildScrollView(
