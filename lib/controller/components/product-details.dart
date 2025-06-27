@@ -41,16 +41,16 @@ class _ProductDetailsState extends State<ProductDetails> {
             children: [
               SizedBox(height: 400,),
              Container(
-               height: 230,
+               height: 250,
                width: double.infinity,
                decoration: BoxDecoration(
                  color: widget.containerColor,
-                 borderRadius: BorderRadius.only(bottomRight: Radius.circular(150),bottomLeft: Radius.circular(150)),
+                 borderRadius: BorderRadius.only(bottomRight: Radius.circular(155),bottomLeft: Radius.circular(155)),
                ),
              ),
               Padding(
                 padding: const EdgeInsets.only(top: 120.0,left: 80.0),
-                child: Image(image: AssetImage(widget.image),height: 210,),
+                child: Image(image: AssetImage(widget.image),height: 220,),
               ),],
           ),
           Spacer(),

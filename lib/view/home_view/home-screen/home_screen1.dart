@@ -34,35 +34,34 @@ class _HomeScreen1State extends State<HomeScreen1> {
   List<GridContainer> gridProduct=[
     GridContainer(
       isNew: false,
-
-        Color(0xffFFCEC1), text: 'Fresh Peach', image:AppIcons.peach , price: '\$8.00', subtitle:
+      color:   Color(0xffFFCEC1), text: 'Fresh Peach', image:AppIcons.peach , price: '\$8.00', subtitle:
         'dozen', cartprice: 'Add to cart' ),
     GridContainer(
         isNew: true,
-        Color(0xffFCFFD9), text: 'Avacoda',
+       color:  Color(0xffFCFFD9), text: 'Avacoda',
         image:AppIcons.aocado , price: '\$7.00', subtitle:
     '2.0 lbs' , cartprice: '1'),
     GridContainer(
         isNew: false,
         isDisount: true,
         discountValue: '-17%',
-        Color(0xffFFE6C2), text: 'Pineapple',
+        color: Color(0xffFFE6C2), text: 'Pineapple',
         image:AppIcons.pineapple , price:'\$9.90'
              , subtitle: '1.50 lbs', cartprice: 'add to cart'),
     GridContainer(
         isNew: false,
         isDisount: true,
         discountValue: '-1%',
-        Color(0xffFEE1ED), text: 'Black Grapes',
+        color: Color(0xffFEE1ED), text: 'Black Grapes',
         image:AppIcons.grapes , price:'\$7.05' , subtitle: '5.0 lbs', cartprice: 'add to cart'),
     GridContainer(
         isNew: true,
-        Color(0xffFFE3E2), text: 'Pomegranate',
+       color:  Color(0xffFFE3E2), text: 'Pomegranate',
         image:AppIcons.pomegrante , price:'\$2.09',
         subtitle: '1.50 lbs', cartprice:'1'),
     GridContainer(
         isNew: false,
-        Color(0xffD2FFD0),
+       color:  Color(0xffD2FFD0),
         text: 'Fresh B roccoli', image:AppIcons.broccoli ,
         price: '\$3.00', subtitle:'1 kg', cartprice:
         'Add to cart'),
@@ -78,16 +77,17 @@ class _HomeScreen1State extends State<HomeScreen1> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.whiteColor,
       appBar: AppBar(
         title: GestureDetector( onTap: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => SearchScreen()),
-          );
-        },
-          child:AbsorbPointer(
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => SearchScreen(allProducts: gridProduct),
+        ),
+      );},
+      child:AbsorbPointer(
           child: Container(
-                  width: 300,
                   child: TextField(
                     controller: searchController,
                     keyboardType: TextInputType.text,
