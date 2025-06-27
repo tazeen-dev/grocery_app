@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:grocery_app/controller/components/text-class.dart';
 import 'package:grocery_app/controller/components/green_text_button.dart';
@@ -10,6 +12,10 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+  void initState(){
+    super.initState();
+    Future.delayed( )
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
