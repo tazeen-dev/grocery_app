@@ -4,6 +4,7 @@ import 'package:grocery_app/view/auth_view/signup-screen/auth_signup_screen.dart
 import 'package:grocery_app/view/auth_view/varification_screen/forgetpassword_screen.dart';
 import 'package:grocery_app/view/auth_view/varification_screen/verify_number.dart';
 import 'package:grocery_app/view/auth_view/welcome1.dart';
+import 'package:grocery_app/view/home_view/apply_filters/apply_filters.dart';
 import 'package:grocery_app/view/home_view/bottom-screen.dart';
 import 'package:grocery_app/view/home_view/bottom_bar.dart';
 import 'package:grocery_app/view/home_view/cart-screen/cart.dart';
@@ -60,7 +61,8 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home ://ShippingAddress(),
+      home :ApplyFilters(),
+      //ShippingAddress(),
       //CartScreen(),
       //TrackScreen(),
       //VeryfyNumber(),
@@ -88,7 +90,7 @@ class MyApp extends StatelessWidget {
       //SplashScreen4(),
      //SplashScreen3(),
     // SplashScreen2(),
-  SplashScreen(),
+  //SplashScreen(),
     );
   }
 }
