@@ -89,8 +89,65 @@ class _ApplyFiltersState extends State<ApplyFilters> {
            ),
          ],
        ),
-       Divider(thickness: 1,color: AppColors.greyColor,)
+       Divider(thickness: 1,color: AppColors.greyColor,),
+       BlackTextWidget(text: 'Star Rating',fontSize: 15,fontWeight: FontWeight.w600,),
+       Container(
+         height: 45,
+         width: 349,
+         decoration: BoxDecoration(
+           color: AppColors.lightGrey
+         ),
+         child: Row(
+           children: [
+             Icon(Icons.star,color: Color(0xffFFC107),size:20 ,),
+             Icon(Icons.star,color: Color(0xffFFC107),size:20,),
+             Icon(Icons.star,color: Color(0xffFFC107),size:20 ,),
+             Icon(Icons.star,color: Color(0xffFFC107),size:20 ,),
+             Icon(Icons.star,color: Colors.white,size:15 ,),
+             Text('4stars',style: TextStyle(color: AppColors.greyColor),)
+           ],
+         ),
+       ),
+ Divider(thickness: 1,color: AppColors.greyColor,),
+       BlackTextWidget(text: 'Star Rating',fontSize: 15,fontWeight: FontWeight.w600,),
+       Row(
+       children: [
+         SizedBox(width: 10,),
+        Icon(Icons.discount_outlined,color: AppColors.greyColor,),
+          SizedBox(width: 10,),
+          BlackTextWidget(text: 'Discount',fontSize: 12,fontWeight: FontWeight.w500,textColor:
+          AppColors.greyColor,),
+         SizedBox(width: 270,),
+         Icon(Icons.check_circle_outline_outlined,color: AppColors.greyColor),
 
+       ],
+     ),
+       SizedBox(width: 20,),
+       Divider(thickness: 1,color: AppColors.greyColor,),
+       Row(
+         children: [
+           SizedBox(width: 10,),
+           Image(image: AssetImage(AppIcons.outofdeleverd)),
+           SizedBox(width: 10,),
+           BlackTextWidget(text: 'Free shipping',fontSize: 12,fontWeight: FontWeight.w500,textColor:
+           AppColors.greyColor,),
+           SizedBox(width: 220,),
+           Icon(Icons.check_circle_outline_outlined,color: AppColors.DarkGreen),
+
+         ],
+       ),
+       Divider(thickness: 1,color: AppColors.greyColor,),
+       Row(
+         children: [
+           SizedBox(width: 10,),
+           Image(image: AssetImage(AppIcons.order),color: AppColors.greyColor,),
+           SizedBox(width: 10,),
+           BlackTextWidget(text: 'Same day delivery',fontSize: 12,fontWeight: FontWeight.w500,textColor:
+           AppColors.greyColor,),
+           SizedBox(width: 215,),
+           Icon(Icons.check_circle_outline_outlined,color: AppColors.DarkGreen),
+         ],
+       )
      ],
    ),
  )
