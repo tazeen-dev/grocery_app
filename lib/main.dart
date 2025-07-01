@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:grocery_app/dummy.dart';
 import 'package:grocery_app/view/auth_view/login-screen/auth_login_screen.dart';
 import 'package:grocery_app/view/auth_view/signup-screen/auth_signup_screen.dart';
 import 'package:grocery_app/view/auth_view/varification_screen/forgetpassword_screen.dart';
@@ -61,7 +62,8 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home :ApplyFilters(),
+      home :SweetHome(),
+      //ApplyFilters(),
       //ShippingAddress(),
       //CartScreen(),
       //TrackScreen(),
@@ -90,7 +92,7 @@ class MyApp extends StatelessWidget {
       //SplashScreen4(),
      //SplashScreen3(),
     // SplashScreen2(),
-  //SplashScreen(),
+  // SplashScreen(),
     );
   }
 }
