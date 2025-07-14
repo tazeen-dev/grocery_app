@@ -62,7 +62,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home :SweetHome(),
+      home ://SweetHome(),
       //ApplyFilters(),
       //ShippingAddress(),
       //CartScreen(),
@@ -92,7 +92,7 @@ class MyApp extends StatelessWidget {
       //SplashScreen4(),
      //SplashScreen3(),
     // SplashScreen2(),
-  // SplashScreen(),
+   SplashScreen(),
     );
   }
 }
