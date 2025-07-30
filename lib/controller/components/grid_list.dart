@@ -120,7 +120,11 @@ class _GridListState extends State<GridList> {
                                   image: product.image,
                                   appicons: AppIcons.hearticon,
                                   discription:
-                                      'This is a fresh and healthy item.',
+                                      'Organic Mountain works as a seller for many organic growers of organic lemons. '
+                                          'Organic lemons are easy to spot in your produce aisle. They are just like'
+                                          ' regular lemons, but they will '
+                                          'usually have a few more scars on the outside of the lemon skin. Organic lemons '
+                                          'are considered to be the worlds finest lemon for juicing',
                                   price: product.price,
                                   containerColor: product.color,
                                 ),

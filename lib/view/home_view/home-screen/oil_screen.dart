@@ -36,7 +36,7 @@ class OilScreen extends StatelessWidget {
       backgroundColor: AppColors.whiteColor,
       appBar: AppBar(
         backgroundColor: AppColors.whiteColor,
-        title: BlackTextWidget(text: 'Vegitables',fontWeight: FontWeight.w500,fontSize: 18,),
+        title: BlackTextWidget(text: 'Edible oil',fontWeight: FontWeight.w500,fontSize: 18,),
         centerTitle: true,
         leading: InkWell(
             onTap: (){
