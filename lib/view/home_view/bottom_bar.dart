@@ -80,19 +80,19 @@ class _BottomNavState extends State<BottomNav> {
         },
         type: BottomNavigationBarType.fixed,
         selectedItemColor: AppColors.greencolor,
-        unselectedItemColor: Colors.grey,
+        unselectedItemColor: Colors.black,
         backgroundColor: AppColors.whiteColor,
         items: [
           BottomNavigationBarItem(
-            icon: ImageIcon(AssetImage(AppIcons.homeicon)),
+            icon: ImageIcon(AssetImage(AppIcons.homeicon),size: 30,),
             label: '',
           ),
           BottomNavigationBarItem(
-            icon: ImageIcon(AssetImage(AppIcons.person)),
+            icon: ImageIcon(AssetImage(AppIcons.person),size: 30,),
             label: '',
           ),
           BottomNavigationBarItem(
-            icon: ImageIcon(AssetImage(AppIcons.hearticon)),
+            icon: ImageIcon(AssetImage(AppIcons.hearticon),size: 30,),
             label: '',
           ),
           BottomNavigationBarItem(

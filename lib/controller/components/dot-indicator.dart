@@ -21,8 +21,8 @@ class _DotIndicatorState extends State<DotIndicator> {
       children: List.generate(
         widget.itemCount,
             (index) => Container(
-          width:widget.currentIndex==index?50:15,
-          height:widget.currentIndex==index?15:15 ,
+          width:widget.currentIndex==index?60:15,
+          height:widget.currentIndex==index?12:12 ,
           margin: const EdgeInsets.symmetric(horizontal: 4),
           decoration: BoxDecoration(
             shape:widget.currentIndex==index? BoxShape.rectangle:BoxShape.circle,

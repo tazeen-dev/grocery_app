@@ -10,6 +10,7 @@ class GridContainer{
   final String price;
   final Color color;
   final String cartprice;
+  bool isFavourite;
   GridContainer({  this.color= const Color(0xffffff),this.isNew=false,this.isDisount=false,this.discountValue='0', required this.text,required this.image,
-     required this.price,required this.subtitle,required this.cartprice});
+     required this.price,required this.subtitle,required this.cartprice,this.isFavourite=false});
 }

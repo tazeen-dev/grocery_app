@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:grocery_app/controller/components/grid_list.dart';
 import 'package:grocery_app/model/product_model/grid_product_list.dart';
 
+import '../../../controller/components/text-class.dart';
+import '../../../controller/utils/constants/appcolors/app_color.dart';
 import '../../../controller/utils/constants/appicons/app_icons.dart';
 class VegitableScreen extends StatelessWidget {
    VegitableScreen({super.key});
@@ -31,11 +33,25 @@ class VegitableScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body:Column(
-      children: [
-        GridList(products: gridProduct),
-
-      ],
-    ),);
+      backgroundColor: AppColors.whiteColor,
+      appBar: AppBar(
+        backgroundColor: AppColors.whiteColor,
+        title: BlackTextWidget(text: 'Vegitables',fontWeight: FontWeight.w500,fontSize: 18,),
+        centerTitle: true,
+        leading: InkWell(
+            onTap: (){
+              Navigator.pop(context);
+            },
+            child: Image(image: AssetImage(AppIcons.backicon),color: AppColors.blackColor,)),
+      ),
+      body:SingleChildScrollView(
+        child: Column(
+        children: [
+          SizedBox(height: 20,),
+          GridList(products: gridProduct),
+        
+        ],
+            ),
+      ),);
   }
 }

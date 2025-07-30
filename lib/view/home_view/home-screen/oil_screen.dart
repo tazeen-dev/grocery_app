@@ -5,8 +5,8 @@ import 'package:grocery_app/model/product_model/grid_product_list.dart';
 import '../../../controller/components/text-class.dart';
 import '../../../controller/utils/constants/appcolors/app_color.dart';
 import '../../../controller/utils/constants/appicons/app_icons.dart';
-class FruitScreen extends StatelessWidget {
-  FruitScreen({super.key});
+class OilScreen extends StatelessWidget {
+  OilScreen({super.key});
   List<GridContainer> gridProduct=[
     GridContainer(
 
