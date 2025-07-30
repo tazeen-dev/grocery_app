@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:grocery_app/controller/components/textfield.dart';
 
 import '../../../controller/components/text-class.dart';
 import '../../../controller/utils/constants/appcolors/app_color.dart';
@@ -12,6 +13,11 @@ class MyCard extends StatefulWidget {
 }
 
 class _MyCardState extends State<MyCard> {
+  TextEditingController userController=TextEditingController();
+  TextEditingController cardController=TextEditingController();
+  TextEditingController dateController=TextEditingController();
+  TextEditingController cvvController=TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -92,9 +98,34 @@ Container(
             Text('XXXX',style: TextStyle(fontSize: 15,fontWeight: FontWeight.w500,color: AppColors.whiteColor),),
           ],
         ),
+
       ),
    ] ),
-) ,      ],
+) ,
+Padding(
+  padding: const EdgeInsets.symmetric(horizontal: 8.0),
+  child: TextFeildWidget(hintext: 'Name on the card', prefixIcons:Icons.person_outline_sharp, controller: userController,
+      color: AppColors.whiteColor),
+),
+          TextFeildWidget(hintext: 'Name on the card', prefixIcons:Icons.person_outline_sharp, controller: cardController,
+              color: AppColors.whiteColor),
+          Row(
+            children: [
+              Expanded(
+                child: TextFeildWidget(hintext: 'Name on the card', prefixIcons:Icons.person_outline_sharp, controller: dateController,
+                    color: AppColors.whiteColor),
+              ),
+              SizedBox(width: 10,),
+              Expanded(
+                child: TextFeildWidget(hintext: 'Name on the card', prefixIcons:Icons.person_outline_sharp, controller: cvvController,
+                    color: AppColors.whiteColor),
+              ),
+            ],
+          ),
+
+
+        ],
+
       ),
     );
   }

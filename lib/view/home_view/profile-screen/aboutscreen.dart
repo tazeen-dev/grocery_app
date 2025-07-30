@@ -25,7 +25,10 @@ class _AboutScreenState extends State<AboutScreen> {
         title: BlackTextWidget(text: 'About me',fontSize: 
         18,fontWeight: FontWeight.w500,),
         centerTitle: true,
-        leading: Image(image: AssetImage(AppIcons.backicon,),color: AppColors.blackColor,),
+        leading: InkWell(onTap: (){
+          Navigator.pop(context);
+        },
+            child: Image(image: AssetImage(AppIcons.backicon,),color: AppColors.blackColor,)),
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 18.0),
