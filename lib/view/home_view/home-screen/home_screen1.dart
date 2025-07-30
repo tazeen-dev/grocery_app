@@ -78,42 +78,42 @@ class _HomeScreen1State extends State<HomeScreen1> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.whiteColor,
-      appBar: AppBar(
-        title: GestureDetector( onTap: () {
-      Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (context) => SearchScreen(allProducts: gridProduct),
-        ),
-      );},
-      child:AbsorbPointer(
-          child: Container(
-                  child: TextField(
-                    controller: searchController,
-                    keyboardType: TextInputType.text,
-                    decoration:InputDecoration(
-                      enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(5),
-                        borderSide: BorderSide(width: 1,color: AppColors.whiteColor),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(width: 1,color: AppColors.whiteColor),
-                        borderRadius: BorderRadius.circular(5),
-                      ),
-                      fillColor: AppColors.lightGrey,
-                      filled: true,
-                      hintText: 'Search keywords..',
-                      hintStyle: TextStyle(color: AppColors.greyColor),
-                      prefixIcon: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Image(image: AssetImage(AppIcons.search)),
-                      ),
-                      suffixIcon: Image(image: AssetImage(AppIcons.search2))),
-                    style: TextStyle(color:AppColors.greyColor),
-                  ),
-                ),
-        ),
-      ),),
+      // appBar: AppBar(
+      //   title: GestureDetector( onTap: () {
+      // Navigator.push(
+      //   context,
+      //   MaterialPageRoute(
+      //     builder: (context) => SearchScreen(allProducts: gridProduct),
+      //   ),
+      // );},
+      // child:AbsorbPointer(
+      //     child: Container(
+      //             child: TextField(
+      //               controller: searchController,
+      //               keyboardType: TextInputType.text,
+      //               decoration:InputDecoration(
+      //                 enabledBorder: OutlineInputBorder(
+      //                   borderRadius: BorderRadius.circular(5),
+      //                   borderSide: BorderSide(width: 1,color: AppColors.whiteColor),
+      //                 ),
+      //                 focusedBorder: OutlineInputBorder(
+      //                   borderSide: BorderSide(width: 1,color: AppColors.whiteColor),
+      //                   borderRadius: BorderRadius.circular(5),
+      //                 ),
+      //                 fillColor: AppColors.lightGrey,
+      //                 filled: true,
+      //                 hintText: 'Search keywords..',
+      //                 hintStyle: TextStyle(color: AppColors.greyColor),
+      //                 prefixIcon: Padding(
+      //                   padding: const EdgeInsets.all(8.0),
+      //                   child: Image(image: AssetImage(AppIcons.search)),
+      //                 ),
+      //                 suffixIcon: Image(image: AssetImage(AppIcons.search2))),
+      //               style: TextStyle(color:AppColors.greyColor),
+      //             ),
+      //           ),
+      //   ),
+      // ),),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 8.0),

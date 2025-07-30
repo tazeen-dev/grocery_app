@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:grocery_app/controller/components/text-class.dart';
 import 'package:grocery_app/controller/components/green_text_button.dart';
 import 'package:grocery_app/controller/components/grey-text.dart';
+import 'package:grocery_app/view/starting_view/splash_view/splash_screen4.dart';
 import 'package:grocery_app/view/starting_view/splash_view/splash_screen5.dart';
 import 'package:grocery_app/view/starting_view/splash_view/splash_screen6.dart';
 class SplashScreen extends StatefulWidget {
@@ -17,7 +18,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState(){
     super.initState();
     Future.delayed(Duration(seconds: 6),(){
-      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>SplashScreen5()));
+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>SplashScreen4()));
     });
   }
   @override
@@ -34,7 +35,8 @@ class _SplashScreenState extends State<SplashScreen> {
               BlackTextWidget(text: "Get Discounts \n On All Products",),
               GreyText(text: "Lorem ipsum dolor sit amet, consetetur \n sadipscing elitr, sed diam nonumy"),
               Spacer(),
-              GreenTextButton(text: "Get started", ontap: (){}),
+              GreenTextButton(text: "Get started", ontap: (){
+              }),
               SizedBox(height: 40,)
             ],
           ),

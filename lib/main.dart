@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grocery_app/dummy.dart';
 import 'package:grocery_app/view/auth_view/login-screen/auth_login_screen.dart';
 import 'package:grocery_app/view/auth_view/signup-screen/auth_signup_screen.dart';

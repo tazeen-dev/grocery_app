@@ -4,6 +4,8 @@ import 'package:grocery_app/controller/components/grey-text.dart';
 import 'package:grocery_app/controller/components/welcome_button.dart';
 import 'package:grocery_app/controller/utils/constants/appcolors/app_color.dart';
 import 'package:grocery_app/controller/utils/constants/appicons/app_icons.dart';
+import 'package:grocery_app/view/auth_view/login-screen/auth_login_screen.dart';
+import 'package:grocery_app/view/auth_view/signup-screen/auth_signup_screen.dart';
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
 
@@ -55,7 +57,7 @@ class WelcomeScreen extends StatelessWidget {
                       WelcomeButton(text: 'Continue with google',textalign:
                       TextAlign.center, ontap: (){}, imageicon: AppIcons.google,background: AppColors.whiteColor,),
                       SizedBox(height: 15,),
-                      WelcomeButton(text: 'Create an account', ontap:(){}, imageicon: AppIcons.person2,
+                      WelcomeButton(text: 'Create an account', ontap:(){Navigator.push(context, MaterialPageRoute(builder: (context)=>SignupScreen()));}, imageicon: AppIcons.person2,
                         textColor: AppColors.whiteColor,gradients: LinearGradient(colors:[AppColors.LightGreen,AppColors.DarkGreen
                         ]),),
                       SizedBox(height: 20,),
@@ -65,9 +67,10 @@ class WelcomeScreen extends StatelessWidget {
                           fontWeight: FontWeight.w300,fontSize: 15,),
                           InkWell(
                           onTap: (){
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginScreen()));
                             },
                             child: BlackTextWidget(text: 'Login',
-                              fontWeight: FontWeight.w300,fontSize: 15,),
+                              fontWeight: FontWeight.bold,fontSize: 15,),
                           ),
                         ],
                       )

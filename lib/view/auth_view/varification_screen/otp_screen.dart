@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:grocery_app/controller/components/green_text_button.dart';
 import 'package:grocery_app/controller/components/grey-text.dart';
+import 'package:grocery_app/controller/components/text-class.dart';
+import 'package:grocery_app/controller/utils/constants/appcolors/app_color.dart';
+import 'package:grocery_app/controller/utils/constants/appicons/app_icons.dart';
+import 'package:grocery_app/view/home_view/bottom_bar.dart';
 import 'package:grocery_app/view/home_view/home-screen/home_screen1.dart';
 
-import '../../../controller/components/text-class.dart';
-import '../../../controller/utils/constants/appcolors/app_color.dart';
-import '../../../controller/utils/constants/appicons/app_icons.dart';
 class OtpScreen extends StatefulWidget {
   const OtpScreen({super.key});
 
@@ -16,195 +17,100 @@ class OtpScreen extends StatefulWidget {
 class _OtpScreenState extends State<OtpScreen> {
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+    final otpFieldWidth = size.width * 0.12;
+
     return Scaffold(
+      backgroundColor: AppColors.whiteColor,
       appBar: AppBar(
         backgroundColor: AppColors.whiteColor,
-        title: BlackTextWidget(text: 'Verify Number',fontWeight: FontWeight.w500,fontSize: 18,),
+        title: BlackTextWidget(
+          text: 'Verify Number',
+          fontWeight: FontWeight.w600,
+          fontSize: size.width * 0.047,
+        ),
         centerTitle: true,
         leading: InkWell(
-            onTap: (){
-              Navigator.pop(context);
-            },
-            child: Image(image: AssetImage(AppIcons.backicon),color: AppColors.blackColor,)),
+          onTap: () => Navigator.pop(context),
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Image.asset(AppIcons.backicon, color: AppColors.blackColor),
+          ),
+        ),
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            SizedBox(height: 60,),
-        BlackTextWidget(text: 'Verify your number',fontSize:20 ,fontWeight: FontWeight.w600,),
-            SizedBox(height: 10,),
-            GreyText(text: 'Enter your OTP code below'),
-            SizedBox(height: 60,),
-            Row(
-              children: [
-                SizedBox(width: 8,),
-                Expanded(
-                  child: Container(
-                    height: 50,
-                    width: 50,
+      body: SafeArea(
+        child: SingleChildScrollView(
+          padding: EdgeInsets.symmetric(horizontal: size.width * 0.06),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              SizedBox(height: size.height * 0.09),
+              BlackTextWidget(
+                text: 'Verify your number',
+                fontSize: size.width * 0.058,
+                fontWeight: FontWeight.w600,
+              ),
+              SizedBox(height: size.height * 0.015),
+              GreyText(text: 'Enter your OTP code below'),
+              SizedBox(height: size.height * 0.06),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: List.generate(6, (index) {
+                  return SizedBox(
+                    width: otpFieldWidth,
+                    height: size.height * 0.065,
                     child: TextFormField(
-                     decoration: InputDecoration(
-                       enabledBorder: OutlineInputBorder(
-                         borderRadius: BorderRadius.circular(5),
-                         borderSide: BorderSide(
-                           color: AppColors.whiteColor,
-                         ),
-                       ),
-                       focusedBorder:OutlineInputBorder(
-                         borderSide: BorderSide(
-                       color: AppColors.whiteColor,
-                       ),
-                     ),
-                     fillColor: AppColors.whiteColor,
-                     filled: true,
-                       hintText: '1',
-                    ),
-                      style: TextStyle(color: AppColors.whiteColor),
-                    ),
-                  ),
-                ),
-                SizedBox(width:  8,),
-                Expanded(
-                  child: Container(
-                    height: 50,
-                    width: 50,
-                    child: TextFormField(
+                      textAlign: TextAlign.center,
+                      keyboardType: TextInputType.number,
                       decoration: InputDecoration(
+                        hintText: index == 0
+                            ? '1'
+                            : index == 1
+                            ? '5'
+                            : index == 2
+                            ? 'X'
+                            : index == 3
+                            ? 'X'
+                            : index == 4
+                            ? 'X'
+                            : 'X',hintStyle: TextStyle(color: AppColors.blackColor,fontSize: size.height*0.02,fontWeight: FontWeight.bold),
+                        filled: true,
+                        fillColor: AppColors.whiteColor,
                         enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(5),
-                          borderSide: BorderSide(
-                            color: AppColors.whiteColor,
-                          ),
+                          borderSide: BorderSide(color: Colors.grey.shade300),
                         ),
-                        focusedBorder:OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: AppColors.whiteColor,
-                          ),
-                        ),
-                        fillColor: AppColors.whiteColor,
-                        filled: true,
-                        hintText: '5',
-                      ),
-                      style: TextStyle(color: AppColors.whiteColor),
-                    ),
-                  ),
-                ),
-                SizedBox(width: 8,),
-                Expanded(
-                  child: Container(
-                    height: 50,
-                    width: 50,
-                    child: TextFormField(
-                      decoration: InputDecoration(
-                        enabledBorder: OutlineInputBorder(
+                        focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(5),
-                          borderSide: BorderSide(
-                            color: AppColors.whiteColor,
-                          ),
+                          borderSide: BorderSide(color: Colors.grey),
                         ),
-                        focusedBorder:OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: AppColors.whiteColor,
-                          ),
-                        ),
-                        fillColor: AppColors.whiteColor,
-                        filled: true,
-                        hintText: '2',
                       ),
-                      style: TextStyle(color: AppColors.whiteColor),
+                      style: TextStyle(color: AppColors.blackColor),
                     ),
-                  ),
-                ),
-                SizedBox(width: 8,),
-                Expanded(
-                  child: Container(
-                    height: 50,
-                    width: 50,
-                    child: TextFormField(
-                      decoration: InputDecoration(
-                        enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(5),
-                          borderSide: BorderSide(
-                            color: AppColors.whiteColor,
-                          ),
-                        ),
-                        focusedBorder:OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: AppColors.whiteColor,
-                          ),
-                        ),
-                        fillColor: AppColors.whiteColor,
-                        filled: true,
-                        hintText: '3',
-                      ),
-                      style: TextStyle(color: AppColors.whiteColor),
-                    ),
-                  ),
-                ),
-                SizedBox(width: 8,),
-                Expanded(
-                  child: Container(
-                    height: 50,
-                    width: 50,
-                    child: TextFormField(
-                      decoration: InputDecoration(
-                        enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(5),
-                          borderSide: BorderSide(
-                            color: AppColors.whiteColor,
-                          ),
-                        ),
-                        focusedBorder:OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: AppColors.whiteColor,
-                          ),
-                        ),
-                        fillColor: AppColors.whiteColor,
-                        filled: true,
-                        hintText: '07',
-                      ),
-                      style: TextStyle(color: AppColors.whiteColor),
-                    ),
-                  ),
-                ),
-                SizedBox(width: 8,),
-                Expanded(
-                  child: Container(
-                    height: 50,
-                    width: 50,
-                    child: TextFormField(
-                      decoration: InputDecoration(
-                        enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(5),
-                          borderSide: BorderSide(
-                            color: AppColors.whiteColor,
-                          ),
-                        ),
-                        focusedBorder:OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: AppColors.whiteColor,
-                          ),
-                        ),
-                        fillColor: AppColors.whiteColor,
-                        filled: true,
-                        hintText: '06',
-                      ),
-                      style: TextStyle(color: AppColors.whiteColor),
-                    ),
-                  ),
-                ),
+                  );
+                }),
+              ),
 
-              ],
-            ),
-            SizedBox(height: 20,),
-            GreenTextButton(text: 'Next', ontap: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>HomeScreen1()));
-            }),
-            SizedBox(height: 20,),
-            Text('Did’nt receive the code ?'),
-            BlackTextWidget(text: 'Resend a new code',fontWeight: FontWeight.w500,fontSize: 15,),
-          ],
+              SizedBox(height: size.height * 0.04),
+              GreenTextButton(
+                text: 'Next',
+                ontap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => BottomNav()));
+                },
+              ),
+              SizedBox(height: size.height * 0.03),
+              Text(
+                'Didn’t receive the code?',
+                style: TextStyle(fontSize: size.width * 0.04),
+              ),
+              BlackTextWidget(
+                text: 'Resend a new code',
+                fontWeight: FontWeight.w500,
+                fontSize: size.width * 0.04,
+              ),
+            ],
+          ),
         ),
       ),
     );

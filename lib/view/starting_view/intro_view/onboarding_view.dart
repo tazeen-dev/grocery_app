@@ -4,6 +4,7 @@ import 'package:grocery_app/controller/components/text-class.dart';
 import 'package:grocery_app/controller/components/green_text_button.dart';
 import 'package:grocery_app/controller/components/grey-text.dart';
 import 'package:grocery_app/controller/utils/constants/appcolors/app_color.dart';
+import 'package:grocery_app/view/auth_view/welcome1.dart';
 import 'package:grocery_app/view/home_view/bottom_bar.dart';
 import 'package:grocery_app/view/home_view/home-screen/home_screen1.dart';
 class OnBoarding extends StatefulWidget {
@@ -27,7 +28,7 @@ class _OnBoardingState extends State<OnBoarding> {
           Padding(
             padding: const EdgeInsets.only(left: 30.0,bottom: 18),
             child: GreenTextButton(text: 'Get started', ontap: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>BottomNav()));
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>WelcomeScreen()));
             },),
           ):
           Padding(
