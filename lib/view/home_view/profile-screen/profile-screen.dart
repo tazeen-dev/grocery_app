@@ -26,6 +26,7 @@ class ProfileScreen extends StatelessWidget {
     ProfileList(CreditcardScreen(), text: 'Credit cards', image: AppIcons.creditcard, icon: Icons.arrow_forward_ios),
     ProfileList(TransactionsScreen(), text:'Transactions' , image:AppIcons.transaction, icon: Icons.arrow_forward_ios),
     ProfileList(NotifictionScreen(), text: 'Notifications', image:AppIcons.notification1, icon:Icons.arrow_forward_ios),
+    ProfileList(ReveiwScreen(), text:'Revieiw', image: AppIcons.signout, icon:Icons.arrow_forward_ios),
     ProfileList(SignoutScreen(), text:'Sign out', image: AppIcons.signout, icon:Icons.arrow_forward_ios),
   ];
 

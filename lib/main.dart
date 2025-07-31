@@ -16,6 +16,7 @@ import 'package:grocery_app/view/home_view/categaries_screen/categaries_screen.d
 import 'package:grocery_app/view/home_view/favorities-screen/favourite.dart';
 import 'package:grocery_app/view/home_view/home-screen/home_screen.dart';
 import 'package:grocery_app/view/home_view/home-screen/home_screen1.dart';
+import 'package:grocery_app/view/home_view/payement_screen.dart';
 import 'package:grocery_app/view/home_view/reveiw/reveiw_screen.dart';
 import 'package:grocery_app/view/home_view/track_screen/track_screen.dart';
 import 'package:grocery_app/view/starting_view/intro_view/onboarding_view.dart';
@@ -63,7 +64,8 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home ://SweetHome(),
+      home :PayementScreen(),
+      //SweetHome(),
       //ApplyFilters(),
       //ShippingAddress(),
       //CartScreen(),
@@ -93,7 +95,7 @@ class MyApp extends StatelessWidget {
       //SplashScreen4(),
      //SplashScreen3(),
     // SplashScreen2(),
-   SplashScreen(),
+   //SplashScreen(),
     );
   }
 }
