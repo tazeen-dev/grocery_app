@@ -1,35 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:grocery_app/dummy.dart';
-import 'package:grocery_app/view/auth_view/login-screen/auth_login_screen.dart';
-import 'package:grocery_app/view/auth_view/signup-screen/auth_signup_screen.dart';
-import 'package:grocery_app/view/auth_view/varification_screen/forgetpassword_screen.dart';
-import 'package:grocery_app/view/auth_view/varification_screen/verify_number.dart';
-import 'package:grocery_app/view/auth_view/welcome1.dart';
-import 'package:grocery_app/view/home_view/apply_filters/apply_filters.dart';
-import 'package:grocery_app/view/home_view/bottom-screen.dart';
-import 'package:grocery_app/view/home_view/bottom_bar.dart';
-import 'package:grocery_app/view/home_view/cart-screen/cart.dart';
-import 'package:grocery_app/view/home_view/cart-screen/order_successful_screen.dart';
-import 'package:grocery_app/view/home_view/cart-screen/shipping_address.dart';
-import 'package:grocery_app/view/home_view/categaries_screen/categaries_screen.dart';
-import 'package:grocery_app/view/home_view/favorities-screen/favourite.dart';
-import 'package:grocery_app/view/home_view/home-screen/home_screen.dart';
-import 'package:grocery_app/view/home_view/home-screen/home_screen1.dart';
-import 'package:grocery_app/view/home_view/payement_screen.dart';
-import 'package:grocery_app/view/home_view/reveiw/reveiw_screen.dart';
-import 'package:grocery_app/view/home_view/track_screen/track_screen.dart';
-import 'package:grocery_app/view/starting_view/intro_view/onboarding_view.dart';
-import 'package:grocery_app/view/starting_view/splash_view/splash-8.dart';
-import 'package:grocery_app/view/starting_view/splash_view/splash_screen.dart';
-import 'package:grocery_app/view/starting_view/splash_view/splash_screen01.dart';
-import 'package:grocery_app/view/starting_view/splash_view/splash_screen2.dart';
-import 'package:grocery_app/view/starting_view/splash_view/splash_screen3.dart';
-import 'package:grocery_app/view/starting_view/splash_view/splash_screen4.dart';
-import 'package:grocery_app/view/starting_view/splash_view/splash_screen5.dart';
-import 'package:grocery_app/view/starting_view/splash_view/splash_screen6.dart';
-import 'package:grocery_app/view/starting_view/splash_view/splash_screen7.dart';
-
+import 'package:groceryApp/view/home_view/payement_screen.dart';
 import 'controller/components/container.dart';
 
 void main() {
@@ -44,7 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'GroceryApp',
       theme: ThemeData(
         // This is the theme of your application.
         //

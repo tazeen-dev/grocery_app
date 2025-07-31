@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:grocery_app/controller/components/dot-indicator.dart';
-import 'package:grocery_app/controller/components/text-class.dart';
-import 'package:grocery_app/controller/components/green_text_button.dart';
-import 'package:grocery_app/controller/components/grey-text.dart';
-import 'package:grocery_app/controller/utils/constants/appcolors/app_color.dart';
-import 'package:grocery_app/view/auth_view/welcome1.dart';
-import 'package:grocery_app/view/home_view/bottom_bar.dart';
-import 'package:grocery_app/view/home_view/home-screen/home_screen1.dart';
+
+import '../../../controller/components/dot-indicator.dart';
+import '../../../controller/components/green_text_button.dart';
+import '../../../controller/components/grey-text.dart';
+import '../../../controller/components/text-class.dart';
+import '../../../controller/utils/constants/appcolors/app_color.dart';
+import '../../auth_view/welcome1.dart';
 class OnBoarding extends StatefulWidget {
   const OnBoarding({super.key});
   @override

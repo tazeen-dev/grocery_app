@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:grocery_app/controller/utils/constants/appcolors/app_color.dart';
+
+import '../utils/constants/appcolors/app_color.dart';
 class BlackTextWidget extends StatelessWidget {
   final String text;
   final TextAlign textalignn;

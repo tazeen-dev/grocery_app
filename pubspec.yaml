@@ -1,4 +1,4 @@
-name: grocery_app
+name: groceryApp
 description: "A new Flutter project."
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -36,11 +36,8 @@ dependencies:
   cupertino_icons: ^1.0.8
   google_fonts: ^6.2.1
   flutter_screenutil: ^5.8.4
+#  icons_launcher: ^3.0.1
 
-
-dev_dependencies:
-  flutter_test:
-    sdk: flutter
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -53,7 +50,16 @@ dev_dependencies:
 # following page: https://dart.dev/tools/pub/pubspec
 
 # The following section is specific to Flutter packages.
+#dev_dependencies:
+#  icons_launcher:
+#    image_path: 'assets/ic_logo_radius.png'
+#    platforms:
+#      android:
+#        enable: true
+#      ios:
+#        enable: true
 flutter:
+
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:grocery_app/controller/components/text-class.dart';
+import 'package:groceryApp/controller/components/text-class.dart';
 class HomeContainer extends StatelessWidget {
   final String text;
   final String images;

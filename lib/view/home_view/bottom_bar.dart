@@ -43,13 +43,13 @@
 // }
 //
 import 'package:flutter/material.dart';
-import 'package:grocery_app/controller/utils/constants/appcolors/app_color.dart';
-import 'package:grocery_app/controller/utils/constants/appicons/app_icons.dart';
-import 'package:grocery_app/view/home_view/cart-screen/cart.dart';
-import 'package:grocery_app/view/home_view/favorities-screen/favourite.dart';
-import 'package:grocery_app/view/home_view/home-screen/home_screen1.dart';
-import 'package:grocery_app/view/home_view/profile-screen/profile-screen.dart';
+import 'package:groceryApp/view/home_view/profile-screen/profile-screen.dart';
 
+import '../../controller/utils/constants/appcolors/app_color.dart';
+import '../../controller/utils/constants/appicons/app_icons.dart';
+import 'cart-screen/cart.dart';
+import 'favorities-screen/favourite.dart';
+import 'home-screen/home_screen1.dart';
 class BottomNav extends StatefulWidget {
   const BottomNav({super.key});
 

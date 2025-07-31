@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:grocery_app/controller/utils/constants/appcolors/app_color.dart';
+
+import '../utils/constants/appcolors/app_color.dart';
 class DotIndicator extends StatefulWidget {
   final int currentIndex;
   final int itemCount;

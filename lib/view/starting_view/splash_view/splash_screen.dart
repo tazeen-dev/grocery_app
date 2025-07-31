@@ -1,12 +1,11 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:grocery_app/controller/components/text-class.dart';
-import 'package:grocery_app/controller/components/green_text_button.dart';
-import 'package:grocery_app/controller/components/grey-text.dart';
-import 'package:grocery_app/view/starting_view/splash_view/splash_screen4.dart';
-import 'package:grocery_app/view/starting_view/splash_view/splash_screen5.dart';
-import 'package:grocery_app/view/starting_view/splash_view/splash_screen6.dart';
+import 'package:groceryApp/view/starting_view/splash_view/splash_screen4.dart';
+
+import '../../../controller/components/green_text_button.dart';
+import '../../../controller/components/grey-text.dart';
+import '../../../controller/components/text-class.dart';
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
 

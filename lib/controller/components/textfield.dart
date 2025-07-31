@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:grocery_app/controller/utils/constants/appcolors/app_color.dart';
-import 'package:grocery_app/controller/utils/constants/appicons/app_icons.dart';
+
+import '../utils/constants/appcolors/app_color.dart';
 class TextFeildWidget extends StatelessWidget {
   final String hintext;
   final Color color;

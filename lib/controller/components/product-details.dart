@@ -146,11 +146,11 @@
 //   }
 // }
 import 'package:flutter/material.dart';
-import 'package:grocery_app/controller/components/green_text_button.dart';
-import 'package:grocery_app/controller/components/grey-text.dart';
-import 'package:grocery_app/controller/components/text-class.dart';
-import 'package:grocery_app/view/home_view/cart-screen/cart.dart';
+import 'package:groceryApp/controller/components/text-class.dart';
+import '../../view/home_view/cart-screen/cart.dart';
 import '../utils/constants/appcolors/app_color.dart';
+import 'green_text_button.dart';
+import 'grey-text.dart';
 
 class ProductDetails extends StatefulWidget {
   final String text;

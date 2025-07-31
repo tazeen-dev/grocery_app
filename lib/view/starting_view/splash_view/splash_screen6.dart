@@ -43,12 +43,12 @@
 // }
 //
 import 'package:flutter/material.dart';
-import 'package:grocery_app/controller/components/text-class.dart';
-import 'package:grocery_app/controller/components/green_text_button.dart';
-import 'package:grocery_app/controller/components/grey-text.dart';
-import 'package:grocery_app/controller/utils/constants/appcolors/app_color.dart';
-import 'package:grocery_app/view/starting_view/intro_view/onboarding_view.dart';
 import '../../../controller/components/custum_clipper.dart';
+import '../../../controller/components/green_text_button.dart';
+import '../../../controller/components/grey-text.dart';
+import '../../../controller/components/text-class.dart';
+import '../../../controller/utils/constants/appcolors/app_color.dart';
+import '../intro_view/onboarding_view.dart';
 
 class SplashScreen6 extends StatelessWidget {
   const SplashScreen6({super.key});

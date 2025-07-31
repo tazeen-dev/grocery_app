@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:grocery_app/controller/components/text-class.dart';
-import 'package:grocery_app/model/product_model/product_list_model.dart';
+import 'package:groceryApp/controller/components/text-class.dart';
 
+import '../../model/product_model/product_list_model.dart';
 import '../utils/constants/appcolors/app_color.dart';
 class ListItems extends StatefulWidget {
   final List<ProductList> products;
