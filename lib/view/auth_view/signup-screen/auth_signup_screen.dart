@@ -1,16 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:grocery_app/controller/components/green_text_button.dart';
-import 'package:grocery_app/controller/components/password-feild.dart';
-import 'package:grocery_app/controller/components/text-class.dart';
-import 'package:grocery_app/controller/components/grey-text.dart';
-import 'package:grocery_app/controller/components/textfield.dart';
-import 'package:grocery_app/controller/utils/constants/appcolors/app_color.dart';
-import 'package:grocery_app/controller/utils/constants/appicons/app_icons.dart';
-import 'package:grocery_app/view/auth_view/login-screen/auth_login_screen.dart';
-import 'package:grocery_app/view/home_view/bottom_bar.dart';
-import 'package:grocery_app/view/home_view/home-screen/home_screen.dart';
-import 'package:grocery_app/view/home_view/home-screen/home_screen1.dart';
+import '../../../controller/components/green_text_button.dart';
+import '../../../controller/components/grey-text.dart';
+import '../../../controller/components/password-feild.dart';
+import '../../../controller/components/text-class.dart';
+import '../../../controller/components/textfield.dart';
+import '../../../controller/utils/constants/appcolors/app_color.dart';
+import '../../../controller/utils/constants/appicons/app_icons.dart';
 import '../../../controller/utils/constants/appimages/app_images_widget.dart';
+import '../../home_view/bottom_bar.dart';
+import '../login-screen/auth_login_screen.dart';
 
 class SignupScreen extends StatefulWidget {
   const SignupScreen({super.key});

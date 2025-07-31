@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:grocery_app/controller/components/grey-text.dart';
-import 'package:grocery_app/controller/components/text-class.dart';
-import 'package:grocery_app/controller/utils/constants/appcolors/app_color.dart';
-import 'package:grocery_app/controller/utils/constants/appicons/app_icons.dart';
+
+import '../../../controller/components/grey-text.dart';
+import '../../../controller/components/text-class.dart';
+import '../../../controller/utils/constants/appcolors/app_color.dart';
+import '../../../controller/utils/constants/appicons/app_icons.dart';
 class FavouriteScreen extends StatefulWidget {
   const FavouriteScreen({super.key});
 

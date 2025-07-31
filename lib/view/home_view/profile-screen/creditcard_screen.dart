@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:grocery_app/controller/components/text-class.dart';
-import 'package:grocery_app/controller/utils/constants/appcolors/app_color.dart';
-import 'package:grocery_app/controller/utils/constants/appicons/app_icons.dart';
-import 'package:grocery_app/view/home_view/profile-screen/my_card.dart';
 
 import '../../../controller/components/green_text_button.dart';
+import '../../../controller/components/text-class.dart';
 import '../../../controller/components/textfield.dart';
+import '../../../controller/utils/constants/appcolors/app_color.dart';
+import '../../../controller/utils/constants/appicons/app_icons.dart';
+import 'my_card.dart';
 class CreditcardScreen extends StatefulWidget {
   const CreditcardScreen({super.key});
 
@@ -18,6 +18,7 @@ class _CreditcardScreenState extends State<CreditcardScreen> {
   TextEditingController addressController=TextEditingController();
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: AppColors.whiteColor,

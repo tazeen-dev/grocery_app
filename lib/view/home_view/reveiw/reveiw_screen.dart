@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:grocery_app/controller/components/grey-text.dart';
-import 'package:grocery_app/controller/components/text-class.dart';
-import 'package:grocery_app/controller/utils/constants/appcolors/app_color.dart';
-import 'package:grocery_app/controller/utils/constants/appimages/app_images_widget.dart';
-import 'package:grocery_app/view/home_view/reveiw/write_review.dart';
+import 'package:groceryApp/view/home_view/reveiw/write_review.dart';
 
+import '../../../controller/components/text-class.dart';
+import '../../../controller/utils/constants/appcolors/app_color.dart';
 import '../../../controller/utils/constants/appicons/app_icons.dart';
+import '../../../controller/utils/constants/appimages/app_images_widget.dart';
 class ReveiwScreen extends StatefulWidget {
   const ReveiwScreen({super.key});
 

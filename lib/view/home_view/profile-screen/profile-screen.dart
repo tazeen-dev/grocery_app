@@ -1,21 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:grocery_app/controller/components/grey-text.dart';
-import 'package:grocery_app/controller/components/profile_listveiw.dart';
-import 'package:grocery_app/controller/components/text-class.dart';
-import 'package:grocery_app/controller/utils/constants/appcolors/app_color.dart';
-import 'package:grocery_app/controller/utils/constants/appicons/app_icons.dart';
-import 'package:grocery_app/controller/utils/constants/appimages/app_images_widget.dart';
-import 'package:grocery_app/model/product_model/profile_list_model.dart';
-import 'package:grocery_app/view/home_view/favorities-screen/favourite.dart';
-import 'package:grocery_app/view/home_view/profile-screen/aboutscreen.dart';
-import 'package:grocery_app/view/home_view/profile-screen/address_screen.dart';
-import 'package:grocery_app/view/home_view/profile-screen/creditcard_screen.dart';
-import 'package:grocery_app/view/home_view/profile-screen/my_address_screen.dart';
-import 'package:grocery_app/view/home_view/profile-screen/notifictionscreen.dart';
-import 'package:grocery_app/view/home_view/profile-screen/orderscreen.dart';
-import 'package:grocery_app/view/home_view/profile-screen/signout_screen.dart';
-import 'package:grocery_app/view/home_view/profile-screen/transactions_screen.dart';
-import 'package:grocery_app/view/home_view/reveiw/reveiw_screen.dart';
+import 'package:groceryApp/view/home_view/profile-screen/signout_screen.dart';
+import 'package:groceryApp/view/home_view/profile-screen/transactions_screen.dart';
+
+import '../../../controller/components/grey-text.dart';
+import '../../../controller/components/text-class.dart';
+import '../../../controller/utils/constants/appicons/app_icons.dart';
+import '../../../model/product_model/profile_list_model.dart';
+import '../favorities-screen/favourite.dart';
+import '../reveiw/reveiw_screen.dart';
+import 'aboutscreen.dart';
+import 'creditcard_screen.dart';
+import 'my_address_screen.dart';
+import 'notifictionscreen.dart';
+import 'orderscreen.dart';
 class ProfileScreen extends StatelessWidget {
    ProfileScreen({super.key});
   List<ProfileList> items=[

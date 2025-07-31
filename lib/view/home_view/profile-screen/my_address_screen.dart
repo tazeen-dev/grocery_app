@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:grocery_app/controller/components/green_text_button.dart';
-import 'package:grocery_app/controller/components/grey-text.dart';
-import 'package:grocery_app/controller/components/text-class.dart';
-import 'package:grocery_app/controller/components/textfield.dart';
-import 'package:grocery_app/controller/utils/constants/appcolors/app_color.dart';
-import 'package:grocery_app/controller/utils/constants/appicons/app_icons.dart';
-import 'package:grocery_app/view/home_view/profile-screen/address_screen.dart';
+
+import '../../../controller/components/green_text_button.dart';
+import '../../../controller/components/text-class.dart';
+import '../../../controller/components/textfield.dart';
+import '../../../controller/utils/constants/appcolors/app_color.dart';
+import '../../../controller/utils/constants/appicons/app_icons.dart';
+import 'address_screen.dart';
 
 class MyAddressScreen extends StatefulWidget {
   MyAddressScreen({super.key});
