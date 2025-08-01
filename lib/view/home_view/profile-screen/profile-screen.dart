@@ -8,6 +8,7 @@ import '../../../controller/components/text-class.dart';
 import '../../../controller/utils/constants/appcolors/app_color.dart';
 import '../../../controller/utils/constants/appicons/app_icons.dart';
 import '../../../model/product_model/profile_list_model.dart';
+import '../apply_filters/apply_filters.dart';
 import '../favorities-screen/favourite.dart';
 import '../reveiw/reveiw_screen.dart';
 import 'aboutscreen.dart';
@@ -27,7 +28,7 @@ class ProfileScreen extends StatelessWidget {
     ProfileList(TransactionsScreen(), text:'Transactions' , image:AppIcons.transaction, icon: Icons.arrow_forward_ios),
     ProfileList(NotifictionScreen(), text: 'Notifications', image:AppIcons.notification1, icon:Icons.arrow_forward_ios),
     ProfileList(ReveiwScreen(), text:'Revieiw', image: AppIcons.signout, icon:Icons.arrow_forward_ios),
-    ProfileList(SignoutScreen(), text:'Sign out', image: AppIcons.signout, icon:Icons.arrow_forward_ios),
+    ProfileList(ApplyFilters(), text:'ApplyFilter', image: AppIcons.check, icon:Icons.arrow_forward_ios),
   ];
 
   @override

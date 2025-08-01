@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:grocery_app/view/home_view/cart-screen/shipping_address.dart';
 
 import '../../../controller/components/green_text_button.dart';
 import '../../../controller/components/text-class.dart';
@@ -26,7 +27,11 @@ class _ApplyFiltersState extends State<ApplyFilters> {
         actions: [
           Padding(
             padding: const EdgeInsets.only(right:18.0),
-            child: Image(image: AssetImage('assets/icons/refresh.png')),
+            child: InkWell(
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>ShippingAddress()));
+              },
+                child: Image(image: AssetImage('assets/icons/refresh.png'))),
           ),
         ],
       ),

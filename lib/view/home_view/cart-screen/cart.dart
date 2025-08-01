@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:grocery_app/view/home_view/shopping_cart.dart';
 import '../../../controller/components/green_text_button.dart';
 import '../../../controller/components/grey-text.dart';
 import '../../../controller/components/text-class.dart';
@@ -193,7 +194,11 @@ class _CartScreenState extends State<CartScreen> {
                         ],
                       ),
                       SizedBox(height: 20,),
-                      GreenTextButton(text: 'Checkout', ontap: (){}),
+                      GreenTextButton(text: 'Checkout', ontap: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>ShoppingCart(
+
+                        )));
+                      }),
                     ],
                   ),
                 ),

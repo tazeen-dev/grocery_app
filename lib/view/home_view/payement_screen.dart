@@ -59,6 +59,26 @@ class _PayementScreenState extends State<PayementScreen> {
                 ),
               ),
 
+              const SizedBox(height: 8),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  BlackTextWidget(text: 'Delivery', fontWeight: FontWeight.w600, fontSize: 12, textColor: AppColors.greyColor),
+                  BlackTextWidget(text: 'Address', fontWeight: FontWeight.w600, fontSize: 12, textColor: AppColors.greyColor),
+                  BlackTextWidget(text: 'Payment', fontWeight: FontWeight.w600, fontSize: 12, textColor: AppColors.greyColor),
+                ],
+              ),
+
+              const SizedBox(height: 25),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  paymentOptionCard(AppIcons.paypal, 'Paypal'),
+                  paymentOptionCard(AppIcons.cardIcon, 'Card'),
+                  paymentOptionCard(AppIcons.appleIcon, 'Apple Pay'),
+                ],
+              ),
+
               Container(
                 height: 189,
                 width: double.infinity,
@@ -177,25 +197,6 @@ class _PayementScreenState extends State<PayementScreen> {
                     ),
                   ],
                 ),
-              ),
-              const SizedBox(height: 8),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  BlackTextWidget(text: 'Delivery', fontWeight: FontWeight.w600, fontSize: 12, textColor: AppColors.greyColor),
-                  BlackTextWidget(text: 'Address', fontWeight: FontWeight.w600, fontSize: 12, textColor: AppColors.greyColor),
-                  BlackTextWidget(text: 'Payment', fontWeight: FontWeight.w600, fontSize: 12, textColor: AppColors.greyColor),
-                ],
-              ),
-
-              const SizedBox(height: 25),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  paymentOptionCard(AppIcons.paypal, 'Paypal'),
-                  paymentOptionCard(AppIcons.cardIcon, 'Card'),
-                  paymentOptionCard(AppIcons.appleIcon, 'Apple Pay'),
-                ],
               ),
 
               const SizedBox(height: 20),
