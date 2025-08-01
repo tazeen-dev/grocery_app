@@ -46,6 +46,7 @@ class _PayementScreenState extends State<PayementScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              SizedBox(height: 30,),
               Center(
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -78,7 +79,7 @@ class _PayementScreenState extends State<PayementScreen> {
                   paymentOptionCard(AppIcons.appleIcon, 'Apple Pay'),
                 ],
               ),
-
+SizedBox(height: 20,),
               Container(
                 height: 189,
                 width: double.infinity,

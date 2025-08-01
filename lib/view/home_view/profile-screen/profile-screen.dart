@@ -17,8 +17,14 @@ import 'creditcard_screen.dart';
 import 'my_address_screen.dart';
 import 'notifictionscreen.dart';
 import 'orderscreen.dart';
-class ProfileScreen extends StatelessWidget {
+class ProfileScreen extends StatefulWidget {
    ProfileScreen({super.key});
+
+  @override
+  State<ProfileScreen> createState() => _ProfileScreenState();
+}
+
+class _ProfileScreenState extends State<ProfileScreen> {
   List<ProfileList> items=[
     ProfileList(AboutScreen(), text: 'About me', image: AppIcons.persongreen, icon:Icons.arrow_forward_ios,),
     ProfileList(OrderScreen(), text: 'My orders', image: AppIcons.order, icon: Icons.arrow_forward_ios),
