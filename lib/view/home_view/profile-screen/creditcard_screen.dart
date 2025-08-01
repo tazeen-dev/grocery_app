@@ -16,6 +16,8 @@ class CreditcardScreen extends StatefulWidget {
 class _CreditcardScreenState extends State<CreditcardScreen> {
   TextEditingController nameController=TextEditingController();
   TextEditingController addressController=TextEditingController();
+  TextEditingController dateController=TextEditingController();
+  TextEditingController codeController=TextEditingController();
   bool saveThisAddress=false;
   @override
   Widget build(BuildContext context) {
@@ -87,21 +89,6 @@ class _CreditcardScreenState extends State<CreditcardScreen> {
                                           Text('CVV : 908')
                                         ],
                                        ),
-                                      // Transform.scale(
-                                      //   scale: 0.8, // adjust size (e.g., 0.8 = 80%)
-                                      //   child: Switch(
-                                      //     value: saveThisAddress,
-                                      //     activeColor: AppColors.greencolor,           // thumb when active
-                                      //     activeTrackColor: AppColors.greencolor.withOpacity(0.5), // track when active
-                                      //     inactiveThumbColor: AppColors.greyColor,    // thumb when inactive
-                                      //     inactiveTrackColor: Colors.grey.shade300,    // track when inactive
-                                      //     onChanged: (val) {
-                                      //       setState(() {
-                                      //         saveThisAddress = val;
-                                      //       });
-                                      //     },
-                                      //   ),
-                                      // ),
                                     ],
                                   ),
                                 ),
@@ -119,46 +106,53 @@ class _CreditcardScreenState extends State<CreditcardScreen> {
                             padding: const EdgeInsets.symmetric(horizontal: 12.0),
                             child: TextFeildWidget(hintext: 'XXXX  XXXX  XXXX  5678', prefixIcons:Icons.margin, controller: addressController, color: Color(0xffF4F5F9)),
                           ),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                            child: Row(
+                              children: [
+                                Expanded(
+                                  child: TextFeildWidget(hintext: '01/22', prefixIcons: Icons.date_range_outlined, controller: dateController,
+                                      color: AppColors.lightGrey),
+                                ),
+
+                            SizedBox(width: 10,),
+                                Expanded(
+                                  child: TextFeildWidget(hintext: '908', prefixIcons: Icons.lock_outline, controller:
+                                  codeController,
+                                      color: AppColors.lightGrey),
+                                ),
+                              ],
+                            ),
+                          ),
+                          SizedBox(height: 10),
                           Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              SizedBox(width: 10,),
-                              Container(
-                                height:50 ,
-                                width: 150,
-                                decoration: BoxDecoration(
-                                  color: AppColors.lightGrey,
-                                  borderRadius: BorderRadius.circular(5),
+                              Padding(
+                                padding: const EdgeInsets.only(left: 15.0),
+                                child: BlackTextWidget(
+                                  text: 'Save this address',
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w400,
                                 ),
-                                child: Row(
-                                  children: [
-                                    SizedBox(width: 20,),
-                                    Icon(Icons.date_range,color: AppColors.greyColor,),
-                                    SizedBox(width: 20,),
-                                    BlackTextWidget(text: '01/22',fontSize: 10,fontWeight: FontWeight.w400,)
-                                  ],
-                                ),
-
                               ),
-
-SizedBox(width: 10,),
-                              Container(
-                                height:50 ,
-                                width: 150,
-                                decoration: BoxDecoration(
-                                  color: AppColors.lightGrey,
-                                  borderRadius: BorderRadius.circular(5),
-                                ),
-                                child: Row(
-                                  children: [
-                                    SizedBox(width: 20,),
-                                    Icon(Icons.lock_outline,color: AppColors.greyColor,),
-                                    SizedBox(width: 20,),
-                                    BlackTextWidget(text: '908',fontSize: 10,fontWeight: FontWeight.w400,)
-                                  ],
+                              Transform.scale(
+                                scale: 0.8, // adjust size (e.g., 0.8 = 80%)
+                                child: Switch(
+                                  value: saveThisAddress,
+                                  activeColor: AppColors.greencolor,           // thumb when active
+                                  activeTrackColor: AppColors.greencolor.withOpacity(0.5), // track when active
+                                  inactiveThumbColor: AppColors.greyColor,    // thumb when inactive
+                                  inactiveTrackColor: Colors.grey.shade300,    // track when inactive
+                                  onChanged: (val) {
+                                    setState(() {
+                                      saveThisAddress = val;
+                                    });
+                                  },
                                 ),
                               ),
                             ],
-                          )
+                          ),
                         ]
                     ),
                   ),

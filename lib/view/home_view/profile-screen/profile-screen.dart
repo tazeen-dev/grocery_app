@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:grocery_app/view/home_view/payement_screen.dart';
 import 'package:grocery_app/view/home_view/profile-screen/signout_screen.dart';
 import 'package:grocery_app/view/home_view/profile-screen/transactions_screen.dart';
 import '../../../controller/components/grey-text.dart';
@@ -22,7 +23,7 @@ class ProfileScreen extends StatelessWidget {
     ProfileList(OrderScreen(), text: 'My orders', image: AppIcons.order, icon: Icons.arrow_forward_ios),
     ProfileList(FavouriteScreen(), text:'My Favourites', image: AppIcons.greenheart, icon:Icons.arrow_forward_ios),
     ProfileList(MyAddressScreen(), text: 'My address', image: AppIcons.address, icon: Icons.arrow_forward_ios),
-    ProfileList(CreditcardScreen(), text: 'Credit cards', image: AppIcons.creditcard, icon: Icons.arrow_forward_ios),
+    ProfileList(PayementScreen(), text: 'Make Payments', image: AppIcons.creditcard, icon: Icons.arrow_forward_ios),
     ProfileList(TransactionsScreen(), text:'Transactions' , image:AppIcons.transaction, icon: Icons.arrow_forward_ios),
     ProfileList(NotifictionScreen(), text: 'Notifications', image:AppIcons.notification1, icon:Icons.arrow_forward_ios),
     ProfileList(ReveiwScreen(), text:'Revieiw', image: AppIcons.signout, icon:Icons.arrow_forward_ios),

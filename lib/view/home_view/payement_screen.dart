@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:grocery_app/controller/components/green_text_button.dart';
 import 'package:grocery_app/controller/components/textfield.dart';
+import 'package:grocery_app/view/home_view/profile-screen/creditcard_screen.dart';
 import '../../controller/components/text-class.dart';
 import '../../controller/utils/constants/appcolors/app_color.dart';
 import '../../controller/utils/constants/appicons/app_icons.dart';
@@ -54,6 +55,126 @@ class _PayementScreenState extends State<PayementScreen> {
                     CircleAvatar(backgroundColor: AppColors.DarkGreen, radius: 18, child: Icon(Icons.check, size: 18, color: AppColors.whiteColor)),
                     buildLine(),
                     CircleAvatar(backgroundColor: AppColors.DarkGreen, radius: 18, child: Icon(Icons.check, size: 18, color: AppColors.whiteColor)),
+                  ],
+                ),
+              ),
+
+              Container(
+                height: 189,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: [AppColors.DarkGreen, AppColors.LightGreen],
+                  ),
+                ),
+                child: Stack(
+                  children: [
+                    Positioned(
+                      top: 20,
+                      left: 40,
+                      child: CircleAvatar(
+                        backgroundColor: const Color(0xffF14336),
+                      ),
+                    ),
+                    Positioned(
+                      top: 20,
+                      left: 70,
+                      child: CircleAvatar(
+                        backgroundColor: const Color(0xffFFC107),
+                      ),
+                    ),
+                    Positioned(
+                      bottom: 0,
+                      right: 0,
+                      child: Container(
+                        height: 50,
+                        width: 50,
+                        decoration: const BoxDecoration(
+                          color: Color(0xff6CC51D),
+                          borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(50),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Positioned(
+                      top: 78,
+                      left: 30,
+                      child: Row(
+                        children: [
+                          for (int i = 0; i < 3; i++) ...[
+                            Text(
+                              'XXXX',
+                              style: TextStyle(
+                                fontSize: 15,
+                                fontWeight: FontWeight.w500,
+                                color: AppColors.whiteColor,
+                              ),
+                            ),
+                            const SizedBox(width: 10),
+                          ],
+                          Text(
+                            '8790',
+                            style: TextStyle(
+                              fontSize: 15,
+                              fontWeight: FontWeight.w500,
+                              color: AppColors.whiteColor,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Positioned(
+                      bottom: 20,
+                      left: 25,
+                      child: Row(
+                        // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            'Russell austin',
+                            style: TextStyle(
+                              fontSize: 15,
+                              fontWeight: FontWeight.w500,
+                              color: AppColors.whiteColor,
+                            ),
+                          ),
+                          const SizedBox(width: 70),
+                          Text(
+                            '01 / 22',
+                            style: TextStyle(
+                              fontSize: 12,
+                              fontWeight: FontWeight.w500,
+                              color: AppColors.whiteColor,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Positioned(
+                      bottom: 38,
+                      left: 25,
+                      child: Row(
+                        children: [
+                          Text(
+                            'Card holder',
+                            style: TextStyle(
+                              fontSize: 15,
+                              fontWeight: FontWeight.w500,
+                              color: AppColors.whiteColor,
+                            ),
+                          ),
+                          const SizedBox(width: 80),
+                          Text(
+                            'Expires',
+                            style: TextStyle(
+                              fontSize: 15,
+                              fontWeight: FontWeight.w500,
+                              color: AppColors.whiteColor,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
                   ],
                 ),
               ),
@@ -118,7 +239,7 @@ class _PayementScreenState extends State<PayementScreen> {
               GreenTextButton(
                 text: 'Make a Payment',
                 ontap: () {
-                  // payment logic
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>CreditcardScreen()));
                 },
               ),
             ],

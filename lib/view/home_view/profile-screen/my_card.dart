@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:grocery_app/controller/components/green_text_button.dart';
 import '../../../controller/components/text-class.dart';
 import '../../../controller/components/textfield.dart';
 import '../../../controller/utils/constants/appcolors/app_color.dart';
 import '../../../controller/utils/constants/appicons/app_icons.dart';
+import '../track_screen/order_sucess.dart';
 
 class MyCard extends StatefulWidget {
   const MyCard({super.key});
@@ -57,7 +59,7 @@ class _MyCardState extends State<MyCard> {
                 children: [
                   Positioned(
                     top: 20,
-                    left: 20,
+                    left: 40,
                     child: CircleAvatar(
                       backgroundColor: const Color(0xffF14336),
                     ),
@@ -111,8 +113,34 @@ class _MyCardState extends State<MyCard> {
                     ),
                   ),
                   Positioned(
-                    bottom: 30,
-                    left: 20,
+                    bottom: 20,
+                    left: 25,
+                    child: Row(
+                     // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'Russell austin',
+                          style: TextStyle(
+                            fontSize: 15,
+                            fontWeight: FontWeight.w500,
+                            color: AppColors.whiteColor,
+                          ),
+                        ),
+                        const SizedBox(width: 70),
+                        Text(
+                          '01 / 22',
+                          style: TextStyle(
+                            fontSize: 12,
+                            fontWeight: FontWeight.w500,
+                            color: AppColors.whiteColor,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Positioned(
+                    bottom: 38,
+                    left: 25,
                     child: Row(
                       children: [
                         Text(
@@ -123,7 +151,7 @@ class _MyCardState extends State<MyCard> {
                             color: AppColors.whiteColor,
                           ),
                         ),
-                        const SizedBox(width: 50),
+                        const SizedBox(width: 80),
                         Text(
                           'Expires',
                           style: TextStyle(
@@ -133,18 +161,6 @@ class _MyCardState extends State<MyCard> {
                           ),
                         ),
                       ],
-                    ),
-                  ),
-                  Positioned(
-                    bottom: 50,
-                    left: 20,
-                    child: Text(
-                      'XXXX XXXX',
-                      style: TextStyle(
-                        fontSize: 15,
-                        fontWeight: FontWeight.w500,
-                        color: AppColors.whiteColor,
-                      ),
                     ),
                   ),
                 ],
@@ -189,7 +205,7 @@ class _MyCardState extends State<MyCard> {
                 ),
               ],
             ),
-            const SizedBox(height: 30),
+            const SizedBox(height: 20),
 
             // Switch
             Row(
@@ -198,33 +214,29 @@ class _MyCardState extends State<MyCard> {
                 BlackTextWidget(
                   text: 'Save this card',
                   fontWeight: FontWeight.w500,
-                  fontSize: 16,
+                  fontSize: 14,
                 ),
-                Switch(
-                  value: isSwitched,
-                  onChanged: (value) {
-                    print("Switch tapped: $value"); // For debug
-                    setState(() {
-                      isSwitched = value;
-                    });
-                  },
-                  activeColor: AppColors.DarkGreen,
-                  inactiveThumbColor: Colors.grey,
+                Transform.scale(
+                  scale: 0.7,
+                  child: Switch(
+                    value: isSwitched,
+                    onChanged: (value) {
+                      print("Switch tapped: $value"); // For debug
+                      setState(() {
+                        isSwitched = value;
+                      });
+                    },
+                    activeColor: AppColors.DarkGreen,
+                    inactiveThumbColor: Colors.grey,
+                  ),
                 ),
               ],
             ),
-            Align(
-              alignment: Alignment.centerRight,
-              child: Text(
-                isSwitched ? 'ON' : 'OFF',
-                style: TextStyle(
-                  color: isSwitched ? Colors.green : Colors.grey,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ),
 
-            const SizedBox(height: 20),
+            const SizedBox(height: 50),
+            GreenTextButton(text: 'Add credit card', ontap: (){
+Navigator.push(context, MaterialPageRoute(builder: (context)=>OrderSucess()));
+            })
           ],
         ),
       ),
