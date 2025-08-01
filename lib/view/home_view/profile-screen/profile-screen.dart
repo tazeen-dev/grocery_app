@@ -10,6 +10,7 @@ import '../../../model/product_model/profile_list_model.dart';
 import '../favorities-screen/favourite.dart';
 import '../reveiw/reveiw_screen.dart';
 import 'aboutscreen.dart';
+import 'address_screen.dart';
 import 'creditcard_screen.dart';
 import 'my_address_screen.dart';
 import 'notifictionscreen.dart';

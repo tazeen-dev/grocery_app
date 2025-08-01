@@ -21,6 +21,7 @@ class _MyAddressScreenState extends State<MyAddressScreen> {
   TextEditingController zipcodeController = TextEditingController();
   TextEditingController phonenumberController = TextEditingController();
   TextEditingController countryController = TextEditingController();
+  bool saveThisAddress=false;
 
   @override
   Widget build(BuildContext context) {
@@ -187,6 +188,21 @@ class _MyAddressScreenState extends State<MyAddressScreen> {
                   ),
                   Row(
                     children: [
+                      Transform.scale(
+                        scale: 0.7, // adjust size (e.g., 0.8 = 80%)
+                        child: Switch(
+                          value: saveThisAddress,
+                          activeColor: AppColors.greencolor,           // thumb when active
+                          activeTrackColor: AppColors.greencolor.withOpacity(0.5), // track when active
+                          inactiveThumbColor: AppColors.greyColor,    // thumb when inactive
+                          inactiveTrackColor: Colors.grey.shade300,    // track when inactive
+                          onChanged: (val) {
+                            setState(() {
+                              saveThisAddress = val;
+                            });
+                          },
+                        ),
+                      ),
                       BlackTextWidget(
                         text: 'Make default',
                         fontWeight: FontWeight.w500,

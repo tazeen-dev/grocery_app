@@ -16,6 +16,7 @@ class CreditcardScreen extends StatefulWidget {
 class _CreditcardScreenState extends State<CreditcardScreen> {
   TextEditingController nameController=TextEditingController();
   TextEditingController addressController=TextEditingController();
+  bool saveThisAddress=false;
   @override
   Widget build(BuildContext context) {
 
@@ -85,7 +86,22 @@ class _CreditcardScreenState extends State<CreditcardScreen> {
                                           SizedBox(width: 30,),
                                           Text('CVV : 908')
                                         ],
-                                      ),
+                                       ),
+                                      // Transform.scale(
+                                      //   scale: 0.8, // adjust size (e.g., 0.8 = 80%)
+                                      //   child: Switch(
+                                      //     value: saveThisAddress,
+                                      //     activeColor: AppColors.greencolor,           // thumb when active
+                                      //     activeTrackColor: AppColors.greencolor.withOpacity(0.5), // track when active
+                                      //     inactiveThumbColor: AppColors.greyColor,    // thumb when inactive
+                                      //     inactiveTrackColor: Colors.grey.shade300,    // track when inactive
+                                      //     onChanged: (val) {
+                                      //       setState(() {
+                                      //         saveThisAddress = val;
+                                      //       });
+                                      //     },
+                                      //   ),
+                                      // ),
                                     ],
                                   ),
                                 ),
@@ -121,7 +137,9 @@ class _CreditcardScreenState extends State<CreditcardScreen> {
                                     BlackTextWidget(text: '01/22',fontSize: 10,fontWeight: FontWeight.w400,)
                                   ],
                                 ),
+
                               ),
+
 SizedBox(width: 10,),
                               Container(
                                 height:50 ,
@@ -190,6 +208,7 @@ SizedBox(width: 10,),
                                         Text('CVV : 908')
                                       ],
                                     ),
+
                                   ],
                                 ),
                               ),
@@ -245,6 +264,7 @@ SizedBox(width: 10,),
                                         Text('CVV : 908')
                                       ],
                                     ),
+
                                   ],
                                 ),
                               ),

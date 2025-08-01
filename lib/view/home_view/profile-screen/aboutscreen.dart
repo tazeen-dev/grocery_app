@@ -20,16 +20,16 @@ class _AboutScreenState extends State<AboutScreen> {
   final TextEditingController passwordConfirmController = TextEditingController();
 
   // User info controllers (readonly fields)
-  final TextEditingController nameController = TextEditingController(text: 'Russell Austin');
-  final TextEditingController emailController = TextEditingController(text: 'russell.partner@gmail.com');
-  final TextEditingController phoneController = TextEditingController(text: '+1 202 555 0142');
+  final TextEditingController nameController = TextEditingController();
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController phoneController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     final isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
 
     return Scaffold(
-      backgroundColor: AppColors.whiteColor,
+      backgroundColor: AppColors.lightGrey,
       appBar: AppBar(
         backgroundColor: AppColors.whiteColor,
         elevation: 0,
@@ -62,7 +62,7 @@ class _AboutScreenState extends State<AboutScreen> {
 
               // Name
               TextFeildWidget(
-                hintext: 'Full Name',
+                hintext: 'Russell Austin',
                 prefixIcons: Icons.account_circle_outlined,textInputType: TextInputType.text,
                 controller: nameController,
                 color: AppColors.whiteColor,
@@ -72,7 +72,7 @@ class _AboutScreenState extends State<AboutScreen> {
 
               // Email
               TextFeildWidget(
-                hintext: 'Email Address',
+                hintext: 'russell.partner@gmail.com',
                 textInputType: TextInputType.emailAddress,
                 prefixIcons: Icons.email_outlined,
                 controller: emailController,
@@ -83,7 +83,7 @@ class _AboutScreenState extends State<AboutScreen> {
 
               // Phone
               TextFeildWidget(
-                hintext: 'Phone Number',textInputType: TextInputType.number,
+                hintext: '+1  202  555  0142 ',textInputType: TextInputType.number,
                 prefixIcons: Icons.phone,
                 controller: phoneController,
                 color: AppColors.whiteColor,
@@ -125,7 +125,7 @@ class _AboutScreenState extends State<AboutScreen> {
               GreenTextButton(
                 text: 'Save Settings',
                 ontap: () {
-                  // TODO: Add save logic
+                  Navigator.pop(context);
                 },
               ),
             ],
