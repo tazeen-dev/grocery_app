@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:grocery_app/controller/components/textfield.dart';
 import '../../controller/components/text-class.dart';
 import '../../controller/utils/constants/appcolors/app_color.dart';
 import '../../controller/utils/constants/appicons/app_icons.dart';
@@ -61,22 +62,56 @@ class _PayementScreenState extends State<PayementScreen> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              BlackTextWidget(text: 'Delivery',fontWeight: FontWeight.w600,fontSize: 18,textColor: AppColors.greyColor,),
-              BlackTextWidget(text: 'Address',fontWeight: FontWeight.w600,fontSize: 18,textColor: AppColors.greyColor,),
-              BlackTextWidget(text: 'Payment',fontWeight: FontWeight.w600,fontSize: 18,textColor: AppColors.greyColor,),
+              BlackTextWidget(text: 'Delivery',fontWeight: FontWeight.w600,fontSize: 15,textColor: AppColors.greyColor,),
+              BlackTextWidget(text: 'Address',fontWeight: FontWeight.w600,fontSize: 15,textColor: AppColors.greyColor,),
+              BlackTextWidget(text: 'Payment',fontWeight: FontWeight.w600,fontSize: 15,textColor: AppColors.greyColor,),
 
             ],
           ),
           Row(
             children: [
-              SizedBox(height: 200,width: 200,
+              SizedBox(height: 100,width: 100,
                 child: Card(
-                  color: AppColors.greyColor,
-                  child: Icon(Icons.paypal),
+                  color: AppColors.whiteColor,
+                  child: Column(
+                    children: [
+                      Image(image: AssetImage(AppIcons.paypal)),
+                      BlackTextWidget(text: 'Paypal',textColor: AppColors.greyColor,fontWeight: FontWeight.w500,fontSize: 10,)
+
+                    ],
+                  ),
+                ),
+              ),
+              SizedBox(height: 100,width: 100,
+                child: Card(
+                  color: AppColors.whiteColor,
+                  child: Column(
+                    children: [
+                      Image(image: AssetImage(AppIcons.cardIcon)),
+                      BlackTextWidget(text: 'Paypal',textColor: AppColors.greyColor,fontWeight: FontWeight.w500,fontSize: 10,)
+
+                    ],
+                  ),
+
+                ),
+              ),
+              SizedBox(height: 100,width: 100,
+                child: Card(
+                  color: AppColors.whiteColor,
+                  child: Column(
+                    children: [
+                      Image(image: AssetImage(AppIcons.appleIcon),),
+                      BlackTextWidget(text: 'Paypal',textColor: AppColors.greyColor,fontWeight: FontWeight.w500,fontSize: 10,)
+                    ],
+                  ),
                 ),
               ),
             ],
-          )
+          ),
+          TextFeildWidget(hintext: 'Name on the card', prefixIcons: Icons.account_circle_outlined, controller:, color:
+          AppColors.whiteColor),
+          TextFeildWidget(hintext: 'Card number', prefixIcons: Icons.credit_card, controller: controller, color: AppColors.whiteColor),
+          TextFeildWidget(hintext: 'Month / Year', prefixIcons: Icons.date_range_outlined, controller: controller, color: AppColors.whiteColor)
         ],
       ),
     );

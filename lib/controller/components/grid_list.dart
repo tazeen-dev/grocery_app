@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:groceryApp/controller/components/product-details.dart';
-import 'package:groceryApp/controller/components/text-class.dart';
+import 'package:grocery_app/controller/components/product-details.dart';
+import 'package:grocery_app/controller/components/text-class.dart';
 import '../../model/product_model/grid_product_list.dart';
 import '../../view/home_view/cart-screen/cart.dart';
 import '../utils/constants/appcolors/app_color.dart';

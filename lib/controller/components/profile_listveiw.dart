@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:groceryApp/controller/components/text-class.dart';
+import 'package:grocery_app/controller/components/text-class.dart';
 
 import '../../model/product_model/profile_list_model.dart';
 import '../utils/constants/appcolors/app_color.dart';

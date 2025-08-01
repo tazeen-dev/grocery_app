@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:groceryApp/view/starting_view/splash_view/splash_screen5.dart';
+import 'package:grocery_app/view/starting_view/splash_view/splash_screen5.dart';
 
 import '../../../controller/components/green_text_button.dart';
 import '../../../controller/components/grey-text.dart';

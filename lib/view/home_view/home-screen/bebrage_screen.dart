@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:grocery_app/controller/components/grid_list.dart';
-import 'package:grocery_app/model/product_model/grid_product_list.dart';
 
+import '../../../controller/components/grid_list.dart';
 import '../../../controller/components/text-class.dart';
 import '../../../controller/utils/constants/appcolors/app_color.dart';
 import '../../../controller/utils/constants/appicons/app_icons.dart';
+import '../../../model/product_model/grid_product_list.dart';
 class BevrageScreen extends StatelessWidget {
   BevrageScreen({super.key});
   List<GridContainer> gridProduct=[

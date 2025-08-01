@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:groceryApp/view/home_view/payement_screen.dart';
+import 'package:grocery_app/view/home_view/payement_screen.dart';
 import 'controller/components/container.dart';
 
 void main() {

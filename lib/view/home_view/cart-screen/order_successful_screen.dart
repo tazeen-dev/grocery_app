@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:grocery_app/controller/components/green_text_button.dart';
-import 'package:grocery_app/controller/components/grey-text.dart';
 
+import '../../../controller/components/green_text_button.dart';
 import '../../../controller/components/text-class.dart';
 import '../../../controller/utils/constants/appcolors/app_color.dart';
 import '../../../controller/utils/constants/appicons/app_icons.dart';

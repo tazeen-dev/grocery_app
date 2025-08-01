@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:groceryApp/view/starting_view/splash_view/splash_screen6.dart';
+import 'package:grocery_app/view/starting_view/splash_view/splash_screen6.dart';
 
 import '../../../controller/components/green_text_button.dart';
 import '../../../controller/components/grey-text.dart';

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:groceryApp/controller/components/text-class.dart';
-
+import 'package:grocery_app/controller/components/text-class.dart';
 import '../utils/constants/appcolors/app_color.dart';
 class ContainerClass extends StatelessWidget {
   final String title;

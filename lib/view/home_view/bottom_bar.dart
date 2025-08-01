@@ -43,7 +43,7 @@
 // }
 //
 import 'package:flutter/material.dart';
-import 'package:groceryApp/view/home_view/profile-screen/profile-screen.dart';
+import 'package:grocery_app/view/home_view/profile-screen/profile-screen.dart';
 
 import '../../controller/utils/constants/appcolors/app_color.dart';
 import '../../controller/utils/constants/appicons/app_icons.dart';

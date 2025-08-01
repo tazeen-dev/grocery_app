@@ -146,7 +146,7 @@
 //   }
 // }
 import 'package:flutter/material.dart';
-import 'package:groceryApp/controller/components/text-class.dart';
+import 'package:grocery_app/controller/components/text-class.dart';
 import '../../view/home_view/cart-screen/cart.dart';
 import '../utils/constants/appcolors/app_color.dart';
 import 'green_text_button.dart';

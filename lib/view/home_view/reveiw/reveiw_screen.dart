@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:groceryApp/view/home_view/reveiw/write_review.dart';
+import 'package:grocery_app/view/home_view/reveiw/write_review.dart';
 
 import '../../../controller/components/text-class.dart';
 import '../../../controller/utils/constants/appcolors/app_color.dart';

@@ -1,5 +1,8 @@
 class AppIcons {
   static const aocado = 'assets/icons/aocado-2 1.png';
+  static const appleIcon = 'assets/icons/apple.png';
+  static const cardIcon = 'assets/icons/cards2.png';
+  static const paypal = 'assets/icons/paypal2.png';
   static const search = 'assets/icons/icon.png';
   static const peach = 'assets/icons/peach.png';
   static const pineapple = 'assets/icons/pineapple-pieces.png';

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:grocery_app/controller/components/text-class.dart';
-import 'package:grocery_app/controller/components/grey-text.dart';
-import 'package:grocery_app/controller/components/welcome_button.dart';
-import 'package:grocery_app/controller/utils/constants/appcolors/app_color.dart';
-import 'package:grocery_app/controller/utils/constants/appicons/app_icons.dart';
-import 'package:grocery_app/view/auth_view/login-screen/auth_login_screen.dart';
 import 'package:grocery_app/view/auth_view/signup-screen/auth_signup_screen.dart';
+import '../../controller/components/grey-text.dart';
+import '../../controller/components/text-class.dart';
+import '../../controller/components/welcome_button.dart';
+import '../../controller/utils/constants/appcolors/app_color.dart';
+import '../../controller/utils/constants/appicons/app_icons.dart';
+import 'login-screen/auth_login_screen.dart';
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
 

@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:groceryApp/view/home_view/profile-screen/signout_screen.dart';
-import 'package:groceryApp/view/home_view/profile-screen/transactions_screen.dart';
-
+import 'package:grocery_app/view/home_view/profile-screen/signout_screen.dart';
+import 'package:grocery_app/view/home_view/profile-screen/transactions_screen.dart';
 import '../../../controller/components/grey-text.dart';
+import '../../../controller/components/profile_listveiw.dart';
 import '../../../controller/components/text-class.dart';
+import '../../../controller/utils/constants/appcolors/app_color.dart';
 import '../../../controller/utils/constants/appicons/app_icons.dart';
 import '../../../model/product_model/profile_list_model.dart';
 import '../favorities-screen/favourite.dart';

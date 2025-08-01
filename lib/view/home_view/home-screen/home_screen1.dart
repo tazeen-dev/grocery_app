@@ -1,23 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:grocery_app/controller/components/dot-indicator.dart';
-import 'package:grocery_app/controller/components/grid_list.dart';
-import 'package:grocery_app/controller/components/home-container.dart';
-import 'package:grocery_app/controller/components/page_veiw.dart';
-import 'package:grocery_app/controller/components/product_list.dart';
-import 'package:grocery_app/controller/utils/constants/appcolors/app_color.dart';
-import 'package:grocery_app/controller/utils/constants/appicons/app_icons.dart';
-import 'package:grocery_app/model/product_model/grid_product_list.dart';
-import 'package:grocery_app/model/product_model/product_list_model.dart';
-import 'package:grocery_app/view/home_view/home-screen/babycare.dart';
-import 'package:grocery_app/view/home_view/home-screen/fruits_screen.dart';
-import 'package:grocery_app/view/home_view/home-screen/grocery_screen.dart';
 import 'package:grocery_app/view/home_view/home-screen/vegitable_screen.dart';
-import 'package:grocery_app/view/home_view/search_screen/search_screen.dart';
+import '../../../controller/components/dot-indicator.dart';
+import '../../../controller/components/grid_list.dart';
+import '../../../controller/components/page_veiw.dart';
+import '../../../controller/components/product_list.dart';
 import '../../../controller/components/text-class.dart';
+import '../../../controller/utils/constants/appcolors/app_color.dart';
+import '../../../controller/utils/constants/appicons/app_icons.dart' show AppIcons;
 import '../../../controller/utils/constants/appimages/app_images_widget.dart';
+import '../../../model/product_model/grid_product_list.dart';
+import '../../../model/product_model/product_list_model.dart';
 import '../categaries_screen/categaries_screen.dart';
 import '../featured_screen/featured_screen.dart';
+import 'babycare.dart';
 import 'bebrage_screen.dart';
+import 'fruits_screen.dart';
+import 'grocery_screen.dart';
 
 class HomeScreen1 extends StatefulWidget {
   const HomeScreen1({super.key});
