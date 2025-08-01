@@ -147,8 +147,10 @@
 // }
 import 'package:flutter/material.dart';
 import 'package:grocery_app/controller/components/text-class.dart';
+import 'package:grocery_app/controller/components/top_rounded_custom_cliper.dart';
 import '../../view/home_view/cart-screen/cart.dart';
 import '../utils/constants/appcolors/app_color.dart';
+import 'custum_clipper.dart';
 import 'green_text_button.dart';
 import 'grey-text.dart';
 
@@ -194,36 +196,40 @@ class _ProductDetailsState extends State<ProductDetails> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            // 🔹 Top Section with Background + Image
-            Container(
-              width: double.infinity,
-              decoration: BoxDecoration(
-                color: widget.containerColor,
-                borderRadius: const BorderRadius.only(
-                  bottomLeft: Radius.circular(120),
-                  bottomRight: Radius.circular(120),
+            Stack(
+              alignment: Alignment.center,
+              children: [
+                // 🔷 Curved Header with Product Image
+                ClipPath(
+                  clipper: BottomRoundedClipper(),
+                  child: Container(
+                    height: 300,
+                    width: double.infinity,
+                    color: widget.containerColor,
+                    child: Center(
+                      child: Image.asset(
+                        widget.image,
+                        width: screenWidth * 0.5,
+                        height: screenWidth * 0.5,
+                        fit: BoxFit.contain,
+                      ),
+                    ),
+                  ),
                 ),
-              ),
-              child: Padding(
-                padding: const EdgeInsets.symmetric(vertical: 30.0),
-                child: Image.asset(
-                  widget.image,
-                  width: screenWidth * 0.65,
-                  height: screenWidth * 0.65,
-                  fit: BoxFit.contain,
-                ),
-              ),
+              ],
             ),
 
-            // 🔹 Detail Section
+            const SizedBox(height: 60),
+
+            // 🔷 Product Detail Section
             Container(
               width: double.infinity,
               color: AppColors.lightGrey,
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 25),
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // 🔹 Price + Icon
+                  // 💵 Price + Favorite Icon
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -241,25 +247,22 @@ class _ProductDetailsState extends State<ProductDetails> {
                   ),
                   const SizedBox(height: 8),
 
-                  // 🔹 Product Title
+                  // 🏷 Title
                   BlackTextWidget(
                     text: widget.text,
                     fontSize: 20,
-                    textColor: AppColors.greencolor,
+                    textColor: AppColors.blackColor,
                     fontWeight: FontWeight.w500,
                   ),
                   const SizedBox(height: 4),
-
-                  // 🔹 Description
                   BlackTextWidget(
-                    text: widget.discription,
+                    text: '1.50 lbs',
                     fontWeight: FontWeight.w300,
                     fontSize: 13,
                     textColor: AppColors.greyColor,
                   ),
-                  const SizedBox(height: 12),
-
-                  // 🔹 Rating
+                  const SizedBox(height: 4),
+                  // ⭐ Rating
                   Row(
                     children: const [
                       BlackTextWidget(
@@ -273,15 +276,24 @@ class _ProductDetailsState extends State<ProductDetails> {
                       Icon(Icons.star_half, color: Color(0xffFFC107), size: 20),
                     ],
                   ),
-                  const SizedBox(height: 15),
 
-                  // 🔹 Quantity Selector
+                  const SizedBox(height: 12),
+                  BlackTextWidget(
+                    text: widget.discription,
+                    fontWeight: FontWeight.w300,
+                    fontSize: 13,
+                    textColor: AppColors.greyColor,
+                  ),
+                  const SizedBox(height: 20),
+
+                  // ➕ Quantity Controls
                   Container(
                     height: 50,
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(6),
                     ),
+                    padding: const EdgeInsets.symmetric(horizontal: 10),
                     child: Row(
                       children: [
                         const GreyText(text: 'Quantity'),
@@ -294,7 +306,8 @@ class _ProductDetailsState extends State<ProductDetails> {
                           },
                           icon: Icon(Icons.remove, color: AppColors.greencolor),
                         ),
-                        Text('$count', style: const TextStyle(fontSize: 16)),
+                        Text('$count',
+                            style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
                         IconButton(
                           onPressed: () {
                             setState(() => count++);
@@ -304,9 +317,8 @@ class _ProductDetailsState extends State<ProductDetails> {
                       ],
                     ),
                   ),
-                  const SizedBox(height: 25),
 
-                  // 🔹 Add to Cart
+                  const SizedBox(height: 30),
                   GreenTextButton(
                     text: 'Add to Cart',
                     ontap: () {
@@ -327,4 +339,3 @@ class _ProductDetailsState extends State<ProductDetails> {
     );
   }
 }
-
