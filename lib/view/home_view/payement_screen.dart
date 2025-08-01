@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:grocery_app/controller/components/green_text_button.dart';
 import 'package:grocery_app/controller/components/textfield.dart';
 import '../../controller/components/text-class.dart';
 import '../../controller/utils/constants/appcolors/app_color.dart';
 import '../../controller/utils/constants/appicons/app_icons.dart';
+
 class PayementScreen extends StatefulWidget {
   const PayementScreen({super.key});
 
@@ -11,108 +13,153 @@ class PayementScreen extends StatefulWidget {
 }
 
 class _PayementScreenState extends State<PayementScreen> {
+  final TextEditingController userController = TextEditingController();
+  final TextEditingController cardController = TextEditingController();
+  final TextEditingController dateController = TextEditingController();
+  final TextEditingController cvvController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.whiteColor,
       appBar: AppBar(
         backgroundColor: AppColors.whiteColor,
-        title: BlackTextWidget(text: 'Payment Method',fontWeight: FontWeight.w500,fontSize: 18,),
+        elevation: 0,
+        title: BlackTextWidget(
+          text: 'Payment Method',
+          fontWeight: FontWeight.w500,
+          fontSize: 18,
+        ),
         centerTitle: true,
         leading: InkWell(
-            onTap: (){
-              Navigator.pop(context);
-            },
-            child: Image(image: AssetImage(AppIcons.backicon),color: AppColors.blackColor,)),
+          onTap: () => Navigator.pop(context),
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Image.asset(AppIcons.backicon, color: AppColors.blackColor),
+          ),
+        ),
       ),
-      body: Column(
-       // mainAxisAlignment: MainAxisAlignment.center,
-       // crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Row(
+      body: SafeArea(
+        child: SingleChildScrollView(
+          padding: const EdgeInsets.all(16),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+
+              /// Progress Bar
+              Center(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    CircleAvatar(backgroundColor: AppColors.DarkGreen, radius: 12, child: Icon(Icons.check, size: 16, color: AppColors.whiteColor)),
+                    buildLine(),
+                    CircleAvatar(backgroundColor: AppColors.DarkGreen, radius: 12, child: Icon(Icons.check, size: 16, color: AppColors.whiteColor)),
+                    buildLine(),
+                    CircleAvatar(backgroundColor: AppColors.DarkGreen, radius: 12, child: Icon(Icons.check, size: 16, color: AppColors.whiteColor)),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 8),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  BlackTextWidget(text: 'Delivery', fontWeight: FontWeight.w600, fontSize: 15, textColor: AppColors.greyColor),
+                  BlackTextWidget(text: 'Address', fontWeight: FontWeight.w600, fontSize: 15, textColor: AppColors.greyColor),
+                  BlackTextWidget(text: 'Payment', fontWeight: FontWeight.w600, fontSize: 15, textColor: AppColors.greyColor),
+                ],
+              ),
+
+              const SizedBox(height: 20),
+
+              /// Payment Options
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  paymentOptionCard(AppIcons.paypal, 'Paypal'),
+                  paymentOptionCard(AppIcons.cardIcon, 'Card'),
+                  paymentOptionCard(AppIcons.appleIcon, 'Apple Pay'),
+                ],
+              ),
+
+              const SizedBox(height: 20),
+
+              /// TextFields
+              TextFeildWidget(
+                hintext: 'Name on the card',
+                prefixIcons: Icons.account_circle_outlined,
+                controller: userController,
+                color: AppColors.whiteColor,
+              ),
+              const SizedBox(height: 12),
+              TextFeildWidget(
+                hintext: 'Card number',
+                prefixIcons: Icons.credit_card,
+                controller: cardController,
+                color: AppColors.whiteColor,
+              ),
+              const SizedBox(height: 12),
+              Row(
+                children: [
+                  Expanded(
+                    child: TextFeildWidget(
+                      hintext: 'Month / Year',
+                      prefixIcons: Icons.date_range_outlined,
+                      controller: dateController,
+                      color: AppColors.whiteColor,
+                    ),
+                  ),
+                  const SizedBox(width: 12),
+                  Expanded(
+                    child: TextFeildWidget(
+                      hintext: 'CVV',
+                      prefixIcons: Icons.lock,
+                      controller: cvvController,
+                      color: AppColors.whiteColor,
+                    ),
+                  ),
+                ],
+              ),
+
+              const SizedBox(height: 24),
+              GreenTextButton(
+                text: 'Make a Payment',
+                ontap: () {
+                  // payment logic
+                },
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget buildLine() => Container(height: 2, width: 40, color: AppColors.DarkGreen);
+
+  Widget paymentOptionCard(String iconPath, String label) {
+    return SizedBox(
+      height: 100,
+      width: 100,
+      child: Card(
+        color: AppColors.whiteColor,
+        elevation: 2,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+        child: Padding(
+          padding: const EdgeInsets.all(8),
+          child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              CircleAvatar(
-                backgroundColor: AppColors.DarkGreen,
-                child: Icon(Icons.check,color: AppColors.whiteColor,),
-              ),
-              Container(
-                height: 2,
-                width: 100,
-                decoration: BoxDecoration(
-                    color: AppColors.DarkGreen
-                ),
-              ),              CircleAvatar(
-                backgroundColor: AppColors.DarkGreen,
-                child: Icon(Icons.check,color: AppColors.whiteColor,),
-              ),
-              Container(
-                height: 2,
-                width: 100,
-                decoration: BoxDecoration(
-                  color: AppColors.DarkGreen
-                ),
-              ),
-              CircleAvatar(
-                backgroundColor: AppColors.DarkGreen,
-                child: Icon(Icons.check,color: AppColors.whiteColor,),
+              Image.asset(iconPath, height: 32),
+              const SizedBox(height: 6),
+              BlackTextWidget(
+                text: label,
+                fontWeight: FontWeight.w500,
+                fontSize: 11,
+                textColor: AppColors.greyColor,
               ),
             ],
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              BlackTextWidget(text: 'Delivery',fontWeight: FontWeight.w600,fontSize: 15,textColor: AppColors.greyColor,),
-              BlackTextWidget(text: 'Address',fontWeight: FontWeight.w600,fontSize: 15,textColor: AppColors.greyColor,),
-              BlackTextWidget(text: 'Payment',fontWeight: FontWeight.w600,fontSize: 15,textColor: AppColors.greyColor,),
-
-            ],
-          ),
-          Row(
-            children: [
-              SizedBox(height: 100,width: 100,
-                child: Card(
-                  color: AppColors.whiteColor,
-                  child: Column(
-                    children: [
-                      Image(image: AssetImage(AppIcons.paypal)),
-                      BlackTextWidget(text: 'Paypal',textColor: AppColors.greyColor,fontWeight: FontWeight.w500,fontSize: 10,)
-
-                    ],
-                  ),
-                ),
-              ),
-              SizedBox(height: 100,width: 100,
-                child: Card(
-                  color: AppColors.whiteColor,
-                  child: Column(
-                    children: [
-                      Image(image: AssetImage(AppIcons.cardIcon)),
-                      BlackTextWidget(text: 'Paypal',textColor: AppColors.greyColor,fontWeight: FontWeight.w500,fontSize: 10,)
-
-                    ],
-                  ),
-
-                ),
-              ),
-              SizedBox(height: 100,width: 100,
-                child: Card(
-                  color: AppColors.whiteColor,
-                  child: Column(
-                    children: [
-                      Image(image: AssetImage(AppIcons.appleIcon),),
-                      BlackTextWidget(text: 'Paypal',textColor: AppColors.greyColor,fontWeight: FontWeight.w500,fontSize: 10,)
-                    ],
-                  ),
-                ),
-              ),
-            ],
-          ),
-          TextFeildWidget(hintext: 'Name on the card', prefixIcons: Icons.account_circle_outlined, controller:, color:
-          AppColors.whiteColor),
-          TextFeildWidget(hintext: 'Card number', prefixIcons: Icons.credit_card, controller: controller, color: AppColors.whiteColor),
-          TextFeildWidget(hintext: 'Month / Year', prefixIcons: Icons.date_range_outlined, controller: controller, color: AppColors.whiteColor)
-        ],
+        ),
       ),
     );
   }
