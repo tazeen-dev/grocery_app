@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grocery_app/view/home_view/payement_screen.dart';
+import 'package:grocery_app/view/starting_view/splash_view/splash_screen.dart';
 import 'controller/components/container.dart';
 
 void main() {
@@ -35,7 +36,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home :PayementScreen(),
+      home ://PayementScreen(),
       //SweetHome(),
       //ApplyFilters(),
       //ShippingAddress(),
@@ -66,7 +67,7 @@ class MyApp extends StatelessWidget {
       //SplashScreen4(),
      //SplashScreen3(),
     // SplashScreen2(),
-   //SplashScreen(),
+   SplashScreen(),
     );
   }
 }

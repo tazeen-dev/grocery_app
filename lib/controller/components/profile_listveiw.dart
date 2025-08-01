@@ -14,7 +14,7 @@ class ListClass extends StatefulWidget {
 class _ListClassState extends State<ListClass> {
   @override
   Widget build(BuildContext context) {
-    return SizedBox(height: 500,
+    return SizedBox(height: 700,
       child: ListView.builder(
         scrollDirection: Axis.vertical,
         itemCount: widget.profileitems.length,

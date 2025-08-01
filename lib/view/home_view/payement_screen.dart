@@ -21,7 +21,7 @@ class _PayementScreenState extends State<PayementScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.whiteColor,
+      backgroundColor: AppColors.lightGrey,
       appBar: AppBar(
         backgroundColor: AppColors.whiteColor,
         elevation: 0,
@@ -45,17 +45,15 @@ class _PayementScreenState extends State<PayementScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-
-              /// Progress Bar
               Center(
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    CircleAvatar(backgroundColor: AppColors.DarkGreen, radius: 12, child: Icon(Icons.check, size: 16, color: AppColors.whiteColor)),
+                    CircleAvatar(backgroundColor: AppColors.DarkGreen, radius: 18, child: Icon(Icons.check, size: 18, color: AppColors.whiteColor)),
                     buildLine(),
-                    CircleAvatar(backgroundColor: AppColors.DarkGreen, radius: 12, child: Icon(Icons.check, size: 16, color: AppColors.whiteColor)),
+                    CircleAvatar(backgroundColor: AppColors.DarkGreen, radius: 18, child: Icon(Icons.check, size: 18, color: AppColors.whiteColor)),
                     buildLine(),
-                    CircleAvatar(backgroundColor: AppColors.DarkGreen, radius: 12, child: Icon(Icons.check, size: 16, color: AppColors.whiteColor)),
+                    CircleAvatar(backgroundColor: AppColors.DarkGreen, radius: 18, child: Icon(Icons.check, size: 18, color: AppColors.whiteColor)),
                   ],
                 ),
               ),
@@ -63,15 +61,13 @@ class _PayementScreenState extends State<PayementScreen> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  BlackTextWidget(text: 'Delivery', fontWeight: FontWeight.w600, fontSize: 15, textColor: AppColors.greyColor),
-                  BlackTextWidget(text: 'Address', fontWeight: FontWeight.w600, fontSize: 15, textColor: AppColors.greyColor),
-                  BlackTextWidget(text: 'Payment', fontWeight: FontWeight.w600, fontSize: 15, textColor: AppColors.greyColor),
+                  BlackTextWidget(text: 'Delivery', fontWeight: FontWeight.w600, fontSize: 12, textColor: AppColors.greyColor),
+                  BlackTextWidget(text: 'Address', fontWeight: FontWeight.w600, fontSize: 12, textColor: AppColors.greyColor),
+                  BlackTextWidget(text: 'Payment', fontWeight: FontWeight.w600, fontSize: 12, textColor: AppColors.greyColor),
                 ],
               ),
 
-              const SizedBox(height: 20),
-
-              /// Payment Options
+              const SizedBox(height: 25),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
@@ -82,8 +78,6 @@ class _PayementScreenState extends State<PayementScreen> {
               ),
 
               const SizedBox(height: 20),
-
-              /// TextFields
               TextFeildWidget(
                 hintext: 'Name on the card',
                 prefixIcons: Icons.account_circle_outlined,
@@ -112,7 +106,7 @@ class _PayementScreenState extends State<PayementScreen> {
                   Expanded(
                     child: TextFeildWidget(
                       hintext: 'CVV',
-                      prefixIcons: Icons.lock,
+                      prefixIcons: Icons.lock_outline,
                       controller: cvvController,
                       color: AppColors.whiteColor,
                     ),
@@ -134,7 +128,7 @@ class _PayementScreenState extends State<PayementScreen> {
     );
   }
 
-  Widget buildLine() => Container(height: 2, width: 40, color: AppColors.DarkGreen);
+  Widget buildLine() => Container(height: 2, width: 90, color: AppColors.DarkGreen);
 
   Widget paymentOptionCard(String iconPath, String label) {
     return SizedBox(
